@@ -1,21 +1,22 @@
 <template>
-    <header class="header">
-      <div class="logo">GOODDeal</div>
-      <nav class="nav">
-        <a href="#">Component</a>
-        <a href="#">Laptop</a>
-        <a href="#">Storage</a>
-        <a href="#">Accessory</a>
-      </nav>
-      <div class="actions">
-        <span class="search-icon">Search</span>
-        <a href="#" class="cart">cart</a>
-        <a href="#" class="account">Account</a>
-      </div>
-    </header>
-  </template>
+  <header class="header">
+    <div class="logo">GOODeal</div>
+    <nav class="nav">
+      <a href="#">Component</a>
+      <a href="#">Laptop</a>
+      <a href="#">Storage</a>
+      <a href="#">Accessory</a>
+    </nav>
+    <div class="actions">
+      <span class="search-icon">Search</span>
+      <a href="#" class="cart">cart</a>
+      <a href="#" class="account">Account</a>
+    </div>
+  </header>
+</template>
   
-  <script setup>
+  <script>
+  
   // No additional JavaScript logic is needed for this static header.
   </script>
   
@@ -28,10 +29,10 @@
   
   /* Header Styling */
   .header {
-    display: flex;color-scheme: ;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     background-color: black;
     color: white;
   }
@@ -43,7 +44,7 @@
   
   .nav {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
   }
   
   .nav a {
@@ -59,7 +60,7 @@
   .actions {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.938px;
   }
   
   .search-icon {
