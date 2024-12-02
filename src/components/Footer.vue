@@ -44,17 +44,17 @@
                         <Icon icon="uil:linkedin" width="24" height="24" />
                     </a>
                     <a href="#" aria-label="Instagram">
-                        <Icon icon="uil:Instagram" width="24" height="24" />
+                        <Icon icon="il:instagram" width="24" height="24" />
                     </a>
 
                     <a href="#" aria-label="YouTube">
-                        <Icon icon="uil:Youtube" width="24" height="24" />
+                        <Icon icon="il:youtube" width="24" height="24" />
                     </a>
                     <a href="#" aria-label="Google">
                         <Icon icon="uil:google" width="24" height="24" />
                     </a>
                     <a href="#" aria-label="Pinterest">
-                        <Icon icon="uil:pinterest" width="24" height="24" />
+                        <Icon icon="mdi:pinterest" width="24" height="24" />
                     </a>
                     <a href="#" aria-label="RSS">
                         <Icon icon="uil:rss" width="24" height="24" />
