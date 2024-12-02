@@ -18,7 +18,7 @@
   </header>
 </template>
 <script>
-import {Icon} from '@iconify/vue'
+import { Icon } from '@iconify/vue';
 export default{
   components:{
     Icon

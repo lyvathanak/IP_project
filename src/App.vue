@@ -28,15 +28,15 @@
   />
 </template>
 <script>
-import Monitor from '@/assets/images/Monitor.png'
-import Header from '@/components/Header.vue';
-import BuyItem from '@/components/BuyItem.vue';
-import InputField from './components/InputField.vue';
-import ClickSelect from './components/ClickSelect.vue';
+import BankCard from '@/assets/images/BankCard.png';
 import Bkas from '@/assets/images/Bkas.png';
 import MasterCard from '@/assets/images/MasterCard.png';
+import Monitor from '@/assets/images/Monitor.png';
 import Visa from '@/assets/images/Visa.png';
-import BankCard from '@/assets/images/BankCard.png';
+import BuyItem from '@/components/BuyItem.vue';
+import Header from '@/components/Header.vue';
+import ClickSelect from './components/ClickSelect.vue';
+import InputField from './components/InputField.vue';
 
 export default {
   components: {
