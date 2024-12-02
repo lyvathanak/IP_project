@@ -1,13 +1,21 @@
 <template>
- <input type="text" name="name"  placeholder="name">
+ <input type="text" :placeholder="placeholder">
 </template>
 <script>
-export default{}
+export default{
+  props:{
+    placeholder:{
+      type:String,
+      required:true,
+      width:String
+    }
+  }
+}
 </script>
 <style>
 input{
-width: 313px;
-height: 43.4px;
+width: 450px;
+height: 48.4px;
 border:1px #dbdbdb solid;
 transition: all 0.3s ease;
 outline: none;
