@@ -1,13 +1,14 @@
 <template>
-    <button class="button">{{ buttonText }}</button>
+    <button class="button">{{ label }}</button>
   </template>
   
   <script>
   export default {
-    data() {
-      return {
-        buttonText: 'Sign Up'
-      };
+    props:{
+      label:{
+      type:String,
+      required:true,
+    }
     }
   };
   </script>
