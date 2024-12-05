@@ -1,4 +1,6 @@
 import HomeView from '@/views/HomeView.vue'
+import PaymentView from '@/views/PaymentView.vue'
+import ProductView from '@/views/ProductView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -9,11 +11,17 @@ const router = createRouter({
       name:"home",
       component:HomeView,
     },
-    // {
-    //   path:"/products",
-    //   name:"products",
-    //   component:ProductView,
-    // },
+    {
+      path: "/products",
+      name: "products",
+      component: ProductView,
+    },
+    {
+      path: "/products/:group",
+      name: "productGroup", // Give it a unique name
+      component: ProductView,
+    },
+    
     // {
     //   path:"/product/details",
     //   name:"product Details",
@@ -24,11 +32,11 @@ const router = createRouter({
     //   name:"cart",
     //   component:CartListView,
     // },
-    // {
-    //   path:"/paymentMethod",
-    //   name:"paymentMethod",
-    //   component:PaymentView,
-    // },
+    {
+      path:"/paymentMethod",
+      name:"paymentMethod",
+      component:PaymentView,
+    },
     // {
     //   path:"/account",
     //   name:"account",

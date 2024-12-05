@@ -1,5 +1,5 @@
 <template>
- <input type="text" :placeholder="placeholder">
+ <input type="text" :placeholder="placeholder" class="sys">
 </template>
 <script>
 export default{
@@ -13,6 +13,13 @@ export default{
 }
 </script>
 <style>
+.sys::placeholder {
+  font-family: 'Arial', sans-serif; /* Replace with your desired font */
+  font-size: 16px;
+  color: gray;
+  font-style: italic; /* Optional */
+  opacity: 1; /* Ensures the placeholder is fully visible */
+}
 input{
 width: 450px;
 height: 48.4px;

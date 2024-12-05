@@ -5,9 +5,12 @@
       <img v-if="image" :src="image" :alt="label" />
       <p>{{ label }}</p>
     </div>
-    <p>$ {{ price.toFixed(2) }}</p>
+    <!-- Check if price is a number or string -->
+    <p v-if="typeof price === 'number'">$ {{ price.toFixed(2) }}</p>
+    <p v-else>{{ price }}</p>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -17,14 +20,14 @@ export default {
     },
     image: {
       type: String,
-      required: true,
+      required: false, // Not all items may have images
     },
     invoice: {
       type: String,
       required: false,
     },
     price: {
-      type: Number,
+      type: [Number, String], // Allow both Number and String
       required: true,
     },
   },
@@ -35,7 +38,6 @@ export default {
 <style>
 .cart{
     display: flex;
-    width:425px;
     justify-content: space-between;
      border-bottom: 1px gray solid;
      align-items: center;
@@ -45,10 +47,6 @@ export default {
     justify-content: space-between;
     align-items: center;
     gap:24px;
-}
-img{
-    width:54px;
-    height:54px;
 }
 p{
     margin:0;

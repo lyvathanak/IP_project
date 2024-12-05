@@ -29,26 +29,30 @@ export default {
 };
 </script>
 
-<style>
-img{
-  object-fit: contain;
-}
+<style scoped>
 .select {
   display: flex;
   align-items: center;
 }
-.container-select {
+.container-select{
+  padding-top: 18px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 155px;
 }
 .images {
   display: flex;
+  align-items: center;
   gap: 3px;
 }
 input[type='radio'] {
   accent-color: rgb(83, 83, 83);
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 26px;
+}
+img{
+  object-fit: contain;
+  width: 36;
+  height: 36px;
 }
 </style>

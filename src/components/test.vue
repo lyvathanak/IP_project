@@ -8,12 +8,12 @@
     />
 
     <!-- BuyItem without an image -->
-    <BuyItem 
+    <BuyItem
       label="Subtotal"
       invoice="ReceiptItem"
       :price="5.0"
     />
-  
+    
   <InputField />
   <ClickSelect
     label="Bank"
