@@ -31,11 +31,3 @@ export default {
   justify-content: start;
 }
 </style>
-
-<style>
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-</style>

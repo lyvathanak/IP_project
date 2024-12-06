@@ -1,7 +1,9 @@
+import CartListView from '@/views/CartListView.vue'
 import DetailView from '@/views/DetailView.vue'
 import HomeView from '@/views/HomeView.vue'
 import PaymentView from '@/views/PaymentView.vue'
 import ProductView from '@/views/ProductView.vue'
+
 import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,11 +23,11 @@ const router = createRouter({
       name:"product Details",
       component:DetailView,
     },
-    // {
-    //   path:"/lists",
-    //   name:"cart",
-    //   component:CartListView,
-    // },
+    {
+      path:"/lists",
+      name:"cart",
+      component:CartListView,
+    },
     {
       path:"/paymentMethod",
       name:"paymentMethod",
