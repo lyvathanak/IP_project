@@ -63,13 +63,11 @@
 
 <script>
 
-import Fill_in_Box from './Fill_in_Box.vue';
 import input from './inputTest.vue';
 
 export default {
 
     components: {
-        Fill_in_Box,
         input,
     }
 
@@ -78,21 +76,22 @@ export default {
 
 <style scoped>
 
-::placeholder {
-    padding-left: 16px;
-}
-
 .inputClass1 {
     border: 0.5px solid gray;
     border-radius: 10px;
-    width: 330px;
+    width: 310px;
     height: 50px;
 }
+.inputClass1::placeholder, 
+.inputClass2::placeholder {
+    font-size: 14px;
+  }
+
 
 .inputClass2 {
     border: 0.5px solid gray;
     border-radius: 10px;
-    width: 710px;
+    width: 690px;
     height: 50px;
 }
 
@@ -129,15 +128,14 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 710px;
+    padding-bottom: 24px;
 }
 
 .emailBox {
     display: flex;
     justify-content: space-between;
     width: 710px;
-}
-.email {
-    gap: 8px;
+    padding-bottom: 24px;
 }
 
 .password {
@@ -145,6 +143,9 @@ export default {
     flex-direction: column;
     gap: 16px;
     width: 710px;
+}
+.changePass p{
+    padding-bottom: 5px;
 }
 .confirm{
     display: flex;

@@ -3,6 +3,7 @@ import DetailView from '@/views/DetailView.vue'
 import HomeView from '@/views/HomeView.vue'
 import PaymentView from '@/views/PaymentView.vue'
 import ProductView from '@/views/ProductView.vue'
+import AccountView from '@/views/AccountView.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
@@ -33,11 +34,11 @@ const router = createRouter({
       name:"paymentMethod",
       component:PaymentView,
     },
-    // {
-    //   path:"/account",
-    //   name:"account",
-    //   component:AccountView,
-    // },
+    {
+      path:"/account",
+      name:"account",
+      component:AccountView,
+    },
   ],
 })
 
