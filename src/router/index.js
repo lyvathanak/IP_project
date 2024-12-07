@@ -1,6 +1,7 @@
 import HomeView from '@/views/HomeView.vue'
 import ProductView from '@/views/ProductView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import AccountView from '@/views/AccountView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,11 +31,11 @@ const router = createRouter({
     //   name:"paymentMethod",
     //   component:PaymentView,
     // },
-    // {
-    //   path:"/account",
-    //   name:"account",
-    //   component:AccountView,
-    // },
+    {
+      path:"/account",
+      name:"account",
+      component:AccountView,
+    },
   ],
 })
 

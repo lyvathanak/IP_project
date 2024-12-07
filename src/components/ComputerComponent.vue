@@ -61,7 +61,7 @@ export default {
           processor: "Intel® Core™ i9-13900HX",
           price: 2699,
         },
-        // Add other laptops similarly...
+        
       ],
     };
   },
