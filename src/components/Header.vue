@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="logo">GOODDeal</div>
+    <div class="logo">GOODeal</div>
     <nav class="nav">
       <a href="#">Component</a>
       <a href="#">Laptop</a>

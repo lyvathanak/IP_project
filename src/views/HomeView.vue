@@ -1,11 +1,7 @@
 <template>
     <div>
         <Header/>
-        <main>
-            <div>
-                Body
-            </div>
-        </main>
+        
         <Footer/>
     </div>
 </template>
