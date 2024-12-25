@@ -23,26 +23,24 @@
           </p>
           <p v-if="product.stock > 0" class="stock-status in-stock">In Stock</p>
           <p v-else class="stock-status out-of-stock">Out of Stock</p>
-  
-          <!-- Product Specifications -->
+
           <div class="specs">
-            <p>Processor:  {{ product.specs.processor }}</p>
-            <p>OS: {{ product.specs.os }}</p>
-            <p>Graphics: {{ product.specs.graphics }}</p>
-            <p>Memory (RAM): {{ product.specs.ram }}</p>
-            <p>Storage: {{ product.specs.storage }}</p>
-            <p>Display: {{ product.specs.display }}</p>
+            <p>Processor:  {{ product.processor }}</p>
+            <p>OS: {{ product.model }}</p>
+            <p>Graphics: {{ product.graphics }}</p>
+            <p>Memory (RAM): {{ product.ram }}</p>
+            <p>Storage: {{ product.storage }} TB</p>
+            <p>Display: {{ product.group }}</p>
           </div>
-  
           <!-- Quantity and Add to Cart -->
           <div class="cart-actions">
-            <div class="quantity-control">
-              <button @click="decrementQuantity">-</button>
-              <input type="number" v-model="quantity" min="1" />
-              <button @click="incrementQuantity">+</button>
-            </div>
-            <button class="add-to-cart" @click="addToCart">Add to Cart</button>
+          <div class="quantity-control">
+            <button @click="decrementQuantity">-</button>
+            <input type="number" v-model="quantity" min="1" />
+            <button @click="incrementQuantity">+</button>
           </div>
+          <button class="add-to-cart" @click.prevent="ItemsCard">Add to Cart</button>
+        </div>
   
           <!-- Additional Information -->
           <div class="delivery-info">
@@ -53,50 +51,77 @@
       </div>
     </div>
   </template>
+ <script>
+ import { Icon } from '@iconify/vue';
+ import Header from '@/components/Header.vue';
+ import axios from 'axios';
+ 
+ export default {
+   name: 'DetailView',
+   components: {
+     Header,
+     Icon,
+   },
+   data() {
+     return {
+       product: {},
+       quantity: 1,
+       userId: null,
+     };
+   },
+   methods: {
+     decrementQuantity() {
+       if (this.quantity > 1) this.quantity--;
+     },
+     incrementQuantity() {
+       this.quantity++;
+     },
+     async fetchDetails() {
+       const id = this.$route.params.id; // Get the product id from the route
+       try {
+         const res = await axios.get(`http://localhost:3000/laptops/${id}`);
+         this.product = res.data;
+       } catch (error) {
+         alert("Can't fetch product details by ID.");
+       }
+     },
+     async ItemsCard() {
+       const productCart = {
+         productId: this.product.id,
+         name: this.product.name,
+         quantity: this.quantity,
+         group: this.product.group, // Corrected property name here
+       };
+         
+       try {
+         this.userId = JSON.parse(localStorage.getItem("user-info"))?.id;
+         if (!this.userId) {
+           alert("User not logged in");
+           this.$router.push("/login"); // Corrected to use $router.push
+           return;
+         }
+ 
+         const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
+         const user = userRes.data;
+ 
+         // Ensure userCart is initialized as an empty array if not already present
+         user.userCart = user.userCart || [];
+         user.userCart.push(productCart);
+ 
+         await axios.put(`http://localhost:3000/users/${this.userId}`, user);
+         alert("Product added to cart!");
+       } catch (error) {
+         alert("Error adding product to cart. Please try again.");
+       }
+     },
+   },
+   mounted() {
+     this.fetchDetails(); // Fetch the product details when the component mounts
+   },
+ };
+ </script>
   
-  <script>
-  import { Icon } from '@iconify/vue';
-  import Header from '@/components/Header.vue';
-  import alienware from '@/assets/images/alienware.png'
-  export default {
-    name: 'DetailView',
-             components:{
-                Header,
-                Icon},
-    data() {
-      return {
-        product: {
-          name: "Alienware m18 R2 Gaming Laptop",
-          price: 1992.0,
-          rating: 4.5,
-          reviews: 150,
-          stock: 10,
-          image:alienware, // image
-          specs: {
-            processor: "Up to Intel® Core™ i9 14900HX",
-            os: "Windows 11 Home or Windows 11 Pro",
-            graphics: "Up to NVIDIA® GeForce RTX™ 4090",
-            ram: "Up to 64 GB",
-            storage: "Up to 8 TB",
-            display: '18"',
-          },
-        },
-        quantity: 1, // Default quantity set to 1
-      };
-    },
-    methods: {
-      decrementQuantity() {
-        if (this.quantity > 1) this.quantity--;
-      },
-      incrementQuantity() {
-        this.quantity++;
-      },
-      addToCart() {
-        alert(`Added ${this.quantity} of ${this.product.name} to your cart!`);
-      },
-    },
-  };
-  </script>
+  
   
   <style scoped>
   /* Page Container */
@@ -105,7 +130,10 @@
     margin: 0 auto;
     padding: 20px;
   }
-  
+  img{
+    width: 598px;
+    height: 454px;
+  }
   /* Breadcrumb Styles */
   .breadcrumb {
     margin-bottom: 20px;

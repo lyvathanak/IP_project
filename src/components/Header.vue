@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="logo">GOODDeal</div>
+    <RouterLink to="/" class="logo">GOODDeal</RouterLink>
     <ul class="nav">
       <li
         @mouseover="hovered = 'components'" 
@@ -86,7 +86,8 @@
           <button @click="addToCart">Add to cart</button>
         </div>
       </div>
-      <a href="/Account" class="account">Account</a>
+      <RouterLink  v-if="userInfo" to="/account" class="account">Account</RouterLink>
+      <RouterLink v-else to="/login" class="login">Login</RouterLink>
     </div>
   </header>
 </template>
@@ -155,6 +156,7 @@ export default {
         "USB Hubs",
         "Adapters and Converters",
       ],
+      userInfo: JSON.parse(localStorage.getItem('user-info')) || null,
     };
   },
   methods: {
@@ -168,6 +170,14 @@ export default {
       this.cartItems.push("Sample Item");
       alert("Item added to cart!");
     },
+    account(){
+      const user =JSON.parse(localStorage.getItem('user-info'));
+      if(user){
+         this.$route.push('/account');
+      }else{
+        this.$route.push('/login');
+      }
+    }
   },
 };
 </script>
