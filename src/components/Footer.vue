@@ -103,9 +103,9 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 72.5rem;
-    padding: 0.625rem;
+    padding:0px  140px ;
     box-sizing: border-box;
+    border-bottom: 1px solid gray;
 }
 
 .logo {
@@ -179,10 +179,11 @@ export default {
     color: #007bff;
 }
 
-/* .footer-bottom {
+.footer-bottom {
     
+    margin-bottom: 30px;
     
-} */
+}
 
 .footer-bottom nav {
     display: flex;
