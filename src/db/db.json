@@ -1,0 +1,939 @@
+{
+  "users": [
+    {
+      "id": "a0c0",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "1234123333",
+      "userBought": [],
+      "userCart": [
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 1,
+          "group": "MSI"
+        },
+        {
+          "productId": "3",
+          "name": "MSI Stealth 16 Studio",
+          "quantity": 12,
+          "group": "MSI"
+        },
+        {
+          "productId": "2",
+          "name": "MSI Raider GE78 HX",
+          "quantity": 1,
+          "group": "MSI"
+        },
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 6,
+          "group": "MSI"
+        },
+        {
+          "productId": "2",
+          "name": "MSI Raider GE78 HX",
+          "quantity": 5,
+          "group": "MSI"
+        },
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 1,
+          "group": "MSI"
+        },
+        {
+          "productId": "30",
+          "name": "ASUS Experook B9",
+          "quantity": 13,
+          "group": "ASUS"
+        },
+        {
+          "productId": "14",
+          "name": "Lenovo Yoga 9i",
+          "quantity": 4,
+          "group": "Lenovo"
+        },
+        {
+          "productId": "22",
+          "name": "MacBook Air 13-inch",
+          "quantity": 5,
+          "group": "MacBook"
+        }
+      ]
+    },
+    {
+      "id": "1dbd",
+      "name": "Khun Meas",
+      "email": "john.doe@example.com",
+      "password": "1234",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "3b1d",
+      "email": "sauchinnisa@gmail.com",
+      "password": "123",
+      "name": "hello",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "e623",
+      "email": "sauchinnis1@gmail.com",
+      "password": "1111",
+      "name": "nisa",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "953e",
+      "email": "sauchinnisa@gmail.com",
+      "password": "we",
+      "name": "mo",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "686c",
+      "email": "measreaksmey01@gmail.com",
+      "password": "1111",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "7694",
+      "email": "measreaksmey02@gmail.com",
+      "password": "123",
+      "name": "meas",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "a70c",
+      "email": "measreaksmey01@gmail.com",
+      "password": "111",
+      "name": "kk",
+      "userBought": [],
+      "userCart": [
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 3,
+          "group": "MSI"
+        },
+        {
+          "productId": "8",
+          "name": "Dell G15 Gaming Laptop",
+          "quantity": 3,
+          "group": "Dell"
+        }
+      ]
+    },
+    {
+      "id": "b790",
+      "email": "",
+      "password": "",
+      "name": "",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "51f4",
+      "email": "measreaksmey01@gmail.com",
+      "password": "111",
+      "name": "meas",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "8b0c",
+      "email": "measreaksmey01@gmail.com",
+      "password": "111",
+      "name": "meas",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "2014",
+      "email": "measreaksmey03@gmail.com",
+      "password": "111",
+      "name": "e20210686",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "173f",
+      "email": "measreaksmey03@gmail.com",
+      "password": "111",
+      "name": "e20210686",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "8315",
+      "name": "meas",
+      "email": "meas@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "5d26",
+      "name": "kll",
+      "email": "ll@gmail.com",
+      "password": "123",
+      "userBought": [],
+      "userCart": []
+    },
+    {
+      "id": "qz6g",
+      "name": "measwwwwwwww",
+      "email": "kkk@gmail.com",
+      "password": "jhhhh",
+      "userBought": [],
+      "userCart": [
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 1,
+          "group": "MSI"
+        },
+        {
+          "productId": "2",
+          "name": "MSI Raider GE78 HX",
+          "quantity": 1,
+          "group": "MSI"
+        },
+        {
+          "productId": "6",
+          "name": "MSI Prestige 16",
+          "quantity": 3,
+          "group": "MSI"
+        }
+      ]
+    },
+    {
+      "id": "d18b",
+      "name": "Ima",
+      "email": "jj12@gmail.com",
+      "password": "12345",
+      "userBought": [],
+      "userCart": [
+        {
+          "productId": "2",
+          "name": "MSI Raider GE78 HX",
+          "quantity": 1,
+          "group": "MSI"
+        },
+        {
+          "productId": "4",
+          "name": "MSI Pulse 15",
+          "quantity": 1,
+          "group": "MSI"
+        }
+      ]
+    }
+  ],
+  "laptops": [
+    {
+      "id": "1",
+      "name": "MSI Titan GT77 HX",
+      "model": "13VI-046US",
+      "storage": "2 ",
+      "ram": "64",
+      "graphics": "NVIDIA GeForce RTX 4090",
+      "processor": "Intel Core i9-13980HX",
+      "price": "5499",
+      "image": "/Laptop/AcerAspire7.png",
+      "group": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
+    },
+    {
+      "id": "2",
+      "name": "MSI Raider GE78 HX",
+      "model": "13VH-091US",
+      "storage": "1",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 4080",
+      "processor": "Intel Core i9-13950HX",
+      "price": "3499",
+      "image": "/Laptop/AcerAspireVero.png",
+      "group": "MSI",
+      "rating": 4.5
+    },
+    {
+      "id": "3",
+      "name": "MSI Stealth 16 Studio",
+      "model": "A13VG-011US",
+      "storage": "1",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 4070",
+      "processor": "Intel Core i7-13700H",
+      "price": "2299",
+      "image": "/Laptop/MSIStealth16Studio.png",
+      "group": "MSI"
+    },
+    {
+      "id": "4",
+      "name": "MSI Pulse 15",
+      "model": "B13VFK-253US",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 4060",
+      "processor": "Intel Core i7-13700H",
+      "price": "1349",
+      "image": "/Laptop/MSIPulse15.png",
+      "group": "MSI"
+    },
+    {
+      "id": "5",
+      "name": "MSI Katana GF76",
+      "model": "12UGSF-624US",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 3070 Ti",
+      "processor": "Intel Core i7-12700H",
+      "price": "1449",
+      "image": "/Laptop/MSIKatanaGF76.png",
+      "group": "MSI"
+    },
+    {
+      "id": "6",
+      "name": "MSI Prestige 16",
+      "model": "A12UC-011",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 3050",
+      "processor": "Intel Core i7-1260P",
+      "price": "1599",
+      "image": "/Laptop/MSIStealth14Studio.png",
+      "group": "MSI"
+    },
+    {
+      "id": "7",
+      "name": "Dell XPS 15",
+      "model": "9520",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 3050 Ti",
+      "processor": "Intel Core i9-12900HK",
+      "price": "2899",
+      "image": "/Laptop/DellXPS15.png",
+      "group": "Dell"
+    },
+    {
+      "id": "8",
+      "name": "Dell G15 Gaming Laptop",
+      "model": "5521",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 3060",
+      "processor": "Intel Core i7-12700H",
+      "price": "1099",
+      "image": "/Laptop/DellG15GamingLaptop.png",
+      "group": "Dell"
+    },
+    {
+      "id": "9",
+      "name": "Alienware m18 R2",
+      "model": "5550",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "Intel Integrated Graphics",
+      "processor": "Intel Core Ultra 7 165H",
+      "price": "1888",
+      "image": "/Laptop/Alienwarem18R2.png",
+      "group": "Dell"
+    },
+    {
+      "id": "10",
+      "name": "Dell Inspiron 16 Plus",
+      "model": "7620",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 3050",
+      "processor": "Intel Core i7-12700H",
+      "price": "1299",
+      "image": "/Laptop/DellG15GamingLaptop.png",
+      "group": "Dell"
+    },
+    {
+      "id": "11",
+      "name": "Dell Precision 5570",
+      "model": "WKR43",
+      "storage": "2 ",
+      "ram": "64",
+      "graphics": "NVIDIA RTX A2000",
+      "processor": "Intel Core i9-12900H",
+      "price": "3999",
+      "image": "/Laptop/DellPrecision5570.png",
+      "group": "Dell"
+    },
+    {
+      "id": "12",
+      "name": "Dell Latitude 9330",
+      "model": "MLBKF",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-1260U",
+      "price": "2199",
+      "image": "/Laptop/DellPrecision5570.png",
+      "group": "Dell"
+    },
+    {
+      "id": "13",
+      "name": "Lenovo Legion Pro 7i",
+      "model": "16IRX8",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 4080",
+      "processor": "Intel Core i9-13900HX",
+      "price": "3499",
+      "image": "/Laptop/LenovoLegionPro7i.png",
+      "group": "Lenovo"
+    },
+    {
+      "id": "14",
+      "name": "Lenovo Yoga 9i",
+      "model": "14IRP8",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-1360P",
+      "price": "1799",
+      "image": "/Laptop/LenovoYoga9i.png",
+      "group": "Lenovo"
+    },
+    {
+      "id": "15",
+      "name": "Lenovo ThinkPad X1 Carbon Gen 11",
+      "model": "21HQ",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-1365U",
+      "price": "1699",
+      "image": "/Laptop/LenovoThinkPadX1CarbonGen11.png",
+      "group": "Lenovo"
+    },
+    {
+      "id": "16",
+      "name": "Lenovo IdeaPad Slim 7 Pro",
+      "model": "14ARH7",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "AMD Radeon 680M",
+      "processor": "AMD Ryzen 7 6800HS",
+      "price": "1199",
+      "image": "/Laptop/LenovoIdeaPadSlim7Pro.png",
+      "group": "Lenovo"
+    },
+    {
+      "id": "17",
+      "name": "Lenovo Legion Slim 7i",
+      "model": "16IRX8",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 4070",
+      "processor": "Intel Core i7-13700H",
+      "price": "2099",
+      "image": "/Laptop/LenovoLegionSlim7i.png",
+      "group": "Lenovo"
+    },
+    {
+      "id": "18",
+      "name": "Lenovo ThinkBook 16p",
+      "model": "Gen 4",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 3060",
+      "processor": "AMD Ryzen 9 6900HX",
+      "price": "2499",
+      "image": "/Laptop/LenovoThinkBook16p.png",
+      "group": "Lenovo"
+    },
+    {
+      "id": "19",
+      "name": "MacBook Pro 16-inch",
+      "model": "2023",
+      "storage": "2 ",
+      "ram": "32",
+      "graphics": "M2 Max GPU",
+      "processor": "Apple M2 Max",
+      "price": "4299",
+      "image": "/Laptop/MacBookPro16-inch.png",
+      "group": "MacBook"
+    },
+    {
+      "id": "20",
+      "name": "MacBook Pro 14-inch",
+      "model": "2023",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "M2 Pro GPU",
+      "processor": "Apple M2 Pro",
+      "price": "2499",
+      "image": "/Laptop/MacBookPro16-inch.png",
+      "group": "MacBook"
+    },
+    {
+      "id": "21",
+      "name": "MacBook Air 15-inch",
+      "model": "2023",
+      "storage": "512",
+      "ram": "8",
+      "graphics": "M2 GPU",
+      "processor": "Apple M2",
+      "price": "1299",
+      "image": "/Laptop/MacBookAir15-inch.png",
+      "group": "MacBook"
+    },
+    {
+      "id": "22",
+      "name": "MacBook Air 13-inch",
+      "model": "2022",
+      "storage": "256",
+      "ram": "8",
+      "graphics": "M2 GPU",
+      "processor": "Apple M2",
+      "price": "1199",
+      "image": "/Laptop/MacBookAir13-inch.png",
+      "group": "MacBook"
+    },
+    {
+      "id": "23",
+      "name": "MacBook Pro 13-inch",
+      "model": "2022",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "M2 GPU",
+      "processor": "Apple M2",
+      "price": "1499",
+      "image": "/Laptop/MacBookAir13-inch.png",
+      "group": "MacBook"
+    },
+    {
+      "id": "24",
+      "name": "MacBook Pro 16-inch",
+      "model": "2021",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "M1 Pro GPU",
+      "processor": "Apple M1 Pro",
+      "price": "2499",
+      "image": "/Laptop/MacBookPro16-inch.png",
+      "group": "MacBook"
+    },
+    {
+      "id": "25",
+      "name": "ASUS ROG Strix Scar 16",
+      "model": "G634JZ",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 4080",
+      "processor": "Intel Core i9-13980HX",
+      "price": "3899",
+      "image": "/Laptop/ASUSROGZephyrusG14.png",
+      "group": "ASUS"
+    },
+    {
+      "id": "26",
+      "name": "ASUS TUF Gaming A15",
+      "model": "FA507",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 4060",
+      "processor": "AMD Ryzen 7 7735HS",
+      "price": "1249",
+      "image": "/Laptop/ASUSZenBookProDuo15.png",
+      "group": "ASUS"
+    },
+    {
+      "id": "27",
+      "name": "ASUS ROG Zephyrus G14",
+      "model": "GA402",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "AMD Radeon RX 6800S",
+      "processor": "AMD Ryzen 9 6900HS",
+      "price": "1699",
+      "image": "/Laptop/ASUSROGZephyrusG14.png",
+      "group": "ASUS"
+    },
+    {
+      "id": "28",
+      "name": "ASUS ZenBook Pro Duo 15",
+      "model": "UX582",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 3070",
+      "processor": "Intel Core i9-11900H",
+      "price": "2999",
+      "image": "/Laptop/ASUSZenBookProDuo15.png",
+      "group": "ASUS"
+    },
+    {
+      "id": "29",
+      "name": "ASUS VivoBook Pro 16X",
+      "model": "N7600",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 3050",
+      "processor": "Intel Core i7-11370H",
+      "price": "1399",
+      "image": "/Laptop/LenovoThinkPadX1CarbonGen11.png",
+      "group": "ASUS"
+    },
+    {
+      "id": "30",
+      "name": "ASUS Experook B9",
+      "model": "B9400",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-1165G7",
+      "price": "1799",
+      "image": "/Laptop/HPPavilionPlus14.png",
+      "group": "ASUS"
+    },
+    {
+      "id": "31",
+      "name": "Acer Predator Helios 18",
+      "model": "PH18-71",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 4080",
+      "processor": "Intel Core i9-13900HX",
+      "price": "2999",
+      "image": "/Laptop/AcerPredatorHelios18.png",
+      "group": "Acer"
+    },
+    {
+      "id": "32",
+      "name": "Acer Nitro 5",
+      "model": "AN515-58",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 3070",
+      "processor": "Intel Core i7-12700H",
+      "price": "1299",
+      "image": "/Laptop/AcerNitro5.png",
+      "group": "Acer"
+    },
+    {
+      "id": "33",
+      "name": "Acer Aspire Vero",
+      "model": "AV15-52",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-1255U",
+      "price": "1099",
+      "image": "/Laptop/AcerAspireVero.png",
+      "group": "Acer"
+    },
+    {
+      "id": "34",
+      "name": "Acer Predator Triton 500 SE",
+      "model": "PT516-52s",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 3080 Ti",
+      "processor": "Intel Core i9-12900H",
+      "price": "2999",
+      "image": "/Laptop/AcerPredatorTriton500SE.png",
+      "group": "Acer"
+    },
+    {
+      "id": "35",
+      "name": "Acer Chromebook Spin 714",
+      "model": "CP714-1WN",
+      "storage": "512",
+      "ram": "8",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i5-1240P",
+      "price": "999",
+      "image": "/Laptop/AcerChromebookSpin714.png",
+      "group": "Acer"
+    },
+    {
+      "id": "36",
+      "name": "Acer Aspire 7",
+      "model": "A715-42G",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce GTX 1650",
+      "processor": "AMD Ryzen 5 5500U",
+      "price": "799",
+      "image": "/Laptop/AcerAspire7.png",
+      "group": "Acer"
+    },
+    {
+      "id": "37",
+      "name": "HP Spectre x360 16",
+      "model": "16-f1003dx",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "Intel Arc A370M",
+      "processor": "Intel Core i7-1260P",
+      "price": "1699",
+      "image": "/Laptop/HPSpectrex36016.png",
+      "group": "HP"
+    },
+    {
+      "id": "38",
+      "name": "HP OMEN 17",
+      "model": "ck1020nr",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 3080 Ti",
+      "processor": "Intel Core i9-12900HX",
+      "price": "2899",
+      "image": "/Laptop/HPOmen17.png",
+      "group": "HP"
+    },
+    {
+      "id": "39",
+      "name": "HP Envy x360 15",
+      "model": "15-es2026nr",
+      "storage": "512",
+      "ram": "8",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-1260P",
+      "price": "1299",
+      "image": "/Laptop/HPEnvyx36015.png",
+      "group": "HP"
+    },
+    {
+      "id": "40",
+      "name": "HP Pavilion Plus 14",
+      "model": "eh0097nr",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-12700H",
+      "price": "999",
+      "image": "/Laptop/HPPavilionPlus14.png",
+      "group": "HP"
+    },
+    {
+      "id": "41",
+      "name": "HP ZBook Studio G9",
+      "model": "16U14UT",
+      "storage": "2 ",
+      "ram": "64",
+      "graphics": "NVIDIA RTX A2000",
+      "processor": "Intel Core i9-12900H",
+      "price": "4499",
+      "image": "/Laptop/HPZBookStudioG9.png",
+      "group": "HP"
+    },
+    {
+      "id": "42",
+      "name": "HP Elite Dragonfly G3",
+      "model": "5T6C6UT",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-1265U",
+      "price": "2599",
+      "image": "/Laptop/HPEliteDragonflyG3.png",
+      "group": "HP"
+    },
+    {
+      "id": "12f9",
+      "name": "MSI Titan GT77 HX",
+      "model": "13VI-046US",
+      "storage": "2 ",
+      "ram": "64",
+      "graphics": "NVIDIA GeForce RTX 4090",
+      "processor": "Intel Core i9-13980HX",
+      "price": "5499",
+      "image": "/Laptop/MSIKatanaGF76.png",
+      "group": "MSI"
+    },
+    {
+      "id": "4e51",
+      "name": "MSI Raider GE78 HX",
+      "model": "13VH-091US",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 4080",
+      "processor": "Intel Core i9-13950HX",
+      "price": "3499",
+      "image": "/Laptop/MSIRaiderGE78HX.png",
+      "group": "MSI"
+    },
+    {
+      "id": "0266",
+      "name": "MSI Stealth 16 Studio",
+      "model": "A13VG-011US",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 4070",
+      "processor": "Intel Core i7-13700H",
+      "price": "2299",
+      "image": "/Laptop/MSIStealth16Studio.png",
+      "group": "MSI"
+    },
+    {
+      "id": "bb76",
+      "name": "MSI Pulse 15",
+      "model": "B13VFK-253US",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 4060",
+      "processor": "Intel Core i7-13700H",
+      "price": "1349",
+      "image": "/Laptop/MSIPulse15.png",
+      "group": "MSI"
+    },
+    {
+      "id": "5c9f",
+      "name": "MSI Katana GF76",
+      "model": "12UGSF-624US",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 3070 Ti",
+      "processor": "Intel Core i7-12700H",
+      "price": "1449",
+      "image": "/Laptop/MSIKatanaGF76.png",
+      "group": "MSI"
+    },
+    {
+      "id": "a3e3",
+      "name": "MSI Prestige 16",
+      "model": "A12UC-011",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 3050",
+      "processor": "Intel Core i7-1260P",
+      "price": "1599",
+      "image": "/Laptop/MSIPulse15.png",
+      "group": "MSI"
+    },
+    {
+      "id": "6eb0",
+      "name": "Dell XPS 15",
+      "model": "9520",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 3050 Ti",
+      "processor": "Intel Core i9-12900HK",
+      "price": "2899",
+      "image": "/Laptop/DellXPS15.png",
+      "group": "Dell"
+    },
+    {
+      "id": "3ebe",
+      "name": "Dell G15 Gaming Laptop",
+      "model": "5521",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 3060",
+      "processor": "Intel Core i7-12700H",
+      "price": "1099",
+      "image": "/Laptop/DellG15GamingLaptop.png",
+      "group": "Dell"
+    },
+    {
+      "id": "3edb",
+      "name": "Alienware m18 R2",
+      "model": "5550",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "Intel Integrated Graphics",
+      "processor": "Intel Core Ultra 7 165H",
+      "price": "1888",
+      "image": "/Laptop/Alienwarem18R2.png",
+      "group": "Dell"
+    },
+    {
+      "id": "bcdd",
+      "name": "Dell Inspiron 16 Plus",
+      "model": "7620",
+      "storage": "512",
+      "ram": "16",
+      "graphics": "NVIDIA GeForce RTX 3050",
+      "processor": "Intel Core i7-12700H",
+      "price": "1299",
+      "image": "/Laptop/DellG15GamingLaptop.png",
+      "group": "Dell"
+    },
+    {
+      "id": "6c26",
+      "name": "Dell Latitude 9330",
+      "model": "MLBKF",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-1260U",
+      "price": "2199",
+      "image": "/Laptop/DellPrecision5570.png",
+      "group": "Dell"
+    },
+    {
+      "id": "212a",
+      "name": "Dell Precision 5570",
+      "model": "WKR43",
+      "storage": "2 ",
+      "ram": "64",
+      "graphics": "NVIDIA RTX A2000",
+      "processor": "Intel Core i9-12900H",
+      "price": "3999",
+      "image": "/Laptop/DellPrecision5570.png",
+      "group": "Dell"
+    },
+    {
+      "id": "4828",
+      "name": "Lenovo Legion Pro 7i",
+      "model": "16IRX8",
+      "storage": "1 ",
+      "ram": "32",
+      "graphics": "NVIDIA GeForce RTX 4080",
+      "processor": "Intel Core i9-13900HX",
+      "price": "3499",
+      "image": "/Laptop/LenovoLegionPro7i.png",
+      "group": "Lenovo"
+    },
+    {
+      "id": "cbeb",
+      "name": "Lenovo Yoga 9i",
+      "model": "14IRP8",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "Intel Iris Xe Graphics",
+      "processor": "Intel Core i7-1360P",
+      "price": "1799",
+      "image": "/Laptop/LenovoYoga9i.png",
+      "group": "Lenovo"
+    },
+    {
+      "id": "4c7a",
+      "name": "MacBook Pro 14-inch",
+      "model": "2023",
+      "storage": "1 ",
+      "ram": "16",
+      "graphics": "M2 Pro GPU",
+      "processor": "Apple M2 Pro",
+      "price": "2499",
+      "image": "/Laptop/MacBookPro16-inch.png",
+      "group": "MacBook"
+    },
+    {
+      "id": "3e5b",
+      "name": "MacBook Air 15-inch",
+      "model": "2023",
+      "storage": "512",
+      "ram": "8",
+      "graphics": "M2 GPU",
+      "processor": "Apple M2",
+      "price": "1299",
+      "image": "/Laptop/MacBookAir15-inch.png",
+      "group": "MacBook"
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 <template>
- <input type="text" :placeholder="placeholder">
+ <input type="text" 
+ :id="id" 
+    :placeholder="placeholder" 
+    :value="value" 
+    @input="$emit('update:value', $event.target.value)" >
 </template>
 <script>
 export default{
@@ -7,12 +11,21 @@ export default{
     placeholder:{
       type:String,
       required:true,
-      width:String
-    }
-  }
+      width:String,
+    },
+    id:String,
+    value:String
+  },
 }
 </script>
 <style>
+.sys::placeholder {
+  font-family: 'Arial', sans-serif; /* Replace with your desired font */
+  font-size: 16px;
+  color: gray;
+  font-style: italic; /* Optional */
+  opacity: 1; /* Ensures the placeholder is fully visible */
+}
 input{
 width: 450px;
 height: 48.4px;

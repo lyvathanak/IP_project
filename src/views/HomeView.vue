@@ -1,24 +1,19 @@
 <template>
-    <div>
-        <Header/>
-        <Promotion/>
-        <Footer/>
-    </div>
+<Header/>
+<Promotion/>
+<Footer/>
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-import Promotion from '@/components/Promotion.vue';
-
+import Header from '@/components/Header.vue';
+import Promotion from '@/components/promotion.vue';
 export default{
     name: 'HomeView',
     components:{
-        Header,
-        Promotion,
-        Footer,
-    },
-};
+        Header,Promotion,Footer
+    }
+}
 </script>
 
 <style scoped>
