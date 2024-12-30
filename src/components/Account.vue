@@ -126,13 +126,15 @@ export default {
     padding-right: 35px;
     padding-top: 30px;
     gap: 32px;
-}.edit{
+}
+.edit{
     font-size: 16px;
     padding: 0px;
     border: none;
     background: none;
 
-}.logOut{
+}
+.logOut{
     font-size: 16px;
     color: white;
     background-color: black;
