@@ -1,5 +1,9 @@
 <template>
- <input type="text" :placeholder="placeholder" class="sys">
+ <input type="text" 
+ :id="id" 
+    :placeholder="placeholder" 
+    :value="value" 
+    @input="$emit('update:value', $event.target.value)" >
 </template>
 <script>
 export default{
@@ -7,9 +11,11 @@ export default{
     placeholder:{
       type:String,
       required:true,
-      width:String
-    }
-  }
+      width:String,
+    },
+    id:String,
+    value:String
+  },
 }
 </script>
 <style>

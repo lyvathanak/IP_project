@@ -1,21 +1,20 @@
 <template>
-    <!-- <EditAccount/> -->
-    <Account/>
-
-</template>
-
-<script>
-
-import EditAccount from '../components/EditAccount.vue';
-import Account from '@/components/Account.vue';
-
-export default{
-
-    components:{
-        EditAccount,
-        Account
-    }
-
-}
-
-</script>
+      <Profile />
+      <CartTotal/>
+      <RouterLink to="/lists" >cart list</RouterLink>
+  </template>
+  
+  <script>
+  import CartTotal from '@/components/CartTotal.vue';
+import Profile from '@/components/Profile.vue';
+  
+  export default {
+    components: {
+      Profile,CartTotal
+    },
+  };
+  </script>
+  
+  <style scoped>
+  </style>
+  

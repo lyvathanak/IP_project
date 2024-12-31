@@ -1,69 +1,59 @@
 <template>
   <div class="body">
     <div class="container">
-      <div class="card" v-for="(laptop, index) in laptops" :key="index">
-        <img :src="laptop.image" :alt="laptop.name">
+      <!-- Show loading message while fetching products -->
+      <div v-if="loading" class="loading">Loading products...</div>
+      
+      <!-- Show error message if fetching failed -->
+      <div v-if="error" class="error">{{ error }}</div>
+
+      <!-- Show product cards when data is available -->
+      <RouterLink :to="`/product-details/${laptop.id}`"
+        class="card"
+        v-for="(laptop, index) in products"
+        :key="index"
+       
+      >
+        <img :src="getImagePath(laptop.image)" :alt="laptop.name" />
         <div class="info">
           <h1>{{ laptop.name }}</h1>
           <p><strong>Model:</strong> {{ laptop.model }}</p>
-          <p><strong>Storage:</strong> {{ laptop.storage }}</p>
-          <p><strong>Memory (RAM):</strong> {{ laptop.memory }}</p>
+          <p><strong>Storage:</strong> {{ laptop.storage }} TB</p>
+          <p><strong>Memory (RAM):</strong> {{ laptop.ram }} GB</p>
           <p><strong>Graphics:</strong> {{ laptop.graphics }}</p>
           <p><strong>Processor:</strong> {{ laptop.processor }}</p>
           <p class="price">${{ laptop.price }}</p>
         </div>
-      </div>
+      </RouterLink>
     </div>
   </div>
 </template>
+
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
-      laptops: [
-        {
-          image: "./src/assets/Laptop/Alienwarem18R2GamingLaptop.png",
-          name: "Alienware m18 R2 Gaming Laptop",
-          model: "5550",
-          storage: "Up to 1 TB",
-          memory: "Up to 32 GB",
-          graphics: "Up to Intel® Integrated Graphics",
-          processor: "Up to Intel® Core™ Ultra 7 165H",
-          price: 1888,
-        },
-        {
-          image: "./src/assets/Laptop/MacBookPro16(2024).png",
-          name: 'MacBook Pro 16" (2024)',
-          model: "A3001",
-          storage: "Up to 2 TB",
-          memory: "Up to 64 GB",
-          graphics: "Up to Apple M3 Max GPU",
-          processor: "Apple M3 Max Chip",
-          price: 3499,
-        },
-        {
-          image: "./src/assets/Laptop/LenovoThinkPadX1CarbonGen11.png",
-          name: "Lenovo ThinkPad X1 Carbon Gen 11",
-          model: "X1C11",
-          storage: "Up to 2 TB SSD",
-          memory: "Up to 32 GB LPDDR5",
-          graphics: "Integrated Intel® Iris® Xe Graphics",
-          processor: "Intel® Core™ i7-1370P",
-          price: 2499,
-        },
-        {
-          image: "./src/assets/Laptop/HPOmen17.png",
-          name: "HP Omen 17",
-          model: "Omen17-ck2000",
-          storage: "Up to 1 TB SSD",
-          memory: "Up to 32 GB DDR5",
-          graphics: "NVIDIA® GeForce RTX™ 4080",
-          processor: "Intel® Core™ i9-13900HX",
-          price: 2699,
-        },
-        
-      ],
+      products: [], // Store laptops data here
     };
+  },
+  methods: {
+    async fetchProducts() {
+      try {
+        const response = await axios.get("http://localhost:3000/laptops"); // Fetch from JSON Server
+        this.products = response.data;
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        alert("Failed to load products. Please try again.");
+      }
+    },
+    getImagePath(filename) {
+      return filename;
+    },
+  },
+  mounted() {
+    this.fetchProducts(); // Fetch data when the component mounts
   },
 };
 </script>
@@ -95,6 +85,7 @@ export default {
   border: 1px solid black;
   height: 294px;
   display: flex;
+  text-decoration: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
