@@ -79,11 +79,31 @@
           />
         </li>
       </div>
-      <div class="cart-section">
+      <!-- <div class="cart-section">
         <a @click="toggleCart" href="#" class="cart">Cart</a>
         <div v-if="isCartVisible" class="card-dropdown">
           <p>Empty</p>
           <button @click="addToCart">Add to cart</button>
+        </div>
+      </div> -->
+
+      <div class="cart-section">
+        <a @click="toggleCart" href="#" class="cart">Cart</a>
+        <div v-if="isCartVisible" class="card-dropdown">
+          <p v-if="cartItems.length === 0">Empty</p>
+          <ul v-else>
+            <li v-for="(item, index) in cartItems" :key="index" class="cart-item">
+              <img :src="item.image" :alt="item.name" class="cart-item-image" />
+              <div class="cart-item-details">
+                <p>{{ item.name }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+              </div>
+            </li>
+          </ul>
+          <button >
+            <CartTotal @click="addToCart"> </CartTotal>
+            <RouterLink to="/lists">Add to cart</RouterLink>
+          </button>
         </div>
       </div>
       <RouterLink  v-if="userInfo" to="/account" class="account">Account</RouterLink>
@@ -93,17 +113,29 @@
 </template>
 <script>
 import { Icon } from "@iconify/vue";
+import { useCartStore } from '@/stores/cart';
+import { computed } from 'vue';
 
 export default {
   components: {
     Icon,
   },
+
+  setup() {
+    const cartStore = useCartStore();
+    const cartItems = computed(() => cartStore.items);
+
+    return {
+      cartItems,
+    };
+  },
+
   data() {
     return {
       hovered: "",
       isSearchVisible: false,
       isCartVisible: false,
-      cartItems: [],
+      // cartItems: [],
       components: [
         "All Components",
         "CPU",
@@ -166,32 +198,51 @@ export default {
     toggleCart() {
       this.isCartVisible = !this.isCartVisible;
     },
-    addToCart() {
-      this.cartItems.push("Sample Item");
-      alert("Item added to cart!");
-    },
-    account(){
-      const user =JSON.parse(localStorage.getItem('user-info'));
-      if(user){
-         this.$route.push('/account');
-      }else{
-        this.$route.push('/login');
-      }
-    }
+    // addToCart() {
+    //   this.cartItems.push("Sample Item");
+    //   alert("Item added to cart!");
+    // },
+    // account(){
+    //   const user =JSON.parse(localStorage.getItem('user-info'));
+    //   if(user){
+    //      this.$route.push('/account');
+    //   }else{
+    //     this.$route.push('/login');
+    //   }
+    // }
   },
 };
 </script>
 
 
 <style scoped>
-.cart-section
- .cart{
-height: 100%;
+.cart-section {
+  
+}
+.cart-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
 }
 .cart{
   color: white;
   font-size: 24px;
   cursor: pointer;
+  height: 100%;
   position: relative;
 }
 .card-dropdown{
@@ -212,6 +263,12 @@ height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card-dropdown ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
 }
 .card-dropdown button{
   height: 55px;

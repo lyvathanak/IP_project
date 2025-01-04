@@ -53,6 +53,7 @@
   </template>
  <script>
  import { Icon } from '@iconify/vue';
+ import { useCartStore } from '@/stores/cart';
  import Header from '@/components/Header.vue';
  import axios from 'axios';
  
@@ -101,15 +102,28 @@
            return;
          }
  
-         const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
-         const user = userRes.data;
+        //  const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
+        //  const user = userRes.data;
  
-         // Ensure userCart is initialized as an empty array if not already present
-         user.userCart = user.userCart || [];
-         user.userCart.push(productCart);
+        //  // Ensure userCart is initialized as an empty array if not already present
+        //  user.userCart = user.userCart || [];
+        //  user.userCart.push(productCart);
  
-         await axios.put(`http://localhost:3000/users/${this.userId}`, user);
-         alert("Product added to cart!");
+        //  await axios.put(`http://localhost:3000/users/${this.userId}`, user);
+        //  alert("Product added to cart!");
+
+        const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
+        const user = userRes.data;
+
+        user.userCart = user.userCart || [];
+        user.userCart.push(productCart);
+
+        await axios.put(`http://localhost:3000/users/${this.userId}`, user);
+
+        // Update the cart store
+        const cartStore = useCartStore();
+        cartStore.addToCart(productCart);
+
        } catch (error) {
          alert("Error adding product to cart. Please try again.");
        }
