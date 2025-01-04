@@ -429,6 +429,24 @@
           "name": "Dell G15 Gaming Laptop",
           "quantity": 3,
           "group": "Dell"
+        },
+        {
+          "productId": "30",
+          "name": "ASUS Experook B9",
+          "quantity": 3,
+          "group": "ASUS"
+        },
+        {
+          "productId": "2",
+          "name": "MSI Raider GE78 HX",
+          "quantity": 5,
+          "group": "MSI"
+        },
+        {
+          "productId": "2",
+          "name": "MSI Raider GE78 HX",
+          "quantity": 2,
+          "group": "MSI"
         }
       ]
     },

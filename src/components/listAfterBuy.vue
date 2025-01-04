@@ -91,16 +91,26 @@
 import axios from "axios";
 import Button from "./Button.vue";
 // import InputField from "./InputField.vue";
+import { useCartStore } from '@/stores/cart';
+import { computed } from 'vue';
 
 export default {
   components: {
     Button,
     // InputField,
   },
+  setup() {
+    const cartStore = useCartStore();
+    const cart = computed(() => cartStore.items);
+
+    return {
+      cart,
+    };
+  },
  
   data() {
     return {
-    cart: [],
+    //cart: [],
     discount:0,
     shipping: "Free",
     couponCodes:["SAVE10","SAVE20","WELCOME5"],
@@ -127,7 +137,9 @@ export default {
     }
   },
     removeItem(index) {
-      this.cart.splice(index, 1);
+      // this.cart.splice(index, 1);
+      const cartStore = useCartStore();
+      cartStore.removeFromCart(index);
     },
     editItem(index) {
       alert(`Edit item at index ${index}`);
@@ -142,7 +154,9 @@ export default {
 
       const userId = loggedInUser.id;
       const response = await axios.get(`http://localhost:3000/users/${userId}`);
-      this.cart = response.data.userCart || [];
+      const cartStore = useCartStore();
+      //this.cart = response.data.userCart || [];
+      cartStore.setCart(response.data.userCart || []);
 
       const productIds = this.cart.map((item) => item.productId);
       if (productIds.length > 0) {
@@ -150,7 +164,19 @@ export default {
           params: { ids: productIds.join(",") },
         });
 
-        this.cart = this.cart.map((item) => {
+        // this.cart = this.cart.map((item) => {
+        //   const product = productRes.data.find(
+        //     (product) => product.id === item.productId
+        //   );
+        //     return {
+        //       ...item,
+        //       image: product?.image || "",
+        //       price: product?.price || 0,
+        //     };
+        //   });
+        // }
+
+        cartStore.setCart(cartStore.items.map((item) => {
           const product = productRes.data.find(
             (product) => product.id === item.productId
           );
@@ -159,8 +185,9 @@ export default {
             image: product?.image || "",
             price: product?.price || 0,
           };
-        });
+        }));
       }
+
     } catch (error) {
       console.error("Error fetching cart:", error);
     }
