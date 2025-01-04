@@ -73,9 +73,11 @@
           />
           <input
             v-if="isSearchVisible" 
-            type="text" 
-            class="search" 
+            type="text"
+            class="search"
             placeholder="Search here..."
+            v-model="search"
+            @keyup.enter="onPressEnter"
           />
         </li>
       </div>
@@ -162,6 +164,10 @@ export default {
   methods: {
     toggleSearch() {
       this.isSearchVisible = !this.isSearchVisible;
+    },
+    onPressEnter() {
+      alert(`Searching for ${this.search}`);
+      
     },
     toggleCart() {
       this.isCartVisible = !this.isCartVisible;

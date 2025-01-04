@@ -3,7 +3,7 @@
     <h2>Your Cart</h2>
     <div v-if="cart.length">
       <div v-for="item in cart" :key="item.productId" class="cart-item">
-        <h3>{{ item.name }}</h3>
+        <h3>{{ item.name || "Unnamed Product" }}</h3>
         <p>Quantity: {{ item.quantity }}</p>
         <p>Group: {{ item.group }}</p>
         <div v-if="item.image">
@@ -33,25 +33,29 @@ export default {
       if (!loggedInUser) {
         throw new Error("No user is logged in. Please log in to view your cart.");
       }
-    
+
       const userId = loggedInUser.id;
       const response = await axios.get(`http://localhost:3000/users/${userId}`);
-
-      
       this.cart = response.data.userCart || [];
 
-      const productIds = this.cart.map(item => item.productId);
+      const productIds = this.cart.map((item) => item.productId);
       if (productIds.length > 0) {
-        
-        const productRes = await axios.get(`http://localhost:3000/laptops`, {
-          params: { ids: productIds.join(',') }
-        });
+        // Fetch products data
+        const [laptopsRes, motherboardsRes,cpuRes] = await Promise.all([
+          axios.get(`http://localhost:3000/laptops`),
+          axios.get(`http://localhost:3000/motherboards`),
+          axios.get(`http://localhost:3000/cpu`),
+        ]);
 
-        this.cart = this.cart.map(item => {
-          const product = productRes.data.find(product => product.id === item.productId);
+        const allProducts = [...laptopsRes.data, ...motherboardsRes.data,...cpuRes.data];
+
+        // Merge product details into cart items
+        this.cart = this.cart.map((item) => {
+          const product = allProducts.find((p) => p.id === item.productId);
           return {
             ...item,
-            image: product?.image || '',
+            name: product?.name || "Unknown Product",
+            image: product?.image || "",
           };
         });
       }

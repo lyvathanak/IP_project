@@ -14,7 +14,7 @@
         <tr v-for="(item, index) in cart" :key="item.productId">
           <td class="product">
             <img :src="item.image" :alt="item.name" class="product-image" />
-            <p>{{ item.name }}</p>
+            <p class="name">{{ item.name }}</p>
           </td>
           <td>${{ item.price }}</td>
           <td>
@@ -32,7 +32,7 @@
             <Button
               :label="'Edit'"
               @click="editItem(index)"
-              class="btn-delete"
+              class="btn-edit"
             />
           </td>
         </tr>
@@ -46,24 +46,21 @@
 
   <div class="all">
     <form class="apply-coupon" @submit.prevent="applyCoupon">
-    <!-- Input for coupon code -->
-    <input
-      id="CouponCode"
-      placeholder="Enter Coupon Code"
-      v-model="couponCode" 
-      class="input-coupon"
-    />
-    
-    <!-- Button to apply the coupon -->
-    <Button
-      type="submit"
-      :label="'Apply Coupon'" 
-      class="btn-apply-coupon"
-    />
-  </form>
+      <input
+        id="CouponCode"
+        placeholder="Enter Coupon Code"
+        v-model="couponCode"
+        class="input-coupon"
+      />
+      <Button
+        type="submit"
+        :label="'Apply Coupon'"
+        class="btn-apply-coupon"
+      />
+    </form>
 
     <div class="summary">
-      <p class="text-Cart">Cart Summary</p>
+      <p class="text-cart">Cart Summary</p>
       <div class="cart-total">
         <div class="price">
           <p>Subtotal</p>
@@ -90,42 +87,32 @@
 <script>
 import axios from "axios";
 import Button from "./Button.vue";
-// import InputField from "./InputField.vue";
+
 
 export default {
   components: {
     Button,
-    // InputField,
   },
- 
   data() {
     return {
-    cart: [],
-    discount:0,
-    shipping: "Free",
-    couponCodes:["SAVE10","SAVE20","WELCOME5"],
-    couponCode:""
-    };
+      cart: [],
+      discount: 0,
+      shipping: "Free",
+      couponCodes: ["SAVE10", "SAVE20", "WELCOME5"],
+      couponCode: "",
+    }
   },
   methods: {
     applyCoupon() {
-    
-    if (this.couponCodes.includes(this.couponCode)) {
-      let discount = 0;
-      if (this.couponCode === "SAVE10") {
-        discount = 10;
-      } else if (this.couponCode === "SAVE20") {
-        discount = 20;
-      } else if (this.couponCode === "WELCOME5") {
-        discount = 5;
+      const discounts = { SAVE10: 10, SAVE20: 20, WELCOME5: 5 };
+      if (this.couponCodes.includes(this.couponCode)) {
+        this.discount = discounts[this.couponCode];
+        alert(`Coupon applied: ${this.discount}% off!`);
+      } else {
+        this.discount = 0;
+        alert("Invalid coupon code.");
       }
-      this.discount = discount;
-      alert(`Coupon applied: ${this.discount}% off!`);
-    } else {
-      this.discount = 0;
-      alert("Invalid coupon code.");
-    }
-  },
+    },
     removeItem(index) {
       this.cart.splice(index, 1);
     },
@@ -143,15 +130,137 @@ export default {
       const userId = loggedInUser.id;
       const response = await axios.get(`http://localhost:3000/users/${userId}`);
       this.cart = response.data.userCart || [];
-
       const productIds = this.cart.map((item) => item.productId);
+      const param= { params: { ids: productIds.join(",") } };
       if (productIds.length > 0) {
-        const productRes = await axios.get(`http://localhost:3000/laptops`, {
-          params: { ids: productIds.join(",") },
-        });
+          const [
+          laptopsRes,
+          motherboardsRes,
+          cpuRes,
+          monitorRes,
+          speakerRes,
+          controllerRes,
+          powerSupplyUnitRes,
+          mouseRes,
+          keyboardRes,
+          usbRes,
+          microphoneRes,
+          coolingFansRes,
+          bluetoothAdapterRes,
+          msiRes,
+          asusRes,
+          appleRes,
+          hpRes,
+          lenovoRes,
+          acerRes,
+          hddRes,
+          ssdRes,
+          nvmeDrivesRes,
+          externalHardDriversRes,
+          memoryCardsRes,
+          usbFlashDriversRes,
+          cloudStorageRes,
+          raidSystemsRes,
+          nasRes,
+          accessoriesRes,
+          laptopsBagsRes,
+          gamingHeadsetsRes,
+          externalDvdDriversRes,
+          dockingStationsRes,
+          externalKeyboardRes,
+          mousePadsRes,
+          cableOrganizerRes,
+          powerBankRes,
+          screenProtectorRes,
+          webcamsRes,
+          usbHubsRes,
+          adaptersAndConvertersRes
+          ] = await Promise.all([
+          axios.get(`http://localhost:3000/laptops`, param),
+          axios.get(`http://localhost:3000/motherboards`, param),
+          axios.get(`http://localhost:3000/cpu`, param),
+          axios.get(`http://localhost:3000/monitor`, param),
+          axios.get(`http://localhost:3000/speaker`, param),
+          axios.get(`http://localhost:3000/controller`, param),
+          axios.get(`http://localhost:3000/power-supply-unit`, param),
+          axios.get(`http://localhost:3000/mouse`, param),
+          axios.get(`http://localhost:3000/keyboard`, param),
+          axios.get(`http://localhost:3000/usb`, param),
+          axios.get(`http://localhost:3000/microphone`, param),
+          axios.get(`http://localhost:3000/cooling-fans`, param),
+          axios.get(`http://localhost:3000/bluetooth-adapter`, param),
+          axios.get(`http://localhost:3000/msi`, param),
+          axios.get(`http://localhost:3000/asus`, param),
+          axios.get(`http://localhost:3000/apple`, param),
+          axios.get(`http://localhost:3000/hp`, param),
+          axios.get(`http://localhost:3000/lenovo`, param),
+          axios.get(`http://localhost:3000/acer`, param),
+          axios.get(`http://localhost:3000/hdd`, param),
+          axios.get(`http://localhost:3000/ssd`, param),
+          axios.get(`http://localhost:3000/nvme-drives`, param),
+          axios.get(`http://localhost:3000/external-hard-drivers`, param),
+          axios.get(`http://localhost:3000/memory-cards`, param),
+          axios.get(`http://localhost:3000/usb-flash-drivers`, param),
+          axios.get(`http://localhost:3000/cloud-storage`, param),
+          axios.get(`http://localhost:3000/raid-systems`, param),
+          axios.get(`http://localhost:3000/nas`, param),
+          axios.get(`http://localhost:3000/accessories`, param),
+          axios.get(`http://localhost:3000/laptops-bages`, param),
+          axios.get(`http://localhost:3000/gaming-headsets`, param),
+          axios.get(`http://localhost:3000/external-dvd-drivers`, param),
+          axios.get(`http://localhost:3000/docking-stations`, param),
+          axios.get(`http://localhost:3000/external-keyboard`, param),
+          axios.get(`http://localhost:3000/mouse-pads`, param),
+          axios.get(`http://localhost:3000/cable-organizer`, param),
+          axios.get(`http://localhost:3000/power-bank`, param),
+          axios.get(`http://localhost:3000/screen-protector`, param),
+          axios.get(`http://localhost:3000/webcams`, param),
+          axios.get(`http://localhost:3000/usb-hubs`, param),
+          axios.get(`http://localhost:3000/adapters-and-converters`, param)
+        ]);
+
+        const allProducts = [
+          ...laptopsRes.data,
+          ...motherboardsRes.data,
+          ...cpuRes.data, ...monitorRes.data,
+          ...speakerRes.data, ...controllerRes.data,
+          ...powerSupplyUnitRes.data, ...mouseRes.data,
+          ...keyboardRes.data, ...usbRes.data,
+          ...microphoneRes.data,
+          ...coolingFansRes.data,
+          ...bluetoothAdapterRes.data,
+          ...msiRes.data,
+          ...asusRes.data,
+          ...appleRes.data,
+          ...hpRes.data,
+          ...lenovoRes.data,
+          ...acerRes.data,
+          ...hddRes.data,
+          ...ssdRes.data,
+          ...nvmeDrivesRes.data,
+          ...externalHardDriversRes.data,
+          ...memoryCardsRes.data,
+          ...usbFlashDriversRes.data,
+          ...cloudStorageRes.data,
+          ...raidSystemsRes.data,
+          ...nasRes.data,
+          ...accessoriesRes.data,
+          ...laptopsBagsRes.data,
+          ...gamingHeadsetsRes.data,
+          ...externalDvdDriversRes.data,
+          ...dockingStationsRes.data,
+          ...externalKeyboardRes.data,
+          ...mousePadsRes.data,
+          ...cableOrganizerRes.data,
+          ...powerBankRes.data,
+          ...screenProtectorRes.data,
+          ...webcamsRes.data,
+          ...usbHubsRes.data,
+          ...adaptersAndConvertersRes.data
+        ];
 
         this.cart = this.cart.map((item) => {
-          const product = productRes.data.find(
+          const product = allProducts.find(
             (product) => product.id === item.productId
           );
           return {
@@ -160,28 +269,25 @@ export default {
             price: product?.price || 0,
           };
         });
-      }
-    } catch (error) {
+        };
+      } catch (error) {
       console.error("Error fetching cart:", error);
     }
   },
-  computed: {
-  cartSubtotal() {
-    return this.cart
-      .reduce((sum, item) => sum + item.price * item.quantity, 0)
-      .toFixed(2);
-  },
-  cartTotal() {
-      const subtotal = parseFloat(this.cartSubtotal);
-      const total = this.discount
-        ? subtotal - (subtotal * this.discount) / 100
-        : subtotal;
-      return total.toFixed(2);
-    },
-},
-};
-</script>
 
+  computed: {
+    cartSubtotal() {
+      return this.cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
+    },
+    cartTotal() {
+      return this.cartSubtotal - (this.cartSubtotal * this.discount) / 100;
+    },
+  },
+}; 
+</script>
 
   <style scoped>
  
@@ -301,6 +407,12 @@ export default {
     padding: 8px 24px;
     border-radius: 5px;
     cursor: pointer;
+  }
+  .name {
+    width: 220px;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
   }
   </style>
   

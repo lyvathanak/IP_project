@@ -60,6 +60,12 @@
           "name": "MacBook Air 13-inch",
           "quantity": 5,
           "group": "MacBook"
+        },
+        {
+          "productId": "4",
+          "name": "MSI Pulse 15",
+          "quantity": 5,
+          "group": "MSI"
         }
       ]
     },
@@ -108,47 +114,23 @@
       "password": "123",
       "name": "meas",
       "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "a70c",
-      "email": "measreaksmey01@gmail.com",
-      "password": "111",
-      "name": "kk",
-      "userBought": [],
       "userCart": [
         {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 3,
-          "group": "MSI"
+          "productId": "3972",
+          "name": "GIGABYTE X870E AORUS ELITE WIFI7 AM5 LGA 1718, ATX, DDR5, 4x M.2, PCIe 5.0, USB4, Wi-Fi 7, 2.5GbE LAN, EZ-Latch",
+          "quantity": 2,
+          "group": "mother-board"
         },
         {
-          "productId": "8",
-          "name": "Dell G15 Gaming Laptop",
-          "quantity": 3,
-          "group": "Dell"
+          "productId": "386a",
+          "name": "Intel Core i9-13980HX",
+          "quantity": 2,
+          "group": "cpu"
         }
       ]
     },
     {
-      "id": "b790",
-      "email": "",
-      "password": "",
-      "name": "",
-      "userBought": [],
-      "userCart": []
-    },
-    {
       "id": "51f4",
-      "email": "measreaksmey01@gmail.com",
-      "password": "111",
-      "name": "meas",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "8b0c",
       "email": "measreaksmey01@gmail.com",
       "password": "111",
       "name": "meas",
@@ -229,6 +211,21 @@
           "productId": "4",
           "name": "MSI Pulse 15",
           "quantity": 1,
+          "group": "MSI"
+        }
+      ]
+    },
+    {
+      "id": "4f82",
+      "name": "ll",
+      "email": "ll@gmail.com",
+      "password": "1111",
+      "userBought": [],
+      "userCart": [
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 3,
           "group": "MSI"
         }
       ]
@@ -540,18 +537,6 @@
       "group": "ASUS"
     },
     {
-      "id": "26",
-      "name": "ASUS TUF Gaming A15",
-      "model": "FA507",
-      "storage": "512",
-      "ram": "16",
-      "graphics": "NVIDIA GeForce RTX 4060",
-      "processor": "AMD Ryzen 7 7735HS",
-      "price": "1249",
-      "image": "/Laptop/ASUSZenBookProDuo15.png",
-      "group": "ASUS"
-    },
-    {
       "id": "27",
       "name": "ASUS ROG Zephyrus G14",
       "model": "GA402",
@@ -561,18 +546,6 @@
       "processor": "AMD Ryzen 9 6900HS",
       "price": "1699",
       "image": "/Laptop/ASUSROGZephyrusG14.png",
-      "group": "ASUS"
-    },
-    {
-      "id": "28",
-      "name": "ASUS ZenBook Pro Duo 15",
-      "model": "UX582",
-      "storage": "1 ",
-      "ram": "32",
-      "graphics": "NVIDIA GeForce RTX 3070",
-      "processor": "Intel Core i9-11900H",
-      "price": "2999",
-      "image": "/Laptop/ASUSZenBookProDuo15.png",
       "group": "ASUS"
     },
     {
@@ -608,7 +581,7 @@
       "graphics": "NVIDIA GeForce RTX 4080",
       "processor": "Intel Core i9-13900HX",
       "price": "2999",
-      "image": "/Laptop/AcerPredatorHelios18.png",
+      "image": "/Laptop/AcerPredatorHelios16.png",
       "group": "Acer"
     },
     {
@@ -753,18 +726,6 @@
       "processor": "Intel Core i9-13980HX",
       "price": "5499",
       "image": "/Laptop/MSIKatanaGF76.png",
-      "group": "MSI"
-    },
-    {
-      "id": "4e51",
-      "name": "MSI Raider GE78 HX",
-      "model": "13VH-091US",
-      "storage": "1 ",
-      "ram": "32",
-      "graphics": "NVIDIA GeForce RTX 4080",
-      "processor": "Intel Core i9-13950HX",
-      "price": "3499",
-      "image": "/Laptop/MSIRaiderGE78HX.png",
       "group": "MSI"
     },
     {
@@ -935,5 +896,155 @@
       "image": "/Laptop/MacBookAir15-inch.png",
       "group": "MacBook"
     }
+  ],
+  "motherboards": [
+    {
+      "id": "3972",
+      "name": "GIGABYTE X870E AORUS ELITE WIFI7 AM5 LGA 1718, ATX, DDR5, 4x M.2, PCIe 5.0, USB4, Wi-Fi 7, 2.5GbE LAN, EZ-Latch",
+      "price": 1299,
+      "image": "/MotherBoards/Gigabyte.png",
+      "productCod": "X870E AORUS ELITE WIFI7",
+      "group": "mother-board"
+    },
+    {
+      "id": "78bf",
+      "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+      "price": 455,
+      "image": "/MotherBoards/X870E.png",
+      "productCod": "X870E AORUS PRO ICE",
+      "group": "mother-board"
+    },
+    {
+      "id": "070e",
+      "name": "MSI MPG X870E CARBON AM5 ATX Gaming Motherboard, 4x SATA 6Gb/s, AMD Wi-Fi 7,USB 4.0",
+      "price": 255,
+      "image": "/MotherBoards/AIPC.png",
+      "productCod": "MPG X870E CARBON WIFI",
+      "group": "mother-board"
+    }
+  ],
+  "cpu": [
+    {
+      "id": "386a",
+      "name": "Intel Core i9-13980HX",
+      "price": 999,
+      "image": "/CPU/AMD7.png",
+      "group": "cpu",
+      "brand": "AMD"
+    }
+  ],
+  "monitor": [
+   
+  ],
+  "speaker": [
+   
+  ],
+  "controller": [
+   
+  ],
+  "power-supply-unit": [
+   
+  ],
+  "mouse": [
+   
+  ],
+  "keyboard": [
+   
+  ],
+  "usb": [
+   
+  ],
+  "microphone": [
+   
+  ],
+  "cooling-fans": [
+   
+  ],
+   "bluetooth-adapter": [
+   
+  ],
+  "msi": [
+   
+  ],
+  "asus": [
+   
+  ],
+  "apple": [
+   
+  ],
+  "hp": [
+   
+  ],
+  "lenovo": [
+   
+  ],
+  "acer": [
+   
+  ],
+  "hdd": [
+   
+  ],
+  "ssd": [
+   
+  ],
+  "nvme-drives": [
+   
+  ],
+  "external-hard-drivers": [
+   
+  ],
+  "memory-cards": [
+   
+  ],
+  "usb-flash-drivers": [
+   
+  ],
+  "cloud-storage": [
+   
+  ],
+  "raid-systems": [
+   
+  ],
+  "nas": [
+   
+  ],
+  "accessories": [
+   
+  ],
+  "laptops-bages": [
+   
+  ],
+  "gaming-headsets": [
+   
+  ],
+  "external-dvd-drivers": [
+   
+  ],
+  "docking-stations": [
+   
+  ],
+  "external-keyboard": [
+   
+  ],
+  "mouse-pads": [
+   
+  ],
+  "cable-organizer": [
+   
+  ],
+  "power-bank": [
+   
+  ],
+  "screen-protector": [
+   
+  ],
+  "webcams": [
+   
+  ],
+  "usb-hubs": [
+   
+  ],
+  "adapters-and-converters": [
+   
   ]
 }

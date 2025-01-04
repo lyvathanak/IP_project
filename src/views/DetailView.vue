@@ -1,55 +1,61 @@
 <template>
-    <Header/>
-    <div class="details-view-page">
-      <!-- Breadcrumb Navigation -->
-      <nav class="breadcrumb">
-        <router-link to="/">Home</router-link> > 
-        <router-link to="/laptop">Laptop</router-link> > View
-      </nav>
+  <Header/>
+  <div class="details-view-page">
+    <!-- Breadcrumb Navigation -->
+    <!-- <nav class="breadcrumb">
+    <router-link to="/">Home</router-link> > 
+    <router-link to="/products/all-laptops">Laptop</router-link> > View
+    </nav> -->
   
-      <!-- Product Details Section -->
-      <div class="product-container">
-        <!-- Product Image -->
-        <div class="product-image">
-          <img :src="product.image" :alt="product.name" />
-        </div>
+    <!-- Product Details Section -->
+    <div class="product-container">
+    <!-- Product Image -->
+    <div class="product-image">
+      <img :src="product.image" :alt="product.name" />
+    </div>
   
-        <!-- Product Information -->
-        <div class="product-info">
-          <h1>{{ product.name }}</h1>
-          <p class="price">${{ product.price }}</p>
-          <p class="rating">
-            {{ product.rating }} ({{ product.reviews }} Reviews)
-          </p>
-          <p v-if="product.stock > 0" class="stock-status in-stock">In Stock</p>
-          <p v-else class="stock-status out-of-stock">Out of Stock</p>
+    <!-- Product Information -->
+    <div class="product-info">
+      <h1 class="name">{{ product.name}}</h1>
+      <p class="price">${{ product.price }}</p>
+      <p class="rating">
+      {{ product.rating }} ({{ product.reviews }} Reviews)
+      </p>
+      <p v-if="product.stock > 0" class="stock-status in-stock">In Stock</p>
+      <p v-else class="stock-status out-of-stock">Out of Stock</p>
 
-          <div class="specs">
-            <p>Processor:  {{ product.processor }}</p>
-            <p>OS: {{ product.model }}</p>
-            <p>Graphics: {{ product.graphics }}</p>
-            <p>Memory (RAM): {{ product.ram }}</p>
-            <p>Storage: {{ product.storage }} TB</p>
-            <p>Display: {{ product.group }}</p>
-          </div>
-          <!-- Quantity and Add to Cart -->
-          <div class="cart-actions">
-          <div class="quantity-control">
-            <button @click="decrementQuantity">-</button>
-            <input type="number" v-model="quantity" min="1" />
-            <button @click="incrementQuantity">+</button>
-          </div>
-          <button class="add-to-cart" @click.prevent="ItemsCard">Add to Cart</button>
-        </div>
-  
-          <!-- Additional Information -->
-          <div class="delivery-info">
-            <p><strong>Free Delivery:</strong> Enter your postal code for delivery availability</p>
-            <p><strong>Return Delivery:</strong> Free 30 Days Delivery Returns</p>
-          </div>
-        </div>
+      <div class="specs" v-if="product.processor">
+      <p>Processor:  {{ product.processor }}</p>
+      <p>OS: {{ product.model }}</p>
+      <p>Graphics: {{ product.graphics }}</p>
+      <p>Memory (RAM): {{ product.ram }}</p>
+      <p>Storage: {{ product.storage }} TB</p>
+      <p>Display: {{ product.group }}</p>
+      </div>
+      <div class="specs" v-else-if="product.group==='cpu'">
+        <p>{{ product.brand }}</p>
+      </div>
+      <div class="specs" v-else>
+      <p>{{ product.productCod }}</p>
+      </div>
+      <!-- Quantity and Add to Cart -->
+      <div class="cart-actions">
+      <div class="quantity-control">
+      <button @click="decrementQuantity">-</button>
+      <input type="number" v-model="quantity" min="1" />
+      <button @click="incrementQuantity">+</button>
+      </div>
+      <button class="add-to-cart" @click.prevent="ItemsCard">Add to Cart</button>
+    </div>
+   
+      <!-- Additional Information -->
+      <div class="delivery-info">
+      <p><strong>Free Delivery:</strong> Enter your postal code for delivery availability</p>
+      <p><strong>Return Delivery:</strong> Free 30 Days Delivery Returns</p>
       </div>
     </div>
+    </div>
+  </div>
   </template>
  <script>
  import { Icon } from '@iconify/vue';
@@ -59,68 +65,75 @@
  export default {
    name: 'DetailView',
    components: {
-     Header,
-     Icon,
+   Header,
+   Icon,
    },
    data() {
-     return {
-       product: {},
-       quantity: 1,
-       userId: null,
-     };
+   return {
+     product: {},
+     quantity: 1,
+     userId: null,
+   };
    },
    methods: {
-     decrementQuantity() {
-       if (this.quantity > 1) this.quantity--;
-     },
-     incrementQuantity() {
-       this.quantity++;
-     },
-     async fetchDetails() {
-       const id = this.$route.params.id; // Get the product id from the route
-       try {
-         const res = await axios.get(`http://localhost:3000/laptops/${id}`);
-         this.product = res.data;
-       } catch (error) {
-         alert("Can't fetch product details by ID.");
-       }
-     },
-     async ItemsCard() {
-       const productCart = {
-         productId: this.product.id,
-         name: this.product.name,
-         quantity: this.quantity,
-         group: this.product.group, // Corrected property name here
-       };
-         
-       try {
-         this.userId = JSON.parse(localStorage.getItem("user-info"))?.id;
-         if (!this.userId) {
-           alert("User not logged in");
-           this.$router.push("/login"); // Corrected to use $router.push
-           return;
-         }
+   decrementQuantity() {
+     if (this.quantity > 1) this.quantity--;
+   },
+   incrementQuantity() {
+     this.quantity++;
+   },
+   async fetchDetails() {
+     const id = this.$route.params.id;
+     try {
+     const [laptopsResponse, motherboardsResponse,cpuResponse] = await Promise.all([
+      axios.get("http://localhost:3000/laptops"),
+      axios.get("http://localhost:3000/motherboards"),
+      axios.get("http://localhost:3000/cpu"),
+      ]);
+     const products =[...laptopsResponse.data,...motherboardsResponse.data,...cpuResponse.data];
+     this.product=products.find((item)=> item.id==id);
+     if (!this.product) {
+      throw new Error("Product not found");
+    }
+     } catch (error) {
+     alert("Can't fetch product details by ID.");
+     }
+   },
+   async ItemsCard() {
+     const productCart = {
+     productId: this.product.id,
+     name: this.product.name,
+     quantity: this.quantity,
+     group: this.product.group, // Corrected property name here
+     };
+     
+     try {
+     this.userId = JSON.parse(localStorage.getItem("user-info"))?.id;
+     if (!this.userId) {
+       alert("User not logged in");
+       this.$router.push("/login"); // Corrected to use $router.push
+       return;
+     }
  
-         const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
-         const user = userRes.data;
+     const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
+     const user = userRes.data;
  
-         // Ensure userCart is initialized as an empty array if not already present
-         user.userCart = user.userCart || [];
-         user.userCart.push(productCart);
+     // Ensure userCart is initialized as an empty array if not already present
+     user.userCart = user.userCart || [];
+     user.userCart.push(productCart);
  
-         await axios.put(`http://localhost:3000/users/${this.userId}`, user);
-         alert("Product added to cart!");
-       } catch (error) {
-         alert("Error adding product to cart. Please try again.");
-       }
-     },
+     await axios.put(`http://localhost:3000/users/${this.userId}`, user);
+     alert("Product added to cart!");
+     } catch (error) {
+     alert("Error adding product to cart. Please try again.");
+     }
+   },
    },
    mounted() {
-     this.fetchDetails(); // Fetch the product details when the component mounts
+   this.fetchDetails(); // Fetch the product details when the component mounts
    },
  };
  </script>
-  
   
   
   <style scoped>
@@ -140,7 +153,7 @@
     font-size: 14px;
     color: #555;
   }
-  
+ 
   .breadcrumb a {
     color: #007bff;
     text-decoration: none;
