@@ -274,8 +274,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-
+  width: 65px;
 }
 
 .card-dropdown ul {

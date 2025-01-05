@@ -1,6 +1,6 @@
 <template>
   <form class="form-container" @submit.prevent="login">
-    <img src="../assets/logo.svg" alt="Logo" class="form-logo" />
+    <h1 class="form-logo" >Log in</h1>
     <p>Email</p>
     <input
       type="email"
@@ -36,32 +36,33 @@ export default {
   },
   methods: {
     async login() {
-  try {
-    const result = await axios.get(
-      `http://localhost:3000/users?email=${this.email}&password=${this.password}`
-    );
-    if (result.status === 200 && result.data.length > 0) {
-      localStorage.setItem("user-info", JSON.stringify(result.data[0])); // Save user info
-      this.$router.push({ name: "Account" }); // Redirect to the account page after login
-    } else {
-      alert("Invalid email or password.");
-    }
-  } catch (error) {
-    console.error(error);
-    alert("Login failed. Try again.");
-  }
-}
-,
+      try {
+        const result = await axios.get(
+          `http://localhost:3000/users?email=${this.email}&password=${this.password}`
+        );
+        if (result.status === 200 && result.data.length > 0) {
+          localStorage.setItem("user-info", JSON.stringify(result.data[0])); // Save user info
+          this.$router.push({ name: "Account" }); // Redirect to the account page after login
+        } else {
+          alert("Invalid email or password.");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Login failed. Try again.");
+      }
+    },
 
   },
 };
 </script>
 
-
-  
-  <style scoped>
+<style scoped>
 /* General Form Styling */
 .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 400px;
   margin: 50px auto;
@@ -74,6 +75,10 @@ export default {
 
 /* Logo Styling */
 .form-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
   width: 100px;
   margin-bottom: 20px;
 }
@@ -124,6 +129,12 @@ export default {
 
 .form-link:hover {
   text-decoration: underline;
+}
+p{
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  text-align: left; /* Add this line */
 }
 
 /* Responsive Design */
