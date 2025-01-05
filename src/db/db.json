@@ -409,7 +409,26 @@
       "password": "123",
       "name": "meas",
       "userBought": [],
-      "userCart": []
+      "userCart": [
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 2,
+          "group": "MSI"
+        },
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 2,
+          "group": "MSI"
+        },
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 2,
+          "group": "MSI"
+        }
+      ]
     },
     {
       "id": "a70c",
