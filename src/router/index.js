@@ -7,12 +7,19 @@ import ProductView from '@/views/ProductView.vue';
 import AccountView from '@/views/AccountView.vue';
 import SignUp from '@/components/SignUp.vue';
 import Login from '@/components/Login.vue';
+import ProductsPage from '@/views/ProductsPage.vue'; // Make sure this import is correct
 
 const routes = [
   {
     path: '/login',
     name: 'Login',
     component: Login,
+  },
+  {
+    path: '/products/:group',
+    name: 'ProductsGroup', // Changed to unique name
+    component: ProductsPage,
+    props: true, 
   },
   {
     path: '/sign-up',
@@ -31,7 +38,7 @@ const routes = [
   },
   {
     path: '/products/all-components',
-    name: 'Products',
+    name: 'AllComponents',
     component: ProductView,
   },
   {
@@ -66,6 +73,11 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
+});
+router.onError((error) => {
+  // Handle route not found or other errors
+  console.error('Route error:', error);
+  // You can redirect to a 404 page or display an error message
 });
 
 export default router;

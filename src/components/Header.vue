@@ -1,382 +1,389 @@
 <template>
   <header class="header">
     <RouterLink to="/" class="logo">GOODDeal</RouterLink>
-    <ul class="nav">
-      <li
-        @mouseover="hovered = 'components'" 
-        @mouseleave="hovered = ''"
-      >
-        <a href="#">Components</a>
-        <div class="con" v-if="hovered === 'components'">
-          <div class="sub-container">
-            <a :href="`/products/${item.toLowerCase().replace(/ /g, '-')}`" 
-               v-for="(item, index) in components" 
-               :key="index">
+    <nav class="nav">
+      <ul>
+        <li
+          @click="toggleDropdown('components')"
+          :class="{ active: activeDropdown === 'components' }"
+        >
+          <a href="#">Components</a>
+          <div v-if="activeDropdown === 'components'" class="dropdown">
+            <RouterLink 
+              v-for="(item, index) in components" 
+              :key="index"
+              :to="`/products/${item.toLowerCase().replace(/ /g, '-')}`"
+              class="dropdown-item"
+              @click="filterByCategory('components', item)"
+            >
               {{ item }}
-            </a>
+            </RouterLink>
           </div>
-        </div>
-      </li>
-      <li
-        @mouseover="hovered = 'laptops'" 
-        @mouseleave="hovered = ''"
-      >
-        <a href="#">Laptops</a>
-        <div class="con" v-if="hovered === 'laptops'">
-          <div class="sub-container">
-            <a :href="`/products/${item.toLowerCase().replace(/ /g, '-')}`" 
-               v-for="(item, index) in laptops" 
-               :key="index">
-              {{ item }}
-            </a>
-          </div>
-        </div>
-      </li>
-      <li 
-        @mouseover="hovered = 'storage'" 
-        @mouseleave="hovered = ''"
-      >
-        <a href="#">Storage</a>
-        <div class="con" v-if="hovered === 'storage'">
-          <div class="sub-container">
-            <a :href="`/products/${item.toLowerCase().replace(/ /g, '-')}`" 
-               v-for="(item, index) in storage" 
-               :key="index">
-              {{ item }}
-            </a>
-          </div>
-        </div>
-      </li>
-      <li 
-        @mouseover="hovered = 'accessory'" 
-        @mouseleave="hovered = ''"
-      >
-        <a href="#">Accessory</a>
-        <div class="con" v-if="hovered === 'accessory'">
-          <div class="sub-container">
-            <a :href="`/products/${item.toLowerCase().replace(/ /g, '-')}`" 
-               v-for="(item, index) in accessory" 
-               :key="index">
-              {{ item }}
-            </a>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <div class="actions">
-      <div class="search-cart">
-        <li>
-          <Icon
-            @click="toggleSearch" 
-            icon="material-symbols:search" 
-            class="search-icon" 
-          />
-          <input
-            v-if="isSearchVisible" 
-            type="text" 
-            class="search" 
-            placeholder="Search here..."
-          />
         </li>
-      </div>
-      <div class="cart-section">
-        <a @click="toggleCart" href="#" class="cart">Cart</a>
-        <div v-if="isCartVisible" class="card-dropdown">
-          <p>Empty</p>
-          <button @click="addToCart">Add to cart</button>
+        <li
+          @click="toggleDropdown('laptops')"
+          :class="{ active: activeDropdown === 'laptops' }"
+        >
+          <a href="#">Laptops</a>
+          <div v-if="activeDropdown === 'laptops'" class="dropdown">
+            <RouterLink 
+              v-for="(item, index) in laptops" 
+              :key="index"
+              :to="`/products/${item.toLowerCase().replace(/ /g, '-')}`"
+              class="dropdown-item"
+              @click="filterByGroup(item)"
+            >
+              {{ item }}
+            </RouterLink>
+          </div>
+        </li>
+        <li
+          @click="toggleDropdown('storage')"
+          :class="{ active: activeDropdown === 'storage' }"
+        >
+          <a href="#">Storage</a>
+          <div v-if="activeDropdown === 'storage'" class="dropdown">
+            <RouterLink 
+              v-for="(item, index) in storage" 
+              :key="index"
+              :to="`/products/${item.toLowerCase().replace(/ /g, '-')}`"
+              class="dropdown-item"
+            >
+              {{ item }}
+            </RouterLink>
+          </div>
+        </li>
+        <li
+          @click="toggleDropdown('accessory')"
+          :class="{ active: activeDropdown === 'accessory' }"
+        >
+          <a href="#">Accessories</a>
+          <div v-if="activeDropdown === 'accessory'" class="dropdown">
+            <RouterLink 
+              v-for="(item, index) in accessories" 
+              :key="index"
+              :to="`/products/${item.toLowerCase().replace(/ /g, '-')}`"
+              class="dropdown-item"
+            >
+              {{ item }}
+            </RouterLink>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <Icon @click="toggleSearch" icon="material-symbols:search" class="icon" />
+      <RouterLink to="/cart" class="icon">
+        <Icon icon="material-symbols:shopping-cart" />
+      </RouterLink>
+      <RouterLink v-if="userInfo" to="/account" class="icon">
+        <Icon icon="material-symbols:person" />
+      </RouterLink>
+      <RouterLink v-else to="/login" class="icon">
+        <Icon icon="material-symbols:person-outline" />
+      </RouterLink>
+    </div>
+    
+    <!-- Search bar that appears below header -->
+    <div v-if="isSearchVisible" class="search-container">
+      <div class="search-wrapper">
+        <input
+          v-model="searchQuery"
+          type="text"
+          class="search-input"
+          placeholder="Search products..."
+          @input="handleSearch"
+        />
+        <div v-if="searchResults.length > 0" class="search-results">
+          <RouterLink
+            v-for="result in searchResults"
+            :key="result.id"
+            :to="`/product/${result.id}`"
+            class="search-result-item"
+            @click="hideSearch"
+          >
+            <img :src="result.image" :alt="result.name" class="result-image">
+            <div class="result-info">
+              <span class="result-name">{{ result.name }}</span>
+              <span class="result-price">${{ result.price }}</span>
+            </div>
+          </RouterLink>
         </div>
       </div>
-      <RouterLink  v-if="userInfo" to="/account" class="account">Account</RouterLink>
-      <RouterLink v-else to="/login" class="login">Login</RouterLink>
     </div>
   </header>
 </template>
+
 <script>
 import { Icon } from "@iconify/vue";
+import axios from "axios";
 
 export default {
-  components: {
-    Icon,
-  },
+  components: { Icon },
   data() {
     return {
-      hovered: "",
+      activeDropdown: null,
       isSearchVisible: false,
-      isCartVisible: false,
-      cartItems: [],
+      searchQuery: "",
+      searchResults: [],
+      userInfo: JSON.parse(localStorage.getItem("user-info")) || null,
       components: [
         "All Components",
         "CPU",
-        "Monitor",
-        "Mother Board",
-        "Speaker",
-        "Controller",
-        "Power Supply Unit",
-        "Mouse",
-        "Keyboard",
-        "USB",
-        "Microphone",
-        "Cooling Fans",
-        "Bluetooth Adapter",
+        "GPU",
+        "RAM",
+        "Motherboard",
+        "Power Supply",
+        "Case",
       ],
       laptops: [
         "All Laptops",
-        "MSI",
-        "Asus",
         "Apple",
+        "Dell",
         "HP",
         "Lenovo",
+        "ASUS",
+        "MSI",
         "Acer",
-        "MacBook",
       ],
       storage: [
         "All Storage",
-        "HDD",
         "SSD",
-        "NVMe Drives",
-        "External Hard Drives",
-        "USB Flash Drives",
-        "Memory Cards",
-        "Cloud Storage",
-        "RAID Systems",
-        "NAS",
+        "HDD",
+        "External Drive",
+        "USB Drive",
       ],
-      accessory: [
+      accessories: [
         "All Accessories",
-        "Laptop Bags",
-        "Gaming Headsets",
-        "External DVD Drives",
-        "Docking Stations",
-        "External Keyboards",
-        "Mouse Pads",
-        "Cable Organizers",
-        "Power Banks",
-        "Screen Protectors",
-        "Webcams",
-        "USB Hubs",
-        "Adapters and Converters",
+        "Mouse",
+        "Keyboard",
+        "Headset",
+        "Webcam",
       ],
-      userInfo: JSON.parse(localStorage.getItem('user-info')) || null,
+      filteredLaptops: [], // Holds the filtered laptops based on category
     };
   },
+  created() {
+    // Fetch all laptops when the component is created to populate the list
+    this.fetchLaptops();
+  },
   methods: {
+    async fetchLaptops() {
+      try {
+        const response = await axios.get("http://localhost:3000/laptops");
+        this.filteredLaptops = response.data;
+      } catch (error) {
+        console.error("Error fetching laptops:", error);
+      }
+    },
+    async handleSearch() {
+      if (this.searchQuery.length < 2) {
+        this.searchResults = [];
+        return;
+      }
+
+      try {
+        const response = await axios.get("http://localhost:3000/laptops");
+        this.searchResults = response.data
+          .filter(
+            (laptop) =>
+              laptop.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+              laptop.group.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+              laptop.model.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+              laptop.processor.toLowerCase().includes(this.searchQuery.toLowerCase())
+          )
+          .slice(0, 5); // Limits the results to top 5 matches
+      } catch (error) {
+        console.error("Error fetching search results:", error);
+        this.searchResults = [];
+      }
+    },
+    toggleDropdown(menu) {
+      this.activeDropdown = this.activeDropdown === menu ? null : menu;
+    },
     toggleSearch() {
       this.isSearchVisible = !this.isSearchVisible;
-    },
-    toggleCart() {
-      this.isCartVisible = !this.isCartVisible;
-    },
-    addToCart() {
-      this.cartItems.push("Sample Item");
-      alert("Item added to cart!");
-    },
-    account(){
-      const user =JSON.parse(localStorage.getItem('user-info'));
-      if(user){
-         this.$route.push('/account');
-      }else{
-        this.$route.push('/login');
+      if (!this.isSearchVisible) {
+        this.searchQuery = "";
+        this.searchResults = [];
       }
-    }
+    },
+    hideSearch() {
+      this.isSearchVisible = false;
+      this.searchQuery = "";
+      this.searchResults = [];
+    },
+    filterByCategory(category, item) {
+      // Filters based on category and group
+      if (category === 'laptops') {
+        this.filteredLaptops = this.filteredLaptops.filter(
+          (laptop) => laptop.group.toLowerCase() === item.toLowerCase() || item === 'All Laptops'
+        );
+      }
+      // You can add more filter logic for other categories here (components, storage, accessories)
+    },
+  },
+  watch: {
+    // Watch for changes in the route and filter laptops accordingly
+    "$route.params.group": function(newGroup) {
+      if (newGroup) {
+        this.filterByGroup(newGroup);
+      }
+    },
   },
 };
 </script>
 
-
 <style scoped>
-.cart-section
- .cart{
-height: 100%;
-}
-.cart{
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  position: relative;
-}
-.card-dropdown{
-  border-top: 1px solid rgb(244, 244, 244);
-  top:55px;
-  right: 47px;
-  display: flex;
-  justify-content: center;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(23, 23, 23);
-  position: fixed;
-  flex-direction: column;
-  color: rgb(0, 0, 0);
-}
-.card-dropdown p{
-  width: 220px;
-  height: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card-dropdown button{
-  height: 55px;
-  background-color: black;
-  font-size: 16px;
-  color: white;
-  cursor: pointer;
-}
-.search-icon {
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  position: relative;
-}
-/* Dropdown Styling */
-.search-cart li{
-  display: flex;
-  align-items: center;
-}
-.search{
-  border-top: 1px solid rgb(244, 244, 244);
-  transform: translate(-50%, 0%);
-  top:55px;
-  left: 50%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  background-color: black;
-  width: 100%;
-  color: white;
-  position: fixed;
-}
-ul {
-  position: relative;
-  display: flex;
-  gap: 37px;
-  align-items: center;
-  margin: 0;
-  justify-content: center;
-}
-
-li {
-  list-style: none;
-  height: 55px;
-  position: relative; /* Ensure sub-container is positioned relative to the li */
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-p{
-  width: fit-content;
-}
-li:hover > a {
-  text-decoration: none;
-}
-.con{
-  border-top: 1px solid rgb(244, 244, 244);
-  transform: translate(-50%, 0%);
-  top:55px;
-  left: 50%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  background-color: black;
-  width: 100%;
-  position: fixed;
-}
-.sub-container {
-  color: white;
-  padding: 15px;
-  /* border: 1px solid rgb(255, 255, 255); */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  row-gap: 10px;
-  column-gap: 75px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  width:fit-content;
-}
-
-.sub-container a {
-  margin: 0;
-  font-size: 18px;
-  font-weight: normal;
-  color: white;
-  width: 220px;
-  padding: 8px 12px;
-  text-align: center;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.sub-container a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-}
-
-
-
-
-
-/* General Header Styling */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 23px;
   background-color: black;
-  color: white;
+  padding: 0 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
 .logo {
-  font-size: 48px;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav li {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav li.active {
+  background-color: white;
+  color: black;
+}
+
+.nav li.active > a {
+  color: black;
   font-weight: bold;
 }
 
 .actions {
   display: flex;
+  gap: 20px;
   align-items: center;
-  gap: 37px;
 }
 
-.search-cart {
-  display: flex;
-  align-items: center;
-  gap: 23px;
+.icon {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.cart,
-.account {
+/* Dropdown styles */
+.dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  z-index: 100;
+}
+
+.dropdown-item {
   color: white;
   text-decoration: none;
-  font-size: 24px;
+  padding: 8px 16px;
+  transition: background-color 0.2s;
 }
 
-.cart:hover,
-.account:hover {
-  text-decoration: underline;
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
-.actions {
+
+/* Search bar styles */
+.search-container {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 200;
+}
+
+.search-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.search-result-item {
   display: flex;
-  align-items: center;
-  gap: 37px;
-  height: 55px; /* Set a fixed height for the actions container */
-}
-
-.cart,
-.account {
-  color: white;
+  padding: 10px;
   text-decoration: none;
-  font-size: 24px;
-  display: flex;
-  justify-content: center;
-  height: 100%; /* Match the height of the parent container (actions) */
+  color: black;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
 }
 
+.search-result-item:hover {
+  background-color: #f5f5f5;
+}
+
+.result-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.result-info .result-name {
+  font-weight: bold;
+}
+
+.result-info .result-price {
+  color: #888;
+}
 </style>
