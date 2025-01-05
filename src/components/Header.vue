@@ -77,7 +77,7 @@
             class="search"
             placeholder="Search here..."
             v-model="search"
-            @keyup.enter="onPressEnter"
+            @input="updateSearch"
           />
         </li>
       </div>
@@ -95,7 +95,7 @@
 </template>
 <script>
 import { Icon } from "@iconify/vue";
-
+import { useCounterStore } from '@/stores/search';
 export default {
   components: {
     Icon,
@@ -158,16 +158,13 @@ export default {
         "USB Hubs",
         "Adapters and Converters",
       ],
+      search: "",
       userInfo: JSON.parse(localStorage.getItem('user-info')) || null,
     };
   },
   methods: {
     toggleSearch() {
       this.isSearchVisible = !this.isSearchVisible;
-    },
-    onPressEnter() {
-      alert(`Searching for ${this.search}`);
-      
     },
     toggleCart() {
       this.isCartVisible = !this.isCartVisible;
@@ -185,7 +182,17 @@ export default {
       }
     }
   },
-};
+  setup() {
+    const productStore= useCounterStore();
+    const updateSearch= (event) => {
+      productStore.updateSearch(event.target.value);
+    };
+    return {
+      searchResults: productStore.searchResults,
+      updateSearch,
+    };
+  },
+}
 </script>
 
 

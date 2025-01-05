@@ -30,6 +30,11 @@ const routes = [
     component: HomeView,
   },
   {
+    path: '/products',
+    name: 'all-products',
+    component: ProductView,
+  },
+  {
     path: '/products/all-components',
     name: 'all-components',
     component: ProductView,
@@ -145,7 +150,7 @@ const routes = [
     component: ProductView,
   },
   {
-    path: '/products/external-hard-drivers',
+    path: '/products/external-hard-drives',
     name: 'external-hard-drivers',
     component: ProductView,
   },
@@ -155,7 +160,7 @@ const routes = [
     component: ProductView,
   },
   {
-    path: '/products/usb-flash-drivers',
+    path: '/products/usb-flash-drives',
     name: 'usb-flash-drivers',
     component: ProductView,
   },
@@ -200,7 +205,7 @@ const routes = [
     component: ProductView,
   },
   {
-    path: '/products/external-keyboard',
+    path: '/products/external-keyboards',
     name: 'external-keyboard',
     component: ProductView,
   },
@@ -210,7 +215,7 @@ const routes = [
     component: ProductView,
   },
   {
-    path: '/products/cable-organizer',
+    path: '/products/cable-organizers',
     name: 'cable-organizer',
     component: ProductView,
   },

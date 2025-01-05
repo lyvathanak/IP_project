@@ -241,6 +241,7 @@ export default {
     displayProducts() {
       const path = this.$route.path;
       if (path === "/products/all-laptops") {
+        console.log(this.laptops);
         return this.laptops;
       } else if (path === "/products/mother-board") {
         return this.motherboards;
@@ -260,9 +261,6 @@ export default {
         return this.keyboard;
       } else if (path === "/products/usb") {
         return this.usb;
-        if(this.usb.length<0){
-          return nodata;
-        }
       } else if (path === "/products/microphone") {
         return this.microphone;
       } else if (path === "/products/cooling-fans") {
@@ -299,9 +297,8 @@ export default {
         return this.raidSystems;
       } else if (path === "/products/nas") {
         return this.nas;
-      } else if (path === "/products/all-components") {
-        // all products
-        return [
+      } else if (path === "/products/all-components" ||path=== "/products") {
+        const allProduct= [
           ...this.laptops.slice(0, 4),
           ...this.motherboards.slice(0, 4),
           ...this.cpu.slice(0, 4),
@@ -344,6 +341,8 @@ export default {
           ...this.usbHubs.slice(0, 4),
           ...this.adaptersAndConverters.slice(0, 4),
         ];
+        console.log(allProduct);
+        return allProduct;
       }
       return [];
     },
