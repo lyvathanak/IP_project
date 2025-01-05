@@ -133,6 +133,12 @@
           "name": "Intel Core i9-13980HX",
           "quantity": 2,
           "group": "cpu"
+        },
+        {
+          "productId": "78bf",
+          "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+          "quantity": 2,
+          "group": "mother-board"
         }
       ]
     },
@@ -940,118 +946,42 @@
       "brand": "AMD"
     }
   ],
-  "monitor": [
-   
-  ],
-  "speaker": [
-   
-  ],
-  "controller": [
-   
-  ],
-  "power-supply-unit": [
-   
-  ],
-  "mouse": [
-   
-  ],
-  "keyboard": [
-   
-  ],
-  "usb": [
-   
-  ],
-  "microphone": [
-   
-  ],
-  "cooling-fans": [
-   
-  ],
-   "bluetooth-adapter": [
-   
-  ],
-  "msi": [
-   
-  ],
-  "asus": [
-   
-  ],
-  "apple": [
-   
-  ],
-  "hp": [
-   
-  ],
-  "lenovo": [
-   
-  ],
-  "acer": [
-   
-  ],
-  "hdd": [
-   
-  ],
-  "ssd": [
-   
-  ],
-  "nvme-drives": [
-   
-  ],
-  "external-hard-drivers": [
-   
-  ],
-  "memory-cards": [
-   
-  ],
-  "usb-flash-drivers": [
-   
-  ],
-  "cloud-storage": [
-   
-  ],
-  "raid-systems": [
-   
-  ],
-  "nas": [
-   
-  ],
-  "accessories": [
-   
-  ],
-  "laptops-bages": [
-   
-  ],
-  "gaming-headsets": [
-   
-  ],
-  "external-dvd-drivers": [
-   
-  ],
-  "docking-stations": [
-   
-  ],
-  "external-keyboard": [
-   
-  ],
-  "mouse-pads": [
-   
-  ],
-  "cable-organizer": [
-   
-  ],
-  "power-bank": [
-   
-  ],
-  "screen-protector": [
-   
-  ],
-  "webcams": [
-   
-  ],
-  "usb-hubs": [
-   
-  ],
-  "adapters-and-converters": [
-   
-  ]
+  "monitor": [],
+  "speaker": [],
+  "controller": [],
+  "power-supply-unit": [],
+  "mouse": [],
+  "keyboard": [],
+  "usb": [],
+  "microphone": [],
+  "cooling-fans": [],
+  "bluetooth-adapter": [],
+  "msi": [],
+  "asus": [],
+  "apple": [],
+  "hp": [],
+  "lenovo": [],
+  "acer": [],
+  "hdd": [],
+  "ssd": [],
+  "nvme-drives": [],
+  "external-hard-drivers": [],
+  "memory-cards": [],
+  "usb-flash-drivers": [],
+  "cloud-storage": [],
+  "raid-systems": [],
+  "nas": [],
+  "accessories": [],
+  "laptops-bages": [],
+  "gaming-headsets": [],
+  "external-dvd-drivers": [],
+  "docking-stations": [],
+  "external-keyboard": [],
+  "mouse-pads": [],
+  "cable-organizer": [],
+  "power-bank": [],
+  "screen-protector": [],
+  "webcams": [],
+  "usb-hubs": [],
+  "adapters-and-converters": []
 }

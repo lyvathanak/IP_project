@@ -90,10 +90,10 @@
   </header>
 </template>
 <script>
-import { useCartStore } from '@/stores/cart';
 import { Icon } from "@iconify/vue";
+import { ref, computed } from 'vue';
+import { useCartStore } from '@/stores/cart';
 import axios from 'axios';
-import { computed, ref } from 'vue';
 
 export default {
   components: {
