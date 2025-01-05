@@ -7,7 +7,6 @@ import ProductView from '@/views/ProductView.vue';
 import AccountView from '@/views/AccountView.vue';
 import SignUp from '@/components/SignUp.vue';
 import Login from '@/components/Login.vue';
-import ProductsPage from '@/views/ProductsPage.vue'; // Make sure this import is correct
 
 const routes = [
   {
@@ -17,8 +16,8 @@ const routes = [
   },
   {
     path: '/products/:group',
-    name: 'ProductsGroup', // Changed to unique name
-    component: ProductsPage,
+    name: 'ProductsGroup',
+    component: ProductView,
     props: true, 
   },
   {
@@ -47,17 +46,22 @@ const routes = [
     component: DetailView,
   },
   {
-    path: '/lists',
+    path: '/cart',
     name: 'Cart',
     component: CartListView,
     meta: { requiresAuth: true },
   },
   {
-    path: '/paymentMethod',
-    name: 'PaymentMethod',
+    path: '/payment',
+    name: 'Payment',
     component: PaymentView,
     meta: { requiresAuth: true },
   },
+  // Catch-all route - redirects to home
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
+  }
 ];
 
 const router = createRouter({
@@ -65,19 +69,24 @@ const router = createRouter({
   routes,
 });
 
+// Navigation guards
 router.beforeEach((to, from, next) => {
-  // Check if the route requires authentication
-  if (to.meta.requiresAuth && !localStorage.getItem('user-info')) {
-    // Redirect to login page if user is not authenticated
-    next({ name: 'Login' });
+  const isAuthenticated = !!localStorage.getItem('user-info');
+  
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next({ 
+      name: 'Login',
+      query: { redirect: to.fullPath }
+    });
   } else {
     next();
   }
 });
+
+// Error handling
 router.onError((error) => {
-  // Handle route not found or other errors
-  console.error('Route error:', error);
-  // You can redirect to a 404 page or display an error message
+  console.error('Navigation error:', error);
+  router.push('/');
 });
 
 export default router;
