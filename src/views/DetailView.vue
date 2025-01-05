@@ -59,6 +59,7 @@
   </template>
  <script>
  import { Icon } from '@iconify/vue';
+ import { useCartStore } from '@/stores/cart';
  import Header from '@/components/Header.vue';
  import axios from 'axios';
  

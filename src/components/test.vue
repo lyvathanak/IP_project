@@ -1,6 +1,6 @@
 <template>
         <!-- BuyItem with an image -->
-        <BuyItem 
+    <BuyItem 
       label="Controller"
       invoice="ReceiptItem"
       :image="Monitor" 

@@ -114,7 +114,9 @@ export default {
       }
     },
     removeItem(index) {
-      this.cart.splice(index, 1);
+      // this.cart.splice(index, 1);
+      const cartStore = useCartStore();
+      cartStore.removeFromCart(index);
     },
     editItem(index) {
       alert(`Edit item at index ${index}`);

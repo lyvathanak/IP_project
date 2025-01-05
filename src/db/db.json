@@ -75,7 +75,14 @@
       "email": "john.doe@example.com",
       "password": "1234",
       "userBought": [],
-      "userCart": []
+      "userCart": [
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 1,
+          "group": "MSI"
+        }
+      ]
     },
     {
       "id": "3b1d",
