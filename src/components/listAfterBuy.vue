@@ -78,7 +78,9 @@
           <p>Total</p>
           <p>${{ cartTotal }}</p>
         </div>
-        <Button :label="'Proceed to Checkout'" class="btn-process" />
+        <RouterLink to="/payment">
+          <Button :label="'Proceed to Checkout'" class="btn-process" />
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -87,11 +89,12 @@
 <script>
 import axios from "axios";
 import Button from "./Button.vue";
+import { RouterLink } from "vue-router";
 
 
 export default {
   components: {
-    Button,
+ Button,
   },
   data() {
     return {

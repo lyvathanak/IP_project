@@ -18,7 +18,7 @@ const routes = [
     path: '/products/:group',
     name: 'ProductsGroup',
     component: ProductView,
-    props: true, 
+    props: true,
   },
   {
     path: '/sign-up',

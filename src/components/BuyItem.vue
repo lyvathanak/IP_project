@@ -1,33 +1,27 @@
 <template>
   <div class="cart">
     <div class="name-price">
-      <!-- Render the image only if it's provided -->
       <img v-if="image" :src="image" :alt="label" />
-      <p>{{ label }}</p>
+      <p>{{ name }}</p>
     </div>
-    <!-- Check if price is a number or string -->
-    <p v-if="typeof price === 'number'">$ {{ price.toFixed(2) }}</p>
-    <p v-else>{{ price }}</p>
+    <p v-if="typeof price === 'number'">$ {{ price.toFixed(2) }} <span>$</span></p>
+    <p v-else>{{ price }} <span>$</span></p>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    label: {
+    name: {
       type: String,
       required: true,
     },
     image: {
       type: String,
-      required: false, // Not all items may have images
-    },
-    invoice: {
-      type: String,
       required: false,
     },
     price: {
-      type: [Number, String], // Allow both Number and String
+      type: [Number, String],
       required: true,
     },
   },
@@ -35,7 +29,7 @@ export default {
 </script>
 
   
-<style>
+<style scoped>
 .cart{
     display: flex;
     justify-content: space-between;
@@ -50,5 +44,10 @@ export default {
 }
 p{
     margin:0;
+}
+img{
+    width:120px;
+    border-radius: 10%;
+
 }
 </style>

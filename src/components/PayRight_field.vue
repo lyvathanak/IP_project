@@ -2,15 +2,31 @@
   <div class="field-info-right">
     <div class="buy-items">
       <BuyItem
-        v-for="(item, index) in buyItems"
+        v-for="(item, index) in cart"
         :key="index"
-        :label="item.label"
-        :invoice="item.invoice"
+        :name="item.name"
         :image="item.image"
         :price="item.price"
       />
     </div>
-
+    <div class="cart-total">
+      <div class="price">
+        <p>Subtotal</p>
+        <p>${{ cartSubtotal }}</p>
+      </div>
+      <div class="price">
+        <p>Discount</p>
+        <p v-if="discount">{{ discount + '%' }}</p>
+      </div>
+      <div class="price">
+        <p>Shipping</p>
+        <p>${{ shipping }}</p>
+      </div>
+      <div class="price">
+        <p>Total</p>
+        <p>${{ cartTotal }}</p>
+      </div>
+    </div>
     <div class="payment-methods">
       <ClickSelect
         v-for="(method, index) in paymentMethods"
@@ -20,79 +36,37 @@
         :images="method.images"
       />
     </div>
-
-    <div class="apply-coupon">
-      <InputField
-        id="CouponCode"
-        v-model="formData.couponCode"
-        :placeholder="'Coupon Code'"
-        class="input-coupon"
-      />
-      <Button class="button-apply" :label="'Apply Coupon'"/>
-    </div>
-
     <Button class="button-submit" :label="'Submit'" />
   </div>
 </template>
+
 <script>
 import ClickSelect from "@/components/ClickSelect.vue";
 import BuyItem from "@/components/BuyItem.vue";
-import InputField from "@/components/InputField.vue";
 import Button from "@/components/Button.vue";
 import BankCard from "@/assets/images/BankCard.png";
 import Bkas from "@/assets/images/Bkas.png";
 import MasterCard from "@/assets/images/MasterCard.png";
-import Monitor from "@/assets/images/Monitor.png";
 import Visa from "@/assets/images/Visa.png";
+import axios from "axios";
 
 export default {
   components: {
     Button,
     BuyItem,
-    InputField,
     ClickSelect,
   },
   data() {
     return {
-      formData: {
-        couponCode: "",
-      },
       image: {
         Bkas,
         MasterCard,
         Visa,
         BankCard,
-        Monitor,
       },
-      buyItems: [
-        {
-          label: "Monitor",
-          invoice: "ReceiptItem",
-          image: Monitor,
-          price: 12.3,
-        },
-        {
-          label: "Monitor",
-          invoice: "ReceiptItem",
-          image: Monitor,
-          price: 12.3,
-        },
-        {
-          label: "Subtotal",
-          invoice: "ReceiptItem",
-          price: 12.3,
-        },
-        {
-          label: "Shipping",
-          invoice: "ReceiptItem",
-          price: "Free",
-        },
-        {
-          label: "Total",
-          invoice: "ReceiptItem",
-          price: 12.3,
-        },
-      ],
+      cart: [],
+      discount: 0,
+      shipping: 0,
       paymentMethods: [
         {
           label: "Bank",
@@ -107,29 +81,76 @@ export default {
       ],
     };
   },
+  computed: {
+    cartSubtotal() {
+      return this.cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
+    },
+    cartTotal() {
+      const discountAmount = (this.cartSubtotal * this.discount) / 100;
+      return this.cartSubtotal - discountAmount + this.shipping;
+    },
+  },
+  async created() {
+    try {
+      const loggedUser = JSON.parse(localStorage.getItem('user-info'));
+      if (!loggedUser) {
+        throw new Error('User not found');
+      }
+      const userId = loggedUser.id;
+      const response = await axios.get(`http://localhost:3000/users/${userId}`);
+      this.cart = response.data.userCart || [];
+      const productIds = this.cart.map(item => item.productId);
+      const param = { params: { ids: productIds.join(',') } };
+      if (productIds.length > 0) {
+        const [lapRes, motherRes, cpuRes] = await Promise.all([
+          axios.get(`http://localhost:3000/laptops`, param),
+          axios.get(`http://localhost:3000/motherboards`, param),
+          axios.get(`http://localhost:3000/cpu`, param),
+        ]);
+        const allProducts = [...lapRes.data, ...motherRes.data, ...cpuRes.data];
+        this.cart = this.cart.map((item) => {
+          const product = allProducts.find(
+            (product) => product.id === item.productId
+          );
+          return {
+            ...item,
+            image: product?.image || "",
+            price: product?.price || 0,
+          };
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 };
 </script>
+
 <style>
-.buy-items{
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-.input-coupon{
-  width: 300px;
-}
-.payment-methods{
-  margin-bottom: 10px;
-}
-.apply-coupon{
+.price {
   display: flex;
   align-items: center;
-  gap:24px;
+  justify-content: space-between;
+  border-bottom: #bfbfbf 1px solid;
+}
+.input-coupon {
+  width: 300px;
+}
+.payment-methods {
+  margin-bottom: 10px;
+}
+.apply-coupon {
+  display: flex;
+  align-items: center;
+  gap: 24px;
   padding-bottom: 20px;
 }
 .button-apply,
-.button-submit{
-  padding: 12px 24px; 
+.button-submit {
+  padding: 12px 24px;
   background-color: #000;
   color: #fff;
   border: none;
@@ -137,5 +158,7 @@ export default {
   border-radius: 4px;
   cursor: pointer;
 }
-
+.field-info-right {
+  width: 500px;
+}
 </style>

@@ -81,6 +81,12 @@
           "name": "MSI Titan GT77 HX",
           "quantity": 1,
           "group": "MSI"
+        },
+        {
+          "productId": "2",
+          "name": "MSI Raider GE78 HX",
+          "quantity": 2,
+          "group": "MSI"
         }
       ]
     },
