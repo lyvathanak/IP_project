@@ -270,7 +270,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .field{
 display: flex;
 flex-direction: column;
