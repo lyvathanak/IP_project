@@ -43,7 +43,9 @@ export default {
 .images {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap:4px;
+
+
 }
 input[type='radio'] {
   accent-color: rgb(83, 83, 83);
@@ -52,7 +54,7 @@ input[type='radio'] {
 }
 img{
   object-fit: contain;
-  width: 36;
-  height: 36px;
+  height: 40px;
+  width: 40px;
 }
 </style>
