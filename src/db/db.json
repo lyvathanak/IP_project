@@ -13,8 +13,94 @@
       "name": "Khun Meas",
       "email": "john.doe@example.com",
       "password": "1234",
-      "userBought": [],
-      "userCart": []
+      "userCart": [],
+      "userBought": [
+        {
+          "purchaseId": "buy1736306199206",
+          "items": [
+            {
+              "productId": "1",
+              "name": "MSI Titan GT77 HX",
+              "quantity": 3,
+              "group": "MSI",
+              "image": "/Laptop/AcerAspire7.png",
+              "price": "5499"
+            }
+          ]
+        },
+        {
+          "purchaseId": "buy1736306361505",
+          "items": [
+            {
+              "productId": "78bf",
+              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+              "quantity": 2,
+              "group": "mother-board",
+              "image": "/MotherBoards/X870E.png",
+              "price": 455
+            }
+          ]
+        }
+      ],
+      "invoices": [
+        {
+          "invoiceId": "INV1736306199206",
+          "invoiceNumber": "INV1736306199206",
+          "invoiceDate": "2025-01-08",
+          "amount": 16497,
+          "customerName": "Khun Meas",
+          "paymentMethod": "Bank",
+          "Address": {
+            "FullName": "khunkkk",
+            "CompanyName": "khun",
+            "StreetAddress": "st21",
+            "Apartment": "123",
+            "Town": "phnom penh",
+            "PhoneNumber": "0123455",
+            "Email": "measreaksmey02@gmail.com"
+          },
+          "cardDetails": {
+            "cardHolder": "khun meas",
+            "cardNumber": "932129283",
+            "cvv": "123456",
+            "expiryDate": "97576"
+          },
+          "items": [
+            {
+              "productId": "1",
+              "name": "MSI Titan GT77 HX",
+              "quantity": 3,
+              "price": "5499"
+            }
+          ]
+        },
+        {
+          "invoiceId": "INV1736306361503",
+          "invoiceNumber": "INV1736306361503",
+          "invoiceDate": "2025-01-08",
+          "amount": 910,
+          "customerName": "Khun Meas",
+          "paymentMethod": "Cash",
+          "Address": {
+            "FullName": "khunkkk",
+            "CompanyName": "khun",
+            "StreetAddress": "st21",
+            "Apartment": "12",
+            "Town": "phnom penh",
+            "PhoneNumber": "0123455",
+            "Email": "measreaksmey02@gmail.com"
+          },
+          "cardDetails": null,
+          "items": [
+            {
+              "productId": "78bf",
+              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+              "quantity": 2,
+              "price": 455
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "3b1d",

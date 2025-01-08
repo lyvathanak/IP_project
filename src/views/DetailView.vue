@@ -125,6 +125,8 @@
  
      await axios.put(`http://localhost:3000/users/${this.userId}`, user);
      alert("Product added to cart!");
+     window.location.href = 'http://localhost:5173/cart';
+      
      } catch (error) {
      alert("Error adding product to cart. Please try again.");
      }

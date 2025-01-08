@@ -295,7 +295,37 @@ export default {
 </script>
 
   <style scoped>
- 
+ .sys::placeholder {
+  font-family: 'Arial', sans-serif; /* Replace with your desired font */
+  font-size: 16px;
+  color: gray;
+  font-style: italic; /* Optional */
+  opacity: 1; /* Ensures the placeholder is fully visible */
+}
+input{
+width: 250px;
+height: 48.4px;
+border:1px #dbdbdb solid;
+transition: all 0.3s ease;
+outline: none;
+padding-left: 17px;
+padding-top: 0px;
+padding-bottom: 0px;
+background-color: #FBFBFB;
+margin-right:20px;
+}
+input:focus{
+    border: 1px #dbdbdb solid;
+    border-radius: 9px;
+    /* box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); */
+}
+input[type="text"] {
+  padding-left: 17px; /* Removes all padding inside the input */
+  font-size: 16px;
+  outline: none;
+  color:rgb(0, 0, 0);
+  border-radius: 9px;
+}
   .text-Cart{
     font-weight: bold;
     font-size: 24px;

@@ -197,7 +197,16 @@ export default {
           cvv: this.cvc,
           expiryDate: this.expireDate
         } : null;
-
+        const Address = {
+          FullName: this.fields.find(field => field.id === "fullName").value,
+          CompanyName: this.fields.find(field => field.id === "companyName").value,
+          StreetAddress: this.fields.find(field => field.id === "streetAddress").value,
+          Apartment: this.fields.find(field => field.id === "apartment").value,
+          Town: this.fields.find(field => field.id === "townCity").value,
+          PhoneNumber: this.fields.find(field => field.id === "phoneNumber").value,
+          Email: this.fields.find(field => field.id === "emailAddress").value,
+        };
+        
         const amount = items.reduce((total, item) => total + (item.price * item.quantity), 0);
         const invoiceId = `INV${Date.now()}`;
 
@@ -208,6 +217,7 @@ export default {
           amount: amount,
           customerName: user.name,
           paymentMethod: selectedPaymentMethod,
+          Address: Address,
           cardDetails: cardDetails, // Store card details in the invoice
           items: items.map(item => ({
             productId: item.productId,
@@ -239,7 +249,8 @@ export default {
 
         this.cart = [];  // Clear the cart from the frontend
         this.selectedPaymentMethod = "";
-        this.$router.push('/products/all-components');
+        window.location.href = 'http://localhost:5173/products/all-components';
+      
       } catch (error) {
         console.error("Error during submission:", error.message);
       }
@@ -282,6 +293,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 .sys::placeholder {
