@@ -2,42 +2,40 @@
   <div>
     <Header />
     <form class="container" @submit.prevent="handleSubmit">
-     
       <div class="container-payment">
         <div class="fields-payment">
           <div class="field-info-left">
             <div class="field" v-for="field in fields" :key="field.id">
               <label :for="field.id">{{ field.label }}</label>
-              <InputField
+              <input
                 :id="field.id"
-                v-model="formData[field.model]"
+                v-model="field.value"
                 :placeholder="field.placeholder"
                 :type="field.type"
               />
             </div>
             <div class="check-container">
-              <input type="checkbox" id="terms" v-model="formData.terms" />
+              <input type="checkbox" id="terms" v-model="terms" />
               <label for="terms">Accept terms and conditions</label>
             </div>
           </div>
 
           <div class="field-info-right">
             <div class="buy-items">
-                <div class="cart" v-for="(item, index) in cart" :key="index">
+              <div class="cart" v-for="(item, index) in cart" :key="index">
                 <div class="name-price">
                   <img v-if="item.image" :src="item.image" :alt="item.name" />
                   <p>{{ item.name }}</p>
                 </div>
                 <p v-if="typeof item.price === 'number'">${{ item.price.toFixed(2) }}</p>
-                <p v-else>
-                  {{ item.price }}
-                </p>
-                </div>
+                <p v-else>{{ item.price }}</p>
+              </div>
             </div>
+
             <div class="cart-total">
               <div class="price">
                 <p>Subtotal</p>
-                <p>${{ cartSubtotal }}</p>
+                <p>${{ cartSubtotal.toFixed(2) }}</p>
               </div>
               <div class="price">
                 <p>Discount</p>
@@ -45,13 +43,14 @@
               </div>
               <div class="price">
                 <p>Shipping</p>
-                <p>${{ shipping }}</p>
+                <p>${{ shipping.toFixed(2) }}</p>
               </div>
               <div class="price">
                 <p>Total</p>
-                <p>${{ cartTotal }}</p>
+                <p>${{ cartTotal.toFixed(2) }}</p>
               </div>
             </div>
+
             <div class="payment-methods">
               <ClickSelect
                 v-for="(method, index) in paymentMethods"
@@ -62,46 +61,46 @@
                 @click="selectPaymentMethod(method.label)"
               />
             </div>
-            <Button class="button-submit" :label="'Submit'" @click="handleSubmit" />
+            <Button class="button-submit" :label="'Submit'" />
           </div>
         </div>
       </div>
 
-      <div v-if="selectedPaymentMethod === 'Bank'" class="credit-card">
+      <div v-show="selectedPaymentMethod === 'Bank'" class="credit-card">
         <h3>Complete Your Credit Card Information</h3>
         <div class="in">
-          <label>Card Holder</label>
-          <InputField
+          <label for="CardHolder">Card Holder</label>
+          <input
             id="CardHolder"
-            v-model="formData.cardHolder"
-            :placeholder="'Card Holder'"
+            v-model="cardHolder"
+            placeholder="Card Holder"
           />
         </div>
         <div class="in">
-          <label>Card Number</label>
-          <InputField
+          <label for="CardNumber">Card Number</label>
+          <input
             id="CardNumber"
-            v-model="formData.cardNumber"
-            :placeholder="'Card Number'"
+            v-model="cardNumber"
+            placeholder="Card Number"
             class="input-card"
           />
         </div>
         <div class="cvv-exp">
           <div class="in">
-            <label>EXP</label>
-            <InputField
+            <label for="ExpireDate">EXP</label>
+            <input
               id="ExpireDate"
-              v-model="formData.expireDate"
-              :placeholder="'Expire Date'"
-              class="input-cexp"
+              v-model="expireDate"
+              placeholder="Expire Date"
+              class="input-exp"
             />
           </div>
           <div class="in">
-            <label>CVC</label>
-            <InputField
+            <label for="CVC">CVC</label>
+            <input
               id="CVC"
-              v-model="formData.cvc"
-              :placeholder="'CVC'"
+              v-model="cvc"
+              placeholder="CVC"
               class="input-cexp"
             />
           </div>
@@ -114,7 +113,6 @@
 <script>
 import axios from "axios";
 import Header from "@/components/Header.vue";
-import InputField from "@/components/InputField.vue";
 import ClickSelect from "@/components/ClickSelect.vue";
 import Button from "@/components/Button.vue";
 import Bkas from "@/assets/images/Bkas.png";
@@ -126,112 +124,125 @@ export default {
   name: "PaymentView",
   components: {
     Header,
-    InputField,
     ClickSelect,
     Button,
   },
   data() {
     return {
-      labels: ["Home", "Product", "Product Details", "List", "Checkout"],
-      formData: {
-        firstName: "",
-        companyName: "",
-        streetAddress: "",
-        apartment: "",
-        city: "",
-        phone: "",
-        email: "",
-        terms: false,
-        couponCode: "",
-        cardHolder: "",
-        cardNumber: "",
-        expireDate: "",
-        cvc: "",
-      },
       fields: [
-        {
-          id: "first-name",
-          label: "First Name*",
-          model: "firstName",
-          placeholder: "Enter your first name",
-          type: "text",
-        },
-        {
-          id: "company-name",
-          label: "Company Name*",
-          model: "companyName",
-          placeholder: "Enter your company name",
-          type: "text",
-        },
-        {
-          id: "street-address",
-          label: "Street Address*",
-          model: "streetAddress",
-          placeholder: "Enter your street address",
-          type: "text",
-        },
-        {
-          id: "apartment",
-          label: "Apartment, floor, etc. (optional)",
-          model: "apartment",
-          placeholder: "Enter apartment details",
-          type: "text",
-        },
-        {
-          id: "city",
-          label: "Town/City*",
-          model: "city",
-          placeholder: "Enter your city",
-          type: "text",
-        },
-        {
-          id: "phone",
-          label: "Phone Number*",
-          model: "phone",
-          placeholder: "Enter your phone number",
-          type: "tel",
-        },
-        {
-          id: "email",
-          label: "Email Address*",
-          model: "email",
-          placeholder: "Enter your email address",
-          type: "email",
-        },
+      { id: "fullName", label: "Full Name", value: "", placeholder: "Your Full Name", type: "text" },
+      { id: "companyName", label: "Company Name", value: "", placeholder: "Your Company Name", type: "text" },
+      { id: "streetAddress", label: "Street Address", value: "", placeholder: "Your Street Address", type: "text" },
+      { id: "apartment", label: "Apartment, floor, etc. (optional)", value: "", placeholder: "Apartment, floor, etc.", type: "text" },
+      { id: "townCity", label: "Town/City", value: "", placeholder: "Your Town/City", type: "text" },
+      { id: "phoneNumber", label: "Phone Number", value: "", placeholder: "Your Phone Number", type: "text" },
+      { id: "emailAddress", label: "Email Address", value: "", placeholder: "Your Email Address", type: "email" },
       ],
       paymentMethods: [
-        {
-          label: "Bank",
-          groupName: "paymentMethod",
-          images: [Bkas, MasterCard, Visa, BankCard],
-        },
+        { label: "Bank", groupName: "paymentMethod", images: [Bkas, MasterCard, Visa, BankCard] },
         { label: "Cash", groupName: "paymentMethod", images: [] },
       ],
-      selectedPaymentMethod: "",
+      selectedPaymentMethod: localStorage.getItem("selectedPaymentMethod") || "",
       cart: [],
       discount: 0,
       shipping: 0,
+      terms: false,
+      cardHolder: "",
+      cardNumber: "",
+      expireDate: "",
+      cvc: "",
     };
+  },
+  computed: {
+    cartSubtotal() {
+      return this.cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    },
+    cartTotal() {
+      return this.cartSubtotal + this.shipping - (this.discount / 100 * this.cartSubtotal);
+    },
   },
   methods: {
     selectPaymentMethod(method) {
       this.selectedPaymentMethod = method;
+      if (method === 'Bank') {
+        this.cardHolder = "";
+        this.cardNumber = "";
+        this.expireDate = "";
+        this.cvc = "";
+      } else {
+        // Clear the credit card details when switching away from 'Bank' method
+        this.cardHolder = "";
+        this.cardNumber = "";
+        this.expireDate = "";
+        this.cvc = "";
+      }
     },
-    handleSubmit() {
-      // Handle form submission logic here
-      console.log("Form submitted", this.formData);
-    },
-  },
-  computed: {
-    cartSubtotal() {
-      return this.cart.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-      );
-    },
-    cartTotal() {
-      const discountAmount = (this.cartSubtotal * this.discount) / 100;
-      return this.cartSubtotal - discountAmount + this.shipping;
+    async handleSubmit() {
+      console.log("Selected payment method:", this.selectedPaymentMethod);
+      try {
+        const loggedUser = JSON.parse(localStorage.getItem("user-info"));
+        if (!loggedUser) {
+          throw new Error("User not found in localStorage.");
+        }
+        if (this.cart.length === 0) {
+          throw new Error("Your cart is empty.");
+        }
+        const userId = loggedUser.id;
+        const user = loggedUser;
+        const items = this.cart;
+        const selectedPaymentMethod = this.selectedPaymentMethod;
+        const cardDetails = selectedPaymentMethod === "Bank" ? { 
+          cardHolder: this.cardHolder,
+          cardNumber: this.cardNumber,
+          cvv: this.cvc,
+          expiryDate: this.expireDate
+        } : null;
+
+        const amount = items.reduce((total, item) => total + (item.price * item.quantity), 0);
+        const invoiceId = `INV${Date.now()}`;
+
+        const invoice = {
+          invoiceId: invoiceId,
+          invoiceNumber: invoiceId,
+          invoiceDate: new Date().toISOString().split('T')[0],
+          amount: amount,
+          customerName: user.name,
+          paymentMethod: selectedPaymentMethod,
+          cardDetails: cardDetails, // Store card details in the invoice
+          items: items.map(item => ({
+            productId: item.productId,
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price,
+          }))
+        };
+
+        // Save the cart details in localStorage before clearing the cart
+        localStorage.setItem('cartDetails', JSON.stringify(items));
+
+        const newPurchase = {
+          purchaseId: `buy${Date.now()}`,
+          items: items,
+        };
+
+        const response = await axios.get(`http://localhost:3000/users/${userId}`);
+        const updatedUser = response.data;
+
+        await axios.patch(`http://localhost:3000/users/${userId}`, {
+          userBought: [...updatedUser.userBought, newPurchase],
+          userCart: [],
+        });
+
+        await axios.patch(`http://localhost:3000/users/${userId}`, {
+          invoices: [...(updatedUser.invoices || []), invoice],
+        });
+
+        this.cart = [];  // Clear the cart from the frontend
+        this.selectedPaymentMethod = "";
+        this.$router.push('/products/all-components');
+      } catch (error) {
+        console.error("Error during submission:", error.message);
+      }
     },
   },
   async created() {
@@ -240,22 +251,24 @@ export default {
       if (!loggedUser) {
         throw new Error("User not found");
       }
+
       const userId = loggedUser.id;
       const response = await axios.get(`http://localhost:3000/users/${userId}`);
       this.cart = response.data.userCart || [];
-      const productIds = this.cart.map((item) => item.productId);
+
+      const productIds = this.cart.map(item => item.productId);
       const param = { params: { ids: productIds.join(",") } };
+
       if (productIds.length > 0) {
         const [lapRes, motherRes, cpuRes] = await Promise.all([
           axios.get(`http://localhost:3000/laptops`, param),
           axios.get(`http://localhost:3000/motherboards`, param),
           axios.get(`http://localhost:3000/cpu`, param),
         ]);
+
         const allProducts = [...lapRes.data, ...motherRes.data, ...cpuRes.data];
         this.cart = this.cart.map((item) => {
-          const product = allProducts.find(
-            (product) => product.id === item.productId
-          );
+          const product = allProducts.find((product) => product.id === item.productId);
           return {
             ...item,
             image: product?.image || "",
@@ -271,12 +284,42 @@ export default {
 </script>
 
 <style scoped>
-.field{
-display: flex;
-flex-direction: column;
-gap: 8px;
+.sys::placeholder {
+  font-family: 'Arial', sans-serif; /* Replace with your desired font */
+  font-size: 16px;
+  color: gray;
+  font-style: italic; /* Optional */
+  opacity: 1; /* Ensures the placeholder is fully visible */
 }
-.check-container{
+input {
+  width: 450px;
+  height: 48.4px;
+  border: 1px #dbdbdb solid;
+  transition: all 0.3s ease;
+  outline: none;
+  padding-left: 17px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #FBFBFB;
+}
+input:focus {
+  border: 1px #dbdbdb solid;
+  border-radius: 9px;
+  /* box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); */
+}
+input[type="text"] {
+  padding-left: 17px; /* Removes all padding inside the input */
+  font-size: 16px;
+  outline: none;
+  color: rgb(0, 0, 0);
+  border-radius: 9px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.check-container {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -286,7 +329,7 @@ input[type="checkbox"] {
   width: 20px;
   height: 20px;
 }
-.field-info-left{
+.field-info-left {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -321,16 +364,12 @@ input[type="checkbox"] {
   border-radius: 4px;
   cursor: pointer;
 }
-.field-info-right {
-  width: 500px;
-}
-
-.fields-payment{
+.fields-payment {
   display: flex;
   gap: 80px;
   justify-content: center;
 }
-.container-payment{
+.container-payment {
   display: flex;
   align-items: start;
   justify-content: center;
@@ -338,7 +377,7 @@ input[type="checkbox"] {
   width: auto;
   padding-top: 18px;
 }
-.container{
+.container {
   display: flex;
   justify-content: center;
   padding-top: 20px;
@@ -346,35 +385,34 @@ input[type="checkbox"] {
   padding-bottom: 20px;
   align-items: center;
 }
-img{
-    width:120px;
-    border-radius: 10%;
+img {
+  width: 120px;
+  border-radius: 10%;
 }
-.cart{
+.cart {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.name-price{
+.name-price {
   display: flex;
   align-items: center;
 }
-.in{
+.in {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.cvv-exp{
-display: flex;
-gap: 16px;
-justify-content: space-between;
-align-items: center;
+.cvv-exp {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
 }
-.input-cexp
-{
+.input-exp {
   width: 190px;
 }
-.credit-card{
+.credit-card {
   display: flex;
   flex-direction: column;
   gap: 16px;

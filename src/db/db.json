@@ -6,68 +6,7 @@
       "email": "john.doe@example.com",
       "password": "1234123333",
       "userBought": [],
-      "userCart": [
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "3",
-          "name": "MSI Stealth 16 Studio",
-          "quantity": 12,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 6,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 5,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "30",
-          "name": "ASUS Experook B9",
-          "quantity": 13,
-          "group": "ASUS"
-        },
-        {
-          "productId": "14",
-          "name": "Lenovo Yoga 9i",
-          "quantity": 4,
-          "group": "Lenovo"
-        },
-        {
-          "productId": "22",
-          "name": "MacBook Air 13-inch",
-          "quantity": 5,
-          "group": "MacBook"
-        },
-        {
-          "productId": "4",
-          "name": "MSI Pulse 15",
-          "quantity": 5,
-          "group": "MSI"
-        }
-      ]
+      "userCart": []
     },
     {
       "id": "1dbd",
@@ -75,20 +14,7 @@
       "email": "john.doe@example.com",
       "password": "1234",
       "userBought": [],
-      "userCart": [
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 2,
-          "group": "MSI"
-        }
-      ]
+      "userCart": []
     },
     {
       "id": "3b1d",

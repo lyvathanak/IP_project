@@ -353,26 +353,20 @@ export default {
 };
 </script>
 <style scoped>
-
-.body {
+.body{
   display: flex;
   justify-content: center;
 }
-
-.container {
-  display: flex;
+.container{
+  display:flex ;
   flex-wrap: wrap;
-  /* align-items: center; */
   justify-content: center;
 
-
-  
   padding: 20px;
   width: 100%;
   max-width: 1440px;
   gap: 25px 25px;
 }
-
 .card {
   width: 298px;
   border: 1px solid black;
