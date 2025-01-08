@@ -13,7 +13,7 @@
   };
   </script>
   
-  <style>
+  <style scoped>
   .sign-up-button {
     background-color: black;
     color: white;

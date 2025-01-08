@@ -12,7 +12,7 @@ import ListAfterBuy from '@/components/listAfterBuy.vue';
 
 export default{
     components:{
-   Header,Footer,ListAfterBuy,CartTotal
+   Header,ListAfterBuy,CartTotal,Footer
     }
 }
 </script>

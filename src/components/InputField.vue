@@ -1,24 +1,4 @@
-<template>
- <input type="text" 
- :id="id" 
-    :placeholder="placeholder" 
-    :value="value" 
-    @input="$emit('update:value', $event.target.value)" >
-</template>
-<script>
-export default{
-  props:{
-    placeholder:{
-      type:String,
-      required:true,
-      width:String,
-    },
-    id:String,
-    value:String
-  },
-}
-</script>
-<style>
+<!-- 
 .sys::placeholder {
   font-family: 'Arial', sans-serif; /* Replace with your desired font */
   font-size: 16px;
@@ -48,5 +28,4 @@ input[type="text"] {
   outline: none;
   color:rgb(0, 0, 0);
   border-radius: 9px;
-}
-</style>
+} -->
