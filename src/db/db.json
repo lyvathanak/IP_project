@@ -53,6 +53,19 @@
               "price": "5499"
             }
           ]
+        },
+        {
+          "purchaseId": "buy1736385179518",
+          "items": [
+            {
+              "productId": "78bf",
+              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+              "quantity": 2,
+              "group": "mother-board",
+              "image": "/MotherBoards/X870E.png",
+              "price": 455
+            }
+          ]
         }
       ],
       "invoices": [
@@ -136,6 +149,32 @@
               "name": "MSI Titan GT77 HX",
               "quantity": 3,
               "price": "5499"
+            }
+          ]
+        },
+        {
+          "invoiceId": "INV1736385179516",
+          "invoiceNumber": "INV1736385179516",
+          "invoiceDate": "2025-01-09",
+          "amount": 910,
+          "customerName": "Khun Meas",
+          "paymentMethod": "Cash",
+          "Address": {
+            "FullName": "khunkkk",
+            "CompanyName": "khun",
+            "StreetAddress": "st21",
+            "Apartment": "12",
+            "Town": "phnom penh",
+            "PhoneNumber": "0123455",
+            "Email": "measreaksmey02@gmail.com"
+          },
+          "cardDetails": null,
+          "items": [
+            {
+              "productId": "78bf",
+              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+              "quantity": 2,
+              "price": 455
             }
           ]
         }
@@ -296,6 +335,21 @@
           "productId": "1",
           "name": "MSI Titan GT77 HX",
           "quantity": 3,
+          "group": "MSI"
+        }
+      ]
+    },
+    {
+      "id": "4161",
+      "name": "hour",
+      "email": "hour123@gmail.com",
+      "password": "12345",
+      "userBought": [],
+      "userCart": [
+        {
+          "productId": "2",
+          "name": "MSI Raider GE78 HX",
+          "quantity": 1,
           "group": "MSI"
         }
       ]

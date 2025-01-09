@@ -132,7 +132,7 @@ export default {
         "CPU",
         "GPU",
         "RAM",
-        "Motherboard",
+        "Mother board",
         "Power Supply",
         "Case",
       ],
