@@ -1,497 +1,389 @@
 <template>
   <header class="header">
     <RouterLink to="/" class="logo">GOODDeal</RouterLink>
-    <ul class="nav">
-      <li @mouseover="hovered = 'components'" @mouseleave="hovered = ''">
-        <a href="#">Components</a>
-        <div class="con" v-if="hovered === 'components'">
-          <div class="sub-container">
-            <a :href="`/products/${item.toLowerCase().replace(/ /g, '-')}`" v-for="(item, index) in components"
-              :key="index">
+    <nav class="nav">
+      <ul>
+        <li
+          @click="toggleDropdown('components')"
+          :class="{ active: activeDropdown === 'components' }"
+        >
+          <a href="#">Components</a>
+          <div v-if="activeDropdown === 'components'" class="dropdown">
+            <RouterLink 
+              v-for="(item, index) in components" 
+              :key="index"
+              :to="`/products/${item.toLowerCase().replace(/ /g, '-')}`"
+              class="dropdown-item"
+              @click="filterByCategory('components', item)"
+            >
               {{ item }}
-            </a>
+            </RouterLink>
           </div>
-        </div>
-      </li>
-      <li @mouseover="hovered = 'laptops'" @mouseleave="hovered = ''">
-        <a href="#">Laptops</a>
-        <div class="con" v-if="hovered === 'laptops'">
-          <div class="sub-container">
-            <a :href="`/products/${item.toLowerCase().replace(/ /g, '-')}`" v-for="(item, index) in laptops"
-              :key="index">
-              {{ item }}
-            </a>
-          </div>
-        </div>
-      </li>
-      <li @mouseover="hovered = 'storage'" @mouseleave="hovered = ''">
-        <a href="#">Storage</a>
-        <div class="con" v-if="hovered === 'storage'">
-          <div class="sub-container">
-            <a :href="`/products/${item.toLowerCase().replace(/ /g, '-')}`" v-for="(item, index) in storage"
-              :key="index">
-              {{ item }}
-            </a>
-          </div>
-        </div>
-      </li>
-      <li @mouseover="hovered = 'accessory'" @mouseleave="hovered = ''">
-        <a href="#">Accessory</a>
-        <div class="con" v-if="hovered === 'accessory'">
-          <div class="sub-container">
-            <a :href="`/products/${item.toLowerCase().replace(/ /g, '-')}`" v-for="(item, index) in accessory"
-              :key="index">
-              {{ item }}
-            </a>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <div class="actions">
-      <div class="search-cart">
-        <li>
-          <Icon @click="toggleSearch" icon="material-symbols:search" class="search-icon" />
-          <input v-if="isSearchVisible" type="text" class="search" placeholder="Search here..." v-model="searchQuery"
-            @input="searchProducts" />
-          <ul v-if="isSearchVisible && searchResults.length" class="search-results">
-            <li v-for="(product, index) in searchResults" :key="index" class="search-result-item">
-              <img :src="product.image" :alt="product.name" class="search-result-image" />
-              <div class="search-result-details">
-                <p>{{ product.name }}</p>
-                <p>${{ product.price }}</p>
-              </div>
-            </li>
-          </ul>
         </li>
-      </div>
-
-      <div class="cart-section">
-        <a @click="toggleCart" href="#" class="cart">Cart</a>
-        <div v-if="isCartVisible" class="card-dropdown">
-          <p v-if="cartItems.length === 0">Empty</p>
-          <ul v-else>
-            <li v-for="(item, index) in cartItems" :key="index" class="cart-item">
-              <img :src="item.image" :alt="item.name" class="cart-item-image" />
-              <p>{{ item.name }}</p>
-              <div class="cart-item-details">
-                <p>{{ item.quantity }}</p>
-                <p>${{ (item.price * item.quantity).toFixed(2) }}</p>
-              </div>
-            </li>
-          </ul>
-          <button class="add-to-cart">
-            <RouterLink to="/lists">Add to cart</RouterLink>
-          </button>
+        <li
+          @click="toggleDropdown('laptops')"
+          :class="{ active: activeDropdown === 'laptops' }"
+        >
+          <a href="#">Laptops</a>
+          <div v-if="activeDropdown === 'laptops'" class="dropdown">
+            <RouterLink 
+              v-for="(item, index) in laptops" 
+              :key="index"
+              :to="`/products/${item.toLowerCase().replace(/ /g, '-')}`"
+              class="dropdown-item"
+              @click="filterByGroup(item)"
+            >
+              {{ item }}
+            </RouterLink>
+          </div>
+        </li>
+        <li
+          @click="toggleDropdown('storage')"
+          :class="{ active: activeDropdown === 'storage' }"
+        >
+          <a href="#">Storage</a>
+          <div v-if="activeDropdown === 'storage'" class="dropdown">
+            <RouterLink 
+              v-for="(item, index) in storage" 
+              :key="index"
+              :to="`/products/${item.toLowerCase().replace(/ /g, '-')}`"
+              class="dropdown-item"
+            >
+              {{ item }}
+            </RouterLink>
+          </div>
+        </li>
+        <li
+          @click="toggleDropdown('accessory')"
+          :class="{ active: activeDropdown === 'accessory' }"
+        >
+          <a href="#">Accessories</a>
+          <div v-if="activeDropdown === 'accessory'" class="dropdown">
+            <RouterLink 
+              v-for="(item, index) in accessories" 
+              :key="index"
+              :to="`/products/${item.toLowerCase().replace(/ /g, '-')}`"
+              class="dropdown-item"
+            >
+              {{ item }}
+            </RouterLink>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <Icon @click="toggleSearch" icon="material-symbols:search" class="icon" />
+      <RouterLink to="/cart" class="icon">
+        <Icon icon="material-symbols:shopping-cart" />
+      </RouterLink>
+      <RouterLink v-if="userInfo" to="/account" class="icon">
+        <Icon icon="material-symbols:person" />
+      </RouterLink>
+      <RouterLink v-else to="/login" class="icon">
+        <Icon icon="material-symbols:person-outline" />
+      </RouterLink>
+    </div>
+    
+    <!-- Search bar that appears below header -->
+    <div v-if="isSearchVisible" class="search-container">
+      <div class="search-wrapper">
+        <input
+          v-model="searchQuery"
+          type="text"
+          class="search-input"
+          placeholder="Search products..."
+          @input="handleSearch"
+        />
+        <div v-if="searchResults.length > 0" class="search-results">
+          <RouterLink
+            v-for="result in searchResults"
+            :key="result.id"
+            :to="`/product/${result.id}`"
+            class="search-result-item"
+            @click="hideSearch"
+          >
+            <img :src="result.image" :alt="result.name" class="result-image">
+            <div class="result-info">
+              <span class="result-name">{{ result.name }}</span>
+              <span class="result-price">${{ result.price }}</span>
+            </div>
+          </RouterLink>
         </div>
       </div>
-      <RouterLink v-if="userInfo" to="/account" class="account">Account</RouterLink>
-      <RouterLink v-else to="/login" class="login">Login</RouterLink>
     </div>
   </header>
 </template>
+
 <script>
 import { Icon } from "@iconify/vue";
-import { ref, computed } from 'vue';
-import { useCartStore } from '@/stores/cart';
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  components: {
-    Icon,
+  components: { Icon },
+  data() {
+    return {
+      activeDropdown: null,
+      isSearchVisible: false,
+      searchQuery: "",
+      searchResults: [],
+      userInfo: JSON.parse(localStorage.getItem("user-info")) || null,
+      components: [
+        "All Components",
+        "CPU",
+        "GPU",
+        "RAM",
+        "Motherboard",
+        "Power Supply",
+        "Case",
+      ],
+      laptops: [
+        "All Laptops",
+        "Apple",
+        "Dell",
+        "HP",
+        "Lenovo",
+        "ASUS",
+        "MSI",
+        "Acer",
+      ],
+      storage: [
+        "All Storage",
+        "SSD",
+        "HDD",
+        "External Drive",
+        "USB Drive",
+      ],
+      accessories: [
+        "All Accessories",
+        "Mouse",
+        "Keyboard",
+        "Headset",
+        "Webcam",
+      ],
+      filteredLaptops: [], // Holds the filtered laptops based on category
+    };
   },
-
-  setup() {
-    const isSearchVisible = ref(false);
-    const searchQuery = ref('');
-    const searchResults = ref([]);
-    const cartStore = useCartStore();
-    const cartItems = computed(() => cartStore.items);
-    const isCartVisible = ref(false);
-
-    const toggleSearch = () => {
-      isSearchVisible.value = !isSearchVisible.value;
-    };
-
-    const toggleCart = () => {
-      isCartVisible.value = !isCartVisible.value;
-    };
-
-    const searchProducts = async () => {
-      if (searchQuery.value.trim() === '') {
-        searchResults.value = [];
+  created() {
+    // Fetch all laptops when the component is created to populate the list
+    this.fetchLaptops();
+  },
+  methods: {
+    async fetchLaptops() {
+      try {
+        const response = await axios.get("http://localhost:3000/laptops");
+        this.filteredLaptops = response.data;
+      } catch (error) {
+        console.error("Error fetching laptops:", error);
+      }
+    },
+    async handleSearch() {
+      if (this.searchQuery.length < 2) {
+        this.searchResults = [];
         return;
       }
 
       try {
-        const response = await axios.get('http://localhost:3000/laptops', {
-          params: { q: searchQuery.value },
-        });
-        searchResults.value = response.data;
+        const response = await axios.get("http://localhost:3000/laptops");
+        this.searchResults = response.data
+          .filter(
+            (laptop) =>
+              laptop.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+              laptop.group.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+              laptop.model.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+              laptop.processor.toLowerCase().includes(this.searchQuery.toLowerCase())
+          )
+          .slice(0, 5); // Limits the results to top 5 matches
       } catch (error) {
-        console.error('Error searching products:', error);
+        console.error("Error fetching search results:", error);
+        this.searchResults = [];
       }
-    };
-
-    return {
-      isSearchVisible,
-      searchQuery,
-      searchResults,
-      toggleSearch,
-      toggleCart,
-      cartItems,
-      isCartVisible,
-    };
+    },
+    toggleDropdown(menu) {
+      this.activeDropdown = this.activeDropdown === menu ? null : menu;
+    },
+    toggleSearch() {
+      this.isSearchVisible = !this.isSearchVisible;
+      if (!this.isSearchVisible) {
+        this.searchQuery = "";
+        this.searchResults = [];
+      }
+    },
+    hideSearch() {
+      this.isSearchVisible = false;
+      this.searchQuery = "";
+      this.searchResults = [];
+    },
+    filterByCategory(category, item) {
+      // Filters based on category and group
+      if (category === 'laptops') {
+        this.filteredLaptops = this.filteredLaptops.filter(
+          (laptop) => laptop.group.toLowerCase() === item.toLowerCase() || item === 'All Laptops'
+        );
+      }
+      // You can add more filter logic for other categories here (components, storage, accessories)
+    },
   },
-
-  data() {
-    return {
-      hovered: "",
-      components: [
-        "All Components",
-        "CPU",
-        "Monitor",
-        "Mother Board",
-        "Speaker",
-        "Controller",
-        "Power Supply Unit",
-        "Mouse",
-        "Keyboard",
-        "USB",
-        "Microphone",
-        "Cooling Fans",
-        "Bluetooth Adapter",
-      ],
-      laptops: [
-        "All Laptops",
-        "MSI",
-        "Asus",
-        "Apple",
-        "HP",
-        "Lenovo",
-        "Acer",
-        "MacBook",
-      ],
-      storage: [
-        "All Storage",
-        "HDD",
-        "SSD",
-        "NVMe Drives",
-        "External Hard Drives",
-        "USB Flash Drives",
-        "Memory Cards",
-        "Cloud Storage",
-        "RAID Systems",
-        "NAS",
-      ],
-      accessory: [
-        "All Accessories",
-        "Laptop Bags",
-        "Gaming Headsets",
-        "External DVD Drives",
-        "Docking Stations",
-        "External Keyboards",
-        "Mouse Pads",
-        "Cable Organizers",
-        "Power Banks",
-        "Screen Protectors",
-        "Webcams",
-        "USB Hubs",
-        "Adapters and Converters",
-      ],
-      userInfo: JSON.parse(localStorage.getItem('user-info')) || null,
-    };
+  watch: {
+    // Watch for changes in the route and filter laptops accordingly
+    "$route.params.group": function(newGroup) {
+      if (newGroup) {
+        this.filterByGroup(newGroup);
+      }
+    },
   },
 };
 </script>
 
-
 <style scoped>
-.cart-section {
-  position: relative;
-}
-
-.cart-item {
+.header {
+  background-color: black;
+  padding: 0 20px;
+  height: 60px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 390px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.cart-item p {
-  margin: 0;
-  padding: 0;
-  width: 100px;
-}
-
-.cart-item-image {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  margin-right: 10px;
-}
-
-.cart-item-details {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-left: 30px;
+  position: relative;
 }
 
-.cart-item-details p {
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  margin-right: 10px;
 }
 
-.cart {
+.nav a {
   color: white;
-  font-size: 24px;
-  cursor: pointer;
-  height: 100%;
-  position: relative;
-}
-
-.card-dropdown {
-  border-top: 1px solid rgb(244, 244, 244);
-  top: 55px;
-  right: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(23, 23, 23);
-  position: fixed;
-  flex-direction: column;
-  color: rgb(0, 0, 0);
-  width: 300px;
-}
-
-.card-dropdown p {
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  width: 65px;
-}
-
-.card-dropdown ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-}
-
-.card-dropdown button {
-  height: 55px;
-  background-color: black;
+  text-decoration: none;
   font-size: 16px;
-  color: white;
-  cursor: pointer;
 }
 
-.search-icon {
-  color: white;
-  font-size: 24px;
+.nav li {
   cursor: pointer;
-  position: relative;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.search-cart li {
+.nav li.active {
+  background-color: white;
+  color: black;
+}
+
+.nav li.active > a {
+  color: black;
+  font-weight: bold;
+}
+
+.actions {
   display: flex;
+  gap: 20px;
   align-items: center;
 }
 
-.search {
-  border-top: 1px solid rgb(244, 244, 244);
-  transform: translate(-50%, 0%);
-  top: 55px;
-  left: 50%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  background-color: black;
-  width: 100%;
+.icon {
   color: white;
-  position: fixed;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.search-cart {
+/* Dropdown styles */
+.dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  z-index: 100;
+}
+
+.dropdown-item {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Search bar styles */
+.search-container {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 200;
+}
+
+.search-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
   position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 .search-results {
   position: absolute;
   top: 100%;
   left: 0;
-  right: 0;
-  background: white;
-  border: 1px solid #ccc;
-  z-index: 1000;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .search-result-item {
   display: flex;
-  align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
 }
 
-.search-result-image {
+.search-result-item:hover {
+  background-color: #f5f5f5;
+}
+
+.result-image {
   width: 50px;
   height: 50px;
+  object-fit: cover;
   margin-right: 10px;
 }
 
-.search-result-details {
-  display: flex;
-  flex-direction: column;
-}
-
-ul {
-  position: relative;
-  display: flex;
-  gap: 37px;
-  align-items: center;
-  margin: 0;
-  justify-content: center;
-}
-
-.add-to-cart {
-  padding: 14px 24px;
-  border-radius: 1px;
-  font-size: 16px;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  width: 100%;
-}
-
-li {
-  list-style: none;
-  height: 55px;
-  position: relative;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-p {
-  width: fit-content;
-  padding: 0px;
-  margin: 0px;
-}
-
-li:hover>a {
-  text-decoration: none;
-}
-
-.con {
-  border-top: 1px solid rgb(244, 244, 244);
-  transform: translate(-50%, 0%);
-  top: 55px;
-  left: 50%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  background-color: black;
-  width: 100%;
-  position: fixed;
-}
-
-.sub-container {
-  color: white;
-  padding: 15px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  row-gap: 10px;
-  column-gap: 75px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  width: fit-content;
-}
-
-.sub-container a {
-  margin: 0;
-  font-size: 18px;
-  font-weight: normal;
-  color: white;
-  width: 220px;
-  padding: 8px 12px;
-  text-align: center;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.sub-container a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 23px;
-  background-color: black;
-  color: white;
-}
-
-.logo {
-  font-size: 48px;
+.result-info .result-name {
   font-weight: bold;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 37px;
-}
-
-.search-cart {
-  display: flex;
-  align-items: center;
-  gap: 23px;
-}
-
-.cart,
-.account {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-}
-
-.cart:hover,
-.account:hover {
-  text-decoration: underline;
-}
-
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 37px;
-  height: 55px;
-}
-
-.cart,
-.account {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  display: flex;
-  justify-content: center;
-  height: 100%;
+.result-info .result-price {
+  color: #888;
 }
 </style>
