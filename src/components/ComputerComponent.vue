@@ -59,6 +59,7 @@ export default {
       motherboards: [],
       cpu: [],
       products: [],
+      
       loading: true,
       error: null,
     };
@@ -71,6 +72,7 @@ export default {
         this.motherboards = products.data.filter((product) => product.group === "motherboard");
         this.cpu = products.data.filter((product) => product.group === "cpu");
         this.products = products.data;
+
       } catch (error) {
         this.error = "Failed to fetch products";
       } finally {
@@ -140,49 +142,49 @@ export default {
       } else if (path === "/products/nas") {
         return this.nas;
       } else if (path === "/products/all-components" ||path=== "/products") {
-        const allProduct= [
-          ...this.laptops.slice(0, 4),
-          ...this.motherboards.slice(0, 4),
-          ...this.cpu.slice(0, 4),
-          ...this.monitor.slice(0, 4),
-          ...this.speaker.slice(0, 4),
-          ...this.controller.slice(0, 4),
-          ...this.powerSupplyUnit.slice(0, 4),
-          ...this.mouse.slice(0, 4),
-          ...this.keyboard.slice(0, 4),
-          ...this.usb.slice(0, 4),
-          ...this.microphone.slice(0, 4),
-          ...this.coolingFans.slice(0, 4),
-          ...this.bluetoothAdapter.slice(0, 4),
-          ...this.msi.slice(0, 4),
-          ...this.asus.slice(0, 4),
-          ...this.apple.slice(0, 4),
-          ...this.hp.slice(0, 4),
-          ...this.lenovo.slice(0, 4),
-          ...this.acer.slice(0, 4),
-          ...this.hdd.slice(0, 4),
-          ...this.ssd.slice(0, 4),
-          ...this.nvmeDrives.slice(0, 4),
-          ...this.externalHardDrivers.slice(0, 4),
-          ...this.memoryCards.slice(0, 4),
-          ...this.usbFlashDrivers.slice(0, 4),
-          ...this.cloudStorage.slice(0, 4),
-          ...this.raidSystems.slice(0, 4),
-          ...this.nas.slice(0, 4),
-          ...this.accessories.slice(0, 4),
-          ...this.laptopsBags.slice(0, 4),
-          ...this.gamingHeadsets.slice(0, 4),
-          ...this.externalDvdDrivers.slice(0, 4),
-          ...this.dockingStations.slice(0, 4),
-          ...this.externalKeyboard.slice(0, 4),
-          ...this.mousePads.slice(0, 4),
-          ...this.cableOrganizer.slice(0, 4),
-          ...this.powerBank.slice(0, 4),
-          ...this.screenProtector.slice(0, 4),
-          ...this.webcams.slice(0, 4),
-          ...this.usbHubs.slice(0, 4),
-          ...this.adaptersAndConverters.slice(0, 4),
-        ];
+        const allProduct= this.products;
+          // ...this.laptops.slice(0, 4),
+          // ...this.motherboards.slice(0, 4),
+          // ...this.cpu.slice(0, 4),
+          // ...this.monitor.slice(0, 4),
+          // ...this.speaker.slice(0, 4),
+          // ...this.controller.slice(0, 4),
+          // ...this.powerSupplyUnit.slice(0, 4),
+          // ...this.mouse.slice(0, 4),
+          // ...this.keyboard.slice(0, 4),
+          // ...this.usb.slice(0, 4),
+          // ...this.microphone.slice(0, 4),
+          // ...this.coolingFans.slice(0, 4),
+          // ...this.bluetoothAdapter.slice(0, 4),
+          // ...this.msi.slice(0, 4),
+          // ...this.asus.slice(0, 4),
+          // ...this.apple.slice(0, 4),
+          // ...this.hp.slice(0, 4),
+          // ...this.lenovo.slice(0, 4),
+          // ...this.acer.slice(0, 4),
+          // ...this.hdd.slice(0, 4),
+          // ...this.ssd.slice(0, 4),
+          // ...this.nvmeDrives.slice(0, 4),
+          // ...this.externalHardDrivers.slice(0, 4),
+          // ...this.memoryCards.slice(0, 4),
+          // ...this.usbFlashDrivers.slice(0, 4),
+          // ...this.cloudStorage.slice(0, 4),
+          // ...this.raidSystems.slice(0, 4),
+          // ...this.nas.slice(0, 4),
+          // ...this.accessories.slice(0, 4),
+          // ...this.laptopsBags.slice(0, 4),
+          // ...this.gamingHeadsets.slice(0, 4),
+          // ...this.externalDvdDrivers.slice(0, 4),
+          // ...this.dockingStations.slice(0, 4),
+          // ...this.externalKeyboard.slice(0, 4),
+          // ...this.mousePads.slice(0, 4),
+          // ...this.cableOrganizer.slice(0, 4),
+          // ...this.powerBank.slice(0, 4),
+          // ...this.screenProtector.slice(0, 4),
+          // ...this.webcams.slice(0, 4),
+          // ...this.usbHubs.slice(0, 4),
+          // ...this.adaptersAndConverters.slice(0, 4),
+        // ];
         console.log(allProduct);
         return allProduct;
       }

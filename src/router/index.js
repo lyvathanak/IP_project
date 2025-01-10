@@ -1,3 +1,8 @@
+import AboutUs from '@/components/Footer/AboutUs.vue';
+import ContactUs from '@/components/Footer/ContactUs.vue';
+import Disclaimer from '@/components/Footer/Disclaimer.vue';
+import Help from '@/components/Footer/Help.vue';
+import PrivacyPolicy from '@/components/Footer/PrivacyPolicy.vue';
 import Login from '@/components/Login.vue';
 import SignUp from '@/components/SignUp.vue';
 import AccountView from '@/views/AccountView.vue';
@@ -6,7 +11,6 @@ import DetailView from '@/views/DetailView.vue';
 import HomeView from '@/views/HomeView.vue';
 import PaymentView from '@/views/PaymentView.vue';
 import ProductView from '@/views/ProductView.vue';
-import { c } from 'vite/dist/node/types.d-aGj9QkWt';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
@@ -266,6 +270,31 @@ const routes = [
     name: 'Payment',
     component: PaymentView,
     meta: { requiresAuth: true },
+  },
+  {
+    path: '/about-us',
+    name: 'AboutUs',
+    component: AboutUs,
+  },  
+  {
+    path: '/contact-us',
+    name: 'ContactUs',
+    component: ContactUs,
+  },  
+  {
+    path: '/help',
+    name: 'Help',
+    component: Help,
+  },  
+  {
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy,
+  },  
+  {
+    path: '/disclaimer',
+    name: 'Disclaimer',
+    component: Disclaimer,
   },
   // Catch-all route - redirects to home
   {
