@@ -7,6 +7,13 @@ import ProductView from '@/views/ProductView.vue';
 import AccountView from '@/views/AccountView.vue';
 import SignUp from '@/components/SignUp.vue';
 import Login from '@/components/Login.vue';
+import AboutUs from '@/components/Footer/AboutUs.vue';
+import ContactUs from '@/components/Footer/ContactUs.vue';
+import Disclaimer from '@/components/Footer/Disclaimer.vue';
+import Help from '@/components/Footer/Help.vue';
+import PrivacyPolicy from '@/components/Footer/PrivacyPolicy.vue';
+import ProductList from '@/components/ProductList.vue';
+//import ItemManager from '@/components/ItemManager.vue';
 
 const routes = [
   {
@@ -51,6 +58,41 @@ const routes = [
     component: PaymentView,
     meta: { requiresAuth: true },
   },
+  {
+    path: '/about-us',
+    name: 'About-us',
+    component: AboutUs,
+  },
+  {
+    path: '/contact-us',
+    name: 'Contact-us',
+    component:ContactUs,
+  },
+  {
+    path: '/disclaimer',
+    name: 'Disclaimer',
+    component: Disclaimer,
+  },
+  {
+    path: '/help',
+    name: 'Help',
+    component: Help,
+  },
+  {
+    path: '/privacy-policy',
+    name: 'Privacy-policy',
+    component: PrivacyPolicy,
+  },
+  // {
+  //   path: '/itemmanager',
+  //   name: 'ItemManager',
+  //   component: ItemManager,
+  // },
+  {
+    path: '/product-list',
+    name: 'ProductList',
+    component: ProductList,
+  }
 ];
 
 const router = createRouter({

@@ -6,560 +6,10 @@
       "email": "john.doe@example.com",
       "password": "1234123333",
       "userBought": [],
-      "userCart": [
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "3",
-          "name": "MSI Stealth 16 Studio",
-          "quantity": 12,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 6,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 5,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "30",
-          "name": "ASUS Experook B9",
-          "quantity": 13,
-          "group": "ASUS"
-        },
-        {
-          "productId": "14",
-          "name": "Lenovo Yoga 9i",
-          "quantity": 4,
-          "group": "Lenovo"
-        },
-        {
-          "productId": "22",
-          "name": "MacBook Air 13-inch",
-          "quantity": 5,
-          "group": "MacBook"
-        },
-        {
-          "productId": "3",
-          "name": "MSI Stealth 16 Studio",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 6,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 6,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 5,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 5,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 7,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 3,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "7",
-          "name": "Dell XPS 15",
-          "quantity": 4,
-          "group": "Dell"
-        },
-        {
-          "productId": "7",
-          "name": "Dell XPS 15",
-          "quantity": 8,
-          "group": "Dell"
-        },
-        {
-          "productId": "7",
-          "name": "Dell XPS 15",
-          "quantity": 8,
-          "group": "Dell"
-        },
-        {
-          "productId": "7",
-          "name": "Dell XPS 15",
-          "quantity": 4,
-          "group": "Dell"
-        },
-        {
-          "productId": "6",
-          "name": "MSI Prestige 16",
-          "quantity": 5,
-          "group": "MSI"
-        },
-        {
-          "productId": "3",
-          "name": "MSI Stealth 16 Studio",
-          "quantity": 3,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 4,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 3,
-          "group": "MSI"
-        },
-        {
-          "productId": "23",
-          "name": "MacBook Pro 13-inch",
-          "quantity": 2,
-          "group": "MacBook"
-        },
-        {
-          "productId": "8",
-          "name": "Dell G15 Gaming Laptop",
-          "quantity": 3,
-          "group": "Dell"
-        },
-        {
-          "productId": "9",
-          "name": "Alienware m18 R2",
-          "quantity": 3,
-          "group": "Dell"
-        }
-      ]
-    },
-    {
-      "id": "1dbd",
-      "name": "Khun Meas",
-      "email": "john.doe@example.com",
-      "password": "1234",
-      "userBought": [],
-      "userCart": [
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        }
-      ]
-    },
-    {
-      "id": "3b1d",
-      "email": "sauchinnisa@gmail.com",
-      "password": "123",
-      "name": "hello",
-      "userBought": [],
       "userCart": []
-    },
-    {
-      "id": "e623",
-      "email": "sauchinnis1@gmail.com",
-      "password": "1111",
-      "name": "nisa",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "953e",
-      "email": "sauchinnisa@gmail.com",
-      "password": "we",
-      "name": "mo",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "686c",
-      "email": "measreaksmey01@gmail.com",
-      "password": "1111",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "7694",
-      "email": "measreaksmey02@gmail.com",
-      "password": "123",
-      "name": "meas",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "a70c",
-      "email": "measreaksmey01@gmail.com",
-      "password": "111",
-      "name": "kk",
-      "userBought": [],
-      "userCart": [
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 3,
-          "group": "MSI"
-        },
-        {
-          "productId": "8",
-          "name": "Dell G15 Gaming Laptop",
-          "quantity": 3,
-          "group": "Dell"
-        },
-        {
-          "productId": "30",
-          "name": "ASUS Experook B9",
-          "quantity": 3,
-          "group": "ASUS"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 5,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 2,
-          "group": "MSI"
-        },
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        }
-      ]
-    },
-    {
-      "id": "b790",
-      "email": "",
-      "password": "",
-      "name": "",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "51f4",
-      "email": "measreaksmey01@gmail.com",
-      "password": "111",
-      "name": "meas",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "8b0c",
-      "email": "measreaksmey01@gmail.com",
-      "password": "111",
-      "name": "meas",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "2014",
-      "email": "measreaksmey03@gmail.com",
-      "password": "111",
-      "name": "e20210686",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "173f",
-      "email": "measreaksmey03@gmail.com",
-      "password": "111",
-      "name": "e20210686",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "8315",
-      "name": "meas",
-      "email": "meas@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "5d26",
-      "name": "kll",
-      "email": "ll@gmail.com",
-      "password": "123",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "qz6g",
-      "name": "measwwwwwwww",
-      "email": "kkk@gmail.com",
-      "password": "jhhhh",
-      "userBought": [],
-      "userCart": [
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "6",
-          "name": "MSI Prestige 16",
-          "quantity": 3,
-          "group": "MSI"
-        }
-      ]
-    },
-    {
-      "id": "d18b",
-      "name": "Ima",
-      "email": "jj12@gmail.com",
-      "password": "12345",
-      "userBought": [],
-      "userCart": [
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "4",
-          "name": "MSI Pulse 15",
-          "quantity": 1,
-          "group": "MSI"
-        }
-      ]
     }
   ],
-  "laptops": [
+  "products": [
     {
       "id": "1",
       "name": "MSI Titan GT77 HX",
@@ -570,7 +20,8 @@
       "processor": "Intel Core i9-13980HX",
       "price": "5499",
       "image": "/Laptop/AcerAspire7.png",
-      "group": "MSI",
+      "brand": "MSI",
+      "group:": "laptop",
       "rating": 4.5,
       "reviews": 100,
       "stock": 10
@@ -585,8 +36,11 @@
       "processor": "Intel Core i9-13950HX",
       "price": "3499",
       "image": "/Laptop/AcerAspireVero.png",
-      "group": "MSI",
-      "rating": 4.5
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "3",
@@ -598,7 +52,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "2299",
       "image": "/Laptop/MSIStealth16Studio.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "4",
@@ -610,7 +68,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "1349",
       "image": "/Laptop/MSIPulse15.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "5",
@@ -622,7 +84,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1449",
       "image": "/Laptop/MSIKatanaGF76.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "6",
@@ -634,7 +100,11 @@
       "processor": "Intel Core i7-1260P",
       "price": "1599",
       "image": "/Laptop/MSIStealth14Studio.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "7",
@@ -646,7 +116,11 @@
       "processor": "Intel Core i9-12900HK",
       "price": "2899",
       "image": "/Laptop/DellXPS15.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "8",
@@ -658,7 +132,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1099",
       "image": "/Laptop/DellG15GamingLaptop.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "9",
@@ -670,7 +148,11 @@
       "processor": "Intel Core Ultra 7 165H",
       "price": "1888",
       "image": "/Laptop/Alienwarem18R2.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "10",
@@ -682,7 +164,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1299",
       "image": "/Laptop/DellG15GamingLaptop.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "11",
@@ -694,7 +180,11 @@
       "processor": "Intel Core i9-12900H",
       "price": "3999",
       "image": "/Laptop/DellPrecision5570.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "12",
@@ -706,7 +196,11 @@
       "processor": "Intel Core i7-1260U",
       "price": "2199",
       "image": "/Laptop/DellPrecision5570.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "13",
@@ -718,7 +212,11 @@
       "processor": "Intel Core i9-13900HX",
       "price": "3499",
       "image": "/Laptop/LenovoLegionPro7i.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "14",
@@ -730,7 +228,11 @@
       "processor": "Intel Core i7-1360P",
       "price": "1799",
       "image": "/Laptop/LenovoYoga9i.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "15",
@@ -742,7 +244,11 @@
       "processor": "Intel Core i7-1365U",
       "price": "1699",
       "image": "/Laptop/LenovoThinkPadX1CarbonGen11.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "16",
@@ -754,7 +260,11 @@
       "processor": "AMD Ryzen 7 6800HS",
       "price": "1199",
       "image": "/Laptop/LenovoIdeaPadSlim7Pro.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "17",
@@ -766,7 +276,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "2099",
       "image": "/Laptop/LenovoLegionSlim7i.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "18",
@@ -778,7 +292,11 @@
       "processor": "AMD Ryzen 9 6900HX",
       "price": "2499",
       "image": "/Laptop/LenovoThinkBook16p.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "19",
@@ -790,7 +308,11 @@
       "processor": "Apple M2 Max",
       "price": "4299",
       "image": "/Laptop/MacBookPro16-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "20",
@@ -802,7 +324,11 @@
       "processor": "Apple M2 Pro",
       "price": "2499",
       "image": "/Laptop/MacBookPro16-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "21",
@@ -814,7 +340,11 @@
       "processor": "Apple M2",
       "price": "1299",
       "image": "/Laptop/MacBookAir15-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "22",
@@ -826,7 +356,11 @@
       "processor": "Apple M2",
       "price": "1199",
       "image": "/Laptop/MacBookAir13-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "23",
@@ -838,7 +372,11 @@
       "processor": "Apple M2",
       "price": "1499",
       "image": "/Laptop/MacBookAir13-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "24",
@@ -850,7 +388,11 @@
       "processor": "Apple M1 Pro",
       "price": "2499",
       "image": "/Laptop/MacBookPro16-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "25",
@@ -862,7 +404,11 @@
       "processor": "Intel Core i9-13980HX",
       "price": "3899",
       "image": "/Laptop/ASUSROGZephyrusG14.png",
-      "group": "ASUS"
+      "brand": "ASUS",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "26",
@@ -874,7 +420,11 @@
       "processor": "AMD Ryzen 7 7735HS",
       "price": "1249",
       "image": "/Laptop/ASUSZenBookProDuo15.png",
-      "group": "ASUS"
+      "brand": "ASUS",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "27",
@@ -886,7 +436,11 @@
       "processor": "AMD Ryzen 9 6900HS",
       "price": "1699",
       "image": "/Laptop/ASUSROGZephyrusG14.png",
-      "group": "ASUS"
+      "brand": "ASUS",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "28",
@@ -898,7 +452,11 @@
       "processor": "Intel Core i9-11900H",
       "price": "2999",
       "image": "/Laptop/ASUSZenBookProDuo15.png",
-      "group": "ASUS"
+      "brand": "ASUS",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "29",
@@ -910,7 +468,11 @@
       "processor": "Intel Core i7-11370H",
       "price": "1399",
       "image": "/Laptop/LenovoThinkPadX1CarbonGen11.png",
-      "group": "ASUS"
+      "brand": "ASUS",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "30",
@@ -922,7 +484,11 @@
       "processor": "Intel Core i7-1165G7",
       "price": "1799",
       "image": "/Laptop/HPPavilionPlus14.png",
-      "group": "ASUS"
+      "brand": "ASUS",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "31",
@@ -934,7 +500,11 @@
       "processor": "Intel Core i9-13900HX",
       "price": "2999",
       "image": "/Laptop/AcerPredatorHelios18.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "32",
@@ -946,7 +516,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1299",
       "image": "/Laptop/AcerNitro5.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "33",
@@ -958,7 +532,11 @@
       "processor": "Intel Core i7-1255U",
       "price": "1099",
       "image": "/Laptop/AcerAspireVero.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "34",
@@ -970,7 +548,11 @@
       "processor": "Intel Core i9-12900H",
       "price": "2999",
       "image": "/Laptop/AcerPredatorTriton500SE.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "35",
@@ -982,7 +564,11 @@
       "processor": "Intel Core i5-1240P",
       "price": "999",
       "image": "/Laptop/AcerChromebookSpin714.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "36",
@@ -994,7 +580,11 @@
       "processor": "AMD Ryzen 5 5500U",
       "price": "799",
       "image": "/Laptop/AcerAspire7.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "37",
@@ -1006,7 +596,11 @@
       "processor": "Intel Core i7-1260P",
       "price": "1699",
       "image": "/Laptop/HPSpectrex36016.png",
-      "group": "HP"
+      "brand": "HP",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "38",
@@ -1018,7 +612,11 @@
       "processor": "Intel Core i9-12900HX",
       "price": "2899",
       "image": "/Laptop/HPOmen17.png",
-      "group": "HP"
+      "brand": "HP",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "39",
@@ -1030,7 +628,11 @@
       "processor": "Intel Core i7-1260P",
       "price": "1299",
       "image": "/Laptop/HPEnvyx36015.png",
-      "group": "HP"
+      "brand": "HP",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "40",
@@ -1042,7 +644,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "999",
       "image": "/Laptop/HPPavilionPlus14.png",
-      "group": "HP"
+      "brand": "HP",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "41",
@@ -1054,7 +660,11 @@
       "processor": "Intel Core i9-12900H",
       "price": "4499",
       "image": "/Laptop/HPZBookStudioG9.png",
-      "group": "HP"
+      "brand": "HP",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "42",
@@ -1066,7 +676,11 @@
       "processor": "Intel Core i7-1265U",
       "price": "2599",
       "image": "/Laptop/HPEliteDragonflyG3.png",
-      "group": "HP"
+      "brand": "HP",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "12f9",
@@ -1078,7 +692,11 @@
       "processor": "Intel Core i9-13980HX",
       "price": "5499",
       "image": "/Laptop/MSIKatanaGF76.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "4e51",
@@ -1090,7 +708,11 @@
       "processor": "Intel Core i9-13950HX",
       "price": "3499",
       "image": "/Laptop/MSIRaiderGE78HX.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "0266",
@@ -1102,7 +724,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "2299",
       "image": "/Laptop/MSIStealth16Studio.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "bb76",
@@ -1114,7 +740,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "1349",
       "image": "/Laptop/MSIPulse15.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "5c9f",
@@ -1126,7 +756,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1449",
       "image": "/Laptop/MSIKatanaGF76.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "a3e3",
@@ -1138,7 +772,7 @@
       "processor": "Intel Core i7-1260P",
       "price": "1599",
       "image": "/Laptop/MSIPulse15.png",
-      "group": "MSI"
+      "brand": "MSI"
     },
     {
       "id": "6eb0",
@@ -1150,7 +784,11 @@
       "processor": "Intel Core i9-12900HK",
       "price": "2899",
       "image": "/Laptop/DellXPS15.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "3ebe",
@@ -1162,7 +800,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1099",
       "image": "/Laptop/DellG15GamingLaptop.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "3edb",
@@ -1174,7 +816,11 @@
       "processor": "Intel Core Ultra 7 165H",
       "price": "1888",
       "image": "/Laptop/Alienwarem18R2.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "bcdd",
@@ -1186,7 +832,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1299",
       "image": "/Laptop/DellG15GamingLaptop.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "6c26",
@@ -1198,7 +848,11 @@
       "processor": "Intel Core i7-1260U",
       "price": "2199",
       "image": "/Laptop/DellPrecision5570.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "212a",
@@ -1210,7 +864,11 @@
       "processor": "Intel Core i9-12900H",
       "price": "3999",
       "image": "/Laptop/DellPrecision5570.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "4828",
@@ -1222,7 +880,11 @@
       "processor": "Intel Core i9-13900HX",
       "price": "3499",
       "image": "/Laptop/LenovoLegionPro7i.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "cbeb",
@@ -1234,7 +896,11 @@
       "processor": "Intel Core i7-1360P",
       "price": "1799",
       "image": "/Laptop/LenovoYoga9i.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "4c7a",
@@ -1246,7 +912,11 @@
       "processor": "Apple M2 Pro",
       "price": "2499",
       "image": "/Laptop/MacBookPro16-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     },
     {
       "id": "3e5b",
@@ -1258,7 +928,11 @@
       "processor": "Apple M2",
       "price": "1299",
       "image": "/Laptop/MacBookAir15-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "group:": "laptop",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
     }
   ]
 }
