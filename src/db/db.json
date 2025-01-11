@@ -1,23 +1,80 @@
 {
   "users": [
     {
-      "id": "a0c0",
-      "name": "John Doe",
-      "email": "john.doe@example.com",
-      "password": "1234123333",
+      "id": "6e9b",
+      "name": "we",
+      "email": "1202q@gmail.com",
+      "password": "123",
+      "userBought": [
+        {
+          "purchaseId": "buy1736582413695",
+          "items": [
+            {
+              "productId": "78bf",
+              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+              "quantity": 1,
+              "group": "mother-board",
+              "image": "/MotherBoards/X870E.png",
+              "price": 455
+            }
+          ]
+        }
+      ],
+      "userCart": [
+        {
+          "productId": "070e",
+          "name": "MSI MPG X870E CARBON AM5 ATX Gaming Motherboard, 4x SATA 6Gb/s, AMD Wi-Fi 7,USB 4.0",
+          "quantity": 1,
+          "group": "mother-board"
+        }
+      ],
+      "invoices": [
+        {
+          "invoiceId": "INV1736582413695",
+          "invoiceNumber": "INV1736582413695",
+          "invoiceDate": "2025-01-11",
+          "amount": 455,
+          "customerName": "qq",
+          "paymentMethod": "Cash",
+          "Address": {
+            "FullName": "khunkkk",
+            "CompanyName": "khun",
+            "StreetAddress": "st21",
+            "Apartment": "12",
+            "Town": "phnom penh",
+            "PhoneNumber": "0123455",
+            "Email": "measreaksmey02@gmail.com"
+          },
+          "cardDetails": null,
+          "items": [
+            {
+              "productId": "78bf",
+              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+              "quantity": 1,
+              "price": 455
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5677",
+      "name": "123",
+      "email": "measreaksmey02@gmail.com",
+      "password": "1234",
       "userBought": [],
       "userCart": [
         {
           "productId": "78bf",
           "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
-          "quantity": 2,
+          "quantity": 1,
           "group": "mother-board"
         },
         {
-          "productId": "386a",
-          "name": "Intel Core i9-13980HX",
-          "quantity": 1,
-          "group": "cpu"
+          "productId": "78bf",
+          "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+          "quantity": 2,
+          "group": "mother-board"
         }
       ]
     }

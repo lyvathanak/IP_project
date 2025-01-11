@@ -25,15 +25,10 @@
           <td>${{ (item.price * item.quantity).toFixed(2) }}</td>
           <td class="edit-delete">
             <Button
-              :label="'Delete'"
-              @click="removeItem(index)"
-              class="btn-delete"
-            />
-            <Button
-              :label="'Edit'"
-              @click="editItem(index)"
-              class="btn-edit"
-            />
+            :label="'Delete'"
+            @click="removeItemFromCart(item.productId)"
+            class="btn-delete"
+          />
           </td>
         </tr>
       </tbody>
@@ -86,12 +81,32 @@ export default {
     };
   },
   methods: {
-    removeItem() {
-    
-    },
-    editItem() {
-      alert(`Edit item at index ${index}`);
-    },
+    async removeItemFromCart(itemId) {
+  try {
+    this.userId = JSON.parse(localStorage.getItem("user-info"))?.id;
+    if (!this.userId) {
+      alert("User not logged in");
+      this.$router.push("/login"); // Redirect to login if not logged in
+      return;
+    }
+
+    // Fetch the user's current cart from the backend
+    const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
+    const user = userRes.data;
+
+    // Filter out the item to be removed based on productId
+    user.userCart = user.userCart.filter(item => item.productId !== itemId);
+
+    // Update the cart in the backend with the modified cart
+    await axios.put(`http://localhost:3000/users/${this.userId}`, user);
+
+    alert("Product removed from cart!");
+    window.location.href = 'http://localhost:5173/cart'; // Redirect to the cart page to reflect changes
+  } catch (error) {
+    alert("Error removing product from cart. Please try again.");
+  }
+},
+
   },
   async created() {
     try {

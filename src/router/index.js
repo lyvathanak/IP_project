@@ -1,5 +1,5 @@
-import Login from '@/components/Login_Sign_Up/Login.vue';
-import SignUp from '@/components/Login_Sign_Up/SignUp.vue';
+import Login from '@/components/Login.vue';
+import SignUp from '@/components/SignUp.vue';
 import AccountView from '@/views/AccountView.vue';
 import CartListView from '@/views/CartListView.vue';
 import DetailView from '@/views/DetailView.vue';

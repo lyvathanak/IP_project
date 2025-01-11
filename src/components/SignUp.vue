@@ -52,6 +52,7 @@ export default {
           password: this.password,
           userBought: [],
           userCart: [],
+  
         });
         if (result.status === 201) {
           alert("Sign-up successful!");
