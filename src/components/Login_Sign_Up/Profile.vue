@@ -2,10 +2,10 @@
     <div class="profile-container">
       <h2>Welcome, {{ userInfo.name }}</h2>
       <p><strong>Email:</strong> {{ userInfo.email }}</p>
-      <!-- Add more profile details if needed -->
-      <RouterLink to="/">Home</RouterLink>
+      <!-- Add more profile details if needed --> 
+       <RouterLink to="/">Home</RouterLink>
       <button @click="logout">Logout</button>
-    </div>
+    </div> 
   </template>
   
   <script>

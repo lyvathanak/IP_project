@@ -59,7 +59,6 @@
   </template>
  <script>
  import { Icon } from '@iconify/vue';
- import { useCartStore } from '@/stores/cart';
  import Header from '@/components/Header.vue';
  import axios from 'axios';
  
@@ -86,13 +85,8 @@
    async fetchDetails() {
      const id = this.$route.params.id;
      try {
-     const [laptopsResponse, motherboardsResponse,cpuResponse] = await Promise.all([
-      axios.get("http://localhost:3000/laptops"),
-      axios.get("http://localhost:3000/motherboards"),
-      axios.get("http://localhost:3000/cpu"),
-      ]);
-     const products =[...laptopsResponse.data,...motherboardsResponse.data,...cpuResponse.data];
-     this.product=products.find((item)=> item.id==id);
+     const res= await axios.get(`http://localhost:3000/products/${id}`);	
+     this.product = res.data;
      if (!this.product) {
       throw new Error("Product not found");
     }
@@ -118,15 +112,13 @@
  
      const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
      const user = userRes.data;
- 
-     // Ensure userCart is initialized as an empty array if not already present
+
      user.userCart = user.userCart || [];
      user.userCart.push(productCart);
  
      await axios.put(`http://localhost:3000/users/${this.userId}`, user);
      alert("Product added to cart!");
      window.location.href = 'http://localhost:5173/cart';
-      
      } catch (error) {
      alert("Error adding product to cart. Please try again.");
      }

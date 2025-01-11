@@ -25,7 +25,7 @@
               <div class="cart" v-for="(item, index) in cart" :key="index">
                 <div class="name-price">
                   <img v-if="item.image" :src="item.image" :alt="item.name" />
-                  <p>{{ item.name }}</p>
+                  <p class="name">{{ item.name }}</p>
                 </div>
                 <p v-if="typeof item.price === 'number'">${{ item.price.toFixed(2) }}</p>
                 <p v-else>{{ item.price }}</p>
@@ -119,7 +119,6 @@ import Bkas from "@/assets/images/Bkas.png";
 import MasterCard from "@/assets/images/MasterCard.png";
 import Visa from "@/assets/images/Visa.png";
 import BankCard from "@/assets/images/BankCard.png";
-
 export default {
   name: "PaymentView",
   components: {
@@ -271,13 +270,8 @@ export default {
       const param = { params: { ids: productIds.join(",") } };
 
       if (productIds.length > 0) {
-        const [lapRes, motherRes, cpuRes] = await Promise.all([
-          axios.get(`http://localhost:3000/laptops`, param),
-          axios.get(`http://localhost:3000/motherboards`, param),
-          axios.get(`http://localhost:3000/cpu`, param),
-        ]);
-
-        const allProducts = [...lapRes.data, ...motherRes.data, ...cpuRes.data];
+        const products= await axios.get("http://localhost:3000/products", param);
+        const allProducts = products.data;
         this.cart = this.cart.map((item) => {
           const product = allProducts.find((product) => product.id === item.productId);
           return {
@@ -302,6 +296,17 @@ export default {
   color: gray;
   font-style: italic; /* Optional */
   opacity: 1; /* Ensures the placeholder is fully visible */
+}
+.name {
+  width: 160px;
+  overflow: hidden;
+  text-overflow: none;
+  white-space: nowrap;
+}
+.name:hover {
+  overflow: visible;
+  white-space: normal;
+  font-size: small;
 }
 input {
   width: 450px;

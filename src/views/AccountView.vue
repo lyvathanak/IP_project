@@ -1,16 +1,18 @@
 <template>
-  <Profile />
-  <CartTotal />
+  <Profile/>
+  <Account/>
   <RouterLink to="/lists">cart list</RouterLink>
 </template>
 
 <script>
-import CartTotal from '@/components/CartTotal.vue';
-import Profile from '@/components/Profile.vue';
+import Account from '@/components/Acount/Account.vue';
 
+import CartTotal from '@/components/CartTotal.vue';
+import Profile from '@/components/Login_Sign_Up/Profile.vue';
 export default {
   components: {
-    Profile, CartTotal
+   
+     CartTotal,Account,Profile
   },
 };
 </script>

@@ -6,356 +6,70 @@
       "email": "john.doe@example.com",
       "password": "1234123333",
       "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "1dbd",
-      "name": "Khun Meas",
-      "email": "john.doe@example.com",
-      "password": "1234",
-      "userCart": [],
-      "userBought": [
-        {
-          "purchaseId": "buy1736306199206",
-          "items": [
-            {
-              "productId": "1",
-              "name": "MSI Titan GT77 HX",
-              "quantity": 3,
-              "group": "MSI",
-              "image": "/Laptop/AcerAspire7.png",
-              "price": "5499"
-            }
-          ]
-        },
-        {
-          "purchaseId": "buy1736306361505",
-          "items": [
-            {
-              "productId": "78bf",
-              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
-              "quantity": 2,
-              "group": "mother-board",
-              "image": "/MotherBoards/X870E.png",
-              "price": 455
-            }
-          ]
-        },
-        {
-          "purchaseId": "buy1736315412274",
-          "items": [
-            {
-              "productId": "1",
-              "name": "MSI Titan GT77 HX",
-              "quantity": 3,
-              "group": "MSI",
-              "image": "/Laptop/AcerAspire7.png",
-              "price": "5499"
-            }
-          ]
-        },
-        {
-          "purchaseId": "buy1736385179518",
-          "items": [
-            {
-              "productId": "78bf",
-              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
-              "quantity": 2,
-              "group": "mother-board",
-              "image": "/MotherBoards/X870E.png",
-              "price": 455
-            }
-          ]
-        }
-      ],
-      "invoices": [
-        {
-          "invoiceId": "INV1736306199206",
-          "invoiceNumber": "INV1736306199206",
-          "invoiceDate": "2025-01-08",
-          "amount": 16497,
-          "customerName": "Khun Meas",
-          "paymentMethod": "Bank",
-          "Address": {
-            "FullName": "khunkkk",
-            "CompanyName": "khun",
-            "StreetAddress": "st21",
-            "Apartment": "123",
-            "Town": "phnom penh",
-            "PhoneNumber": "0123455",
-            "Email": "measreaksmey02@gmail.com"
-          },
-          "cardDetails": {
-            "cardHolder": "khun meas",
-            "cardNumber": "932129283",
-            "cvv": "123456",
-            "expiryDate": "97576"
-          },
-          "items": [
-            {
-              "productId": "1",
-              "name": "MSI Titan GT77 HX",
-              "quantity": 3,
-              "price": "5499"
-            }
-          ]
-        },
-        {
-          "invoiceId": "INV1736306361503",
-          "invoiceNumber": "INV1736306361503",
-          "invoiceDate": "2025-01-08",
-          "amount": 910,
-          "customerName": "Khun Meas",
-          "paymentMethod": "Cash",
-          "Address": {
-            "FullName": "khunkkk",
-            "CompanyName": "khun",
-            "StreetAddress": "st21",
-            "Apartment": "12",
-            "Town": "phnom penh",
-            "PhoneNumber": "0123455",
-            "Email": "measreaksmey02@gmail.com"
-          },
-          "cardDetails": null,
-          "items": [
-            {
-              "productId": "78bf",
-              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
-              "quantity": 2,
-              "price": 455
-            }
-          ]
-        },
-        {
-          "invoiceId": "INV1736315412274",
-          "invoiceNumber": "INV1736315412274",
-          "invoiceDate": "2025-01-08",
-          "amount": 16497,
-          "customerName": "Khun Meas",
-          "paymentMethod": "Cash",
-          "Address": {
-            "FullName": "khunkkk",
-            "CompanyName": "khun",
-            "StreetAddress": "st21",
-            "Apartment": "123",
-            "Town": "phnom penh",
-            "PhoneNumber": "0123455",
-            "Email": "measreaksmey02@gmail.com"
-          },
-          "cardDetails": null,
-          "items": [
-            {
-              "productId": "1",
-              "name": "MSI Titan GT77 HX",
-              "quantity": 3,
-              "price": "5499"
-            }
-          ]
-        },
-        {
-          "invoiceId": "INV1736385179516",
-          "invoiceNumber": "INV1736385179516",
-          "invoiceDate": "2025-01-09",
-          "amount": 910,
-          "customerName": "Khun Meas",
-          "paymentMethod": "Cash",
-          "Address": {
-            "FullName": "khunkkk",
-            "CompanyName": "khun",
-            "StreetAddress": "st21",
-            "Apartment": "12",
-            "Town": "phnom penh",
-            "PhoneNumber": "0123455",
-            "Email": "measreaksmey02@gmail.com"
-          },
-          "cardDetails": null,
-          "items": [
-            {
-              "productId": "78bf",
-              "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
-              "quantity": 2,
-              "price": 455
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "3b1d",
-      "email": "sauchinnisa@gmail.com",
-      "password": "123",
-      "name": "hello",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "e623",
-      "email": "sauchinnis1@gmail.com",
-      "password": "1111",
-      "name": "nisa",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "953e",
-      "email": "sauchinnisa@gmail.com",
-      "password": "we",
-      "name": "mo",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "686c",
-      "email": "measreaksmey01@gmail.com",
-      "password": "1111",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "7694",
-      "email": "measreaksmey02@gmail.com",
-      "password": "123",
-      "name": "meas",
-      "userBought": [],
       "userCart": [
         {
-          "productId": "3972",
-          "name": "GIGABYTE X870E AORUS ELITE WIFI7 AM5 LGA 1718, ATX, DDR5, 4x M.2, PCIe 5.0, USB4, Wi-Fi 7, 2.5GbE LAN, EZ-Latch",
+          "productId": "78bf",
+          "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
           "quantity": 2,
           "group": "mother-board"
         },
         {
           "productId": "386a",
           "name": "Intel Core i9-13980HX",
-          "quantity": 2,
+          "quantity": 1,
           "group": "cpu"
-        },
-        {
-          "productId": "78bf",
-          "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
-          "quantity": 2,
-          "group": "mother-board"
-        }
-      ]
-    },
-    {
-      "id": "51f4",
-      "email": "measreaksmey01@gmail.com",
-      "password": "111",
-      "name": "meas",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "2014",
-      "email": "measreaksmey03@gmail.com",
-      "password": "111",
-      "name": "e20210686",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "173f",
-      "email": "measreaksmey03@gmail.com",
-      "password": "111",
-      "name": "e20210686",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "8315",
-      "name": "meas",
-      "email": "meas@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "5d26",
-      "name": "kll",
-      "email": "ll@gmail.com",
-      "password": "123",
-      "userBought": [],
-      "userCart": []
-    },
-    {
-      "id": "qz6g",
-      "name": "measwwwwwwww",
-      "email": "kkk@gmail.com",
-      "password": "jhhhh",
-      "userBought": [],
-      "userCart": [
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "6",
-          "name": "MSI Prestige 16",
-          "quantity": 3,
-          "group": "MSI"
-        }
-      ]
-    },
-    {
-      "id": "d18b",
-      "name": "Ima",
-      "email": "jj12@gmail.com",
-      "password": "12345",
-      "userBought": [],
-      "userCart": [
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 1,
-          "group": "MSI"
-        },
-        {
-          "productId": "4",
-          "name": "MSI Pulse 15",
-          "quantity": 1,
-          "group": "MSI"
-        }
-      ]
-    },
-    {
-      "id": "4f82",
-      "name": "ll",
-      "email": "ll@gmail.com",
-      "password": "1111",
-      "userBought": [],
-      "userCart": [
-        {
-          "productId": "1",
-          "name": "MSI Titan GT77 HX",
-          "quantity": 3,
-          "group": "MSI"
-        }
-      ]
-    },
-    {
-      "id": "4161",
-      "name": "hour",
-      "email": "hour123@gmail.com",
-      "password": "12345",
-      "userBought": [],
-      "userCart": [
-        {
-          "productId": "2",
-          "name": "MSI Raider GE78 HX",
-          "quantity": 1,
-          "group": "MSI"
         }
       ]
     }
   ],
-  "laptops": [
+  "products": [
+    {
+      "id": "3972",
+      "name": "GIGABYTE X870E AORUS ELITE WIFI7 AM5 LGA 1718, ATX, DDR5, 4x M.2, PCIe 5.0, USB4, Wi-Fi 7, 2.5GbE LAN, EZ-Latch",
+      "price": 1299,
+      "image": "/MotherBoards/Gigabyte.png",
+      "productCod": "X870E AORUS ELITE WIFI7",
+      "group": "mother-board",
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
+    },
+    {
+      "id": "78bf",
+      "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
+      "price": 455,
+      "image": "/MotherBoards/X870E.png",
+      "productCod": "X870E AORUS PRO ICE",
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "mother-board"
+    },
+    {
+      "id": "070e",
+      "name": "MSI MPG X870E CARBON AM5 ATX Gaming Motherboard, 4x SATA 6Gb/s, AMD Wi-Fi 7,USB 4.0",
+      "price": 255,
+      "image": "/MotherBoards/AIPC.png",
+      "productCod": "MPG X870E CARBON WIFI",
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "mother-board"
+    },
+    {
+      "id": "386a",
+      "name": "Intel Core i9-13980HX",
+      "price": 999,
+      "image": "/CPU/AMD7.png",
+      "group": "cpu",
+      "brand": "AMD",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10
+    },
     {
       "id": "1",
       "name": "MSI Titan GT77 HX",
@@ -366,10 +80,11 @@
       "processor": "Intel Core i9-13980HX",
       "price": "5499",
       "image": "/Laptop/AcerAspire7.png",
-      "group": "MSI",
+      "brand": "MSI",
       "rating": 4.5,
       "reviews": 100,
-      "stock": 10
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "2",
@@ -381,8 +96,11 @@
       "processor": "Intel Core i9-13950HX",
       "price": "3499",
       "image": "/Laptop/AcerAspireVero.png",
-      "group": "MSI",
-      "rating": 4.5
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "3",
@@ -394,7 +112,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "2299",
       "image": "/Laptop/MSIStealth16Studio.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "4",
@@ -406,7 +128,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "1349",
       "image": "/Laptop/MSIPulse15.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "5",
@@ -418,7 +144,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1449",
       "image": "/Laptop/MSIKatanaGF76.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "6",
@@ -430,7 +160,11 @@
       "processor": "Intel Core i7-1260P",
       "price": "1599",
       "image": "/Laptop/MSIStealth14Studio.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "7",
@@ -442,7 +176,11 @@
       "processor": "Intel Core i9-12900HK",
       "price": "2899",
       "image": "/Laptop/DellXPS15.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "8",
@@ -454,7 +192,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1099",
       "image": "/Laptop/DellG15GamingLaptop.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "9",
@@ -466,7 +208,11 @@
       "processor": "Intel Core Ultra 7 165H",
       "price": "1888",
       "image": "/Laptop/Alienwarem18R2.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "10",
@@ -478,7 +224,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1299",
       "image": "/Laptop/DellG15GamingLaptop.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "11",
@@ -490,7 +240,11 @@
       "processor": "Intel Core i9-12900H",
       "price": "3999",
       "image": "/Laptop/DellPrecision5570.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "12",
@@ -502,7 +256,11 @@
       "processor": "Intel Core i7-1260U",
       "price": "2199",
       "image": "/Laptop/DellPrecision5570.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "13",
@@ -514,7 +272,11 @@
       "processor": "Intel Core i9-13900HX",
       "price": "3499",
       "image": "/Laptop/LenovoLegionPro7i.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "14",
@@ -526,7 +288,11 @@
       "processor": "Intel Core i7-1360P",
       "price": "1799",
       "image": "/Laptop/LenovoYoga9i.png",
-      "group": "Lenovo"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "15",
@@ -538,7 +304,11 @@
       "processor": "Intel Core i7-1365U",
       "price": "1699",
       "image": "/Laptop/LenovoThinkPadX1CarbonGen11.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "16",
@@ -550,7 +320,11 @@
       "processor": "AMD Ryzen 7 6800HS",
       "price": "1199",
       "image": "/Laptop/LenovoIdeaPadSlim7Pro.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "17",
@@ -562,7 +336,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "2099",
       "image": "/Laptop/LenovoLegionSlim7i.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "18",
@@ -574,7 +352,11 @@
       "processor": "AMD Ryzen 9 6900HX",
       "price": "2499",
       "image": "/Laptop/LenovoThinkBook16p.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "19",
@@ -585,8 +367,11 @@
       "graphics": "M2 Max GPU",
       "processor": "Apple M2 Max",
       "price": "4299",
-      "image": "/Laptop/MacBookPro16-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "20",
@@ -598,7 +383,11 @@
       "processor": "Apple M2 Pro",
       "price": "2499",
       "image": "/Laptop/MacBookPro16-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "21",
@@ -610,7 +399,11 @@
       "processor": "Apple M2",
       "price": "1299",
       "image": "/Laptop/MacBookAir15-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 0,
+      "group": "laptops"
     },
     {
       "id": "22",
@@ -622,7 +415,11 @@
       "processor": "Apple M2",
       "price": "1199",
       "image": "/Laptop/MacBookAir13-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "23",
@@ -634,7 +431,11 @@
       "processor": "Apple M2",
       "price": "1499",
       "image": "/Laptop/MacBookAir13-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "24",
@@ -646,7 +447,11 @@
       "processor": "Apple M1 Pro",
       "price": "2499",
       "image": "/Laptop/MacBookPro16-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "25",
@@ -658,7 +463,11 @@
       "processor": "Intel Core i9-13980HX",
       "price": "3899",
       "image": "/Laptop/ASUSROGZephyrusG14.png",
-      "group": "ASUS"
+      "brand": "MacBook",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "27",
@@ -670,7 +479,11 @@
       "processor": "AMD Ryzen 9 6900HS",
       "price": "1699",
       "image": "/Laptop/ASUSROGZephyrusG14.png",
-      "group": "ASUS"
+      "brand": "Asus",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "29",
@@ -682,11 +495,15 @@
       "processor": "Intel Core i7-11370H",
       "price": "1399",
       "image": "/Laptop/LenovoThinkPadX1CarbonGen11.png",
-      "group": "ASUS"
+      "brand": "Lenovo",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "30",
-      "name": "ASUS Experook B9",
+      "name": "HP Experook B9",
       "model": "B9400",
       "storage": "512",
       "ram": "16",
@@ -694,7 +511,11 @@
       "processor": "Intel Core i7-1165G7",
       "price": "1799",
       "image": "/Laptop/HPPavilionPlus14.png",
-      "group": "ASUS"
+      "brand": "HP",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "31",
@@ -706,7 +527,11 @@
       "processor": "Intel Core i9-13900HX",
       "price": "2999",
       "image": "/Laptop/AcerPredatorHelios16.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "32",
@@ -718,7 +543,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1299",
       "image": "/Laptop/AcerNitro5.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "33",
@@ -730,7 +559,11 @@
       "processor": "Intel Core i7-1255U",
       "price": "1099",
       "image": "/Laptop/AcerAspireVero.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "34",
@@ -742,7 +575,11 @@
       "processor": "Intel Core i9-12900H",
       "price": "2999",
       "image": "/Laptop/AcerPredatorTriton500SE.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "35",
@@ -754,7 +591,11 @@
       "processor": "Intel Core i5-1240P",
       "price": "999",
       "image": "/Laptop/AcerChromebookSpin714.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "36",
@@ -766,7 +607,11 @@
       "processor": "AMD Ryzen 5 5500U",
       "price": "799",
       "image": "/Laptop/AcerAspire7.png",
-      "group": "Acer"
+      "brand": "Acer",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "37",
@@ -778,7 +623,11 @@
       "processor": "Intel Core i7-1260P",
       "price": "1699",
       "image": "/Laptop/HPSpectrex36016.png",
-      "group": "HP"
+      "brand": "HP",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "38",
@@ -790,7 +639,11 @@
       "processor": "Intel Core i9-12900HX",
       "price": "2899",
       "image": "/Laptop/HPOmen17.png",
-      "group": "HP"
+      "brand": "HP",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "39",
@@ -802,7 +655,11 @@
       "processor": "Intel Core i7-1260P",
       "price": "1299",
       "image": "/Laptop/HPEnvyx36015.png",
-      "group": "HP"
+      "brand": "HP",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "40",
@@ -814,7 +671,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "999",
       "image": "/Laptop/HPPavilionPlus14.png",
-      "group": "HP"
+      "brand": "HP",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "41",
@@ -826,7 +687,11 @@
       "processor": "Intel Core i9-12900H",
       "price": "4499",
       "image": "/Laptop/HPZBookStudioG9.png",
-      "group": "HP"
+      "brand": "HP",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "42",
@@ -838,7 +703,11 @@
       "processor": "Intel Core i7-1265U",
       "price": "2599",
       "image": "/Laptop/HPEliteDragonflyG3.png",
-      "group": "HP"
+      "brand": "HP",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "12f9",
@@ -850,7 +719,11 @@
       "processor": "Intel Core i9-13980HX",
       "price": "5499",
       "image": "/Laptop/MSIKatanaGF76.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "0266",
@@ -862,7 +735,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "2299",
       "image": "/Laptop/MSIStealth16Studio.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "bb76",
@@ -874,7 +751,11 @@
       "processor": "Intel Core i7-13700H",
       "price": "1349",
       "image": "/Laptop/MSIPulse15.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "5c9f",
@@ -886,7 +767,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1449",
       "image": "/Laptop/MSIKatanaGF76.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "a3e3",
@@ -898,7 +783,11 @@
       "processor": "Intel Core i7-1260P",
       "price": "1599",
       "image": "/Laptop/MSIPulse15.png",
-      "group": "MSI"
+      "brand": "MSI",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "6eb0",
@@ -910,7 +799,11 @@
       "processor": "Intel Core i9-12900HK",
       "price": "2899",
       "image": "/Laptop/DellXPS15.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "3ebe",
@@ -922,7 +815,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1099",
       "image": "/Laptop/DellG15GamingLaptop.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "3edb",
@@ -934,7 +831,11 @@
       "processor": "Intel Core Ultra 7 165H",
       "price": "1888",
       "image": "/Laptop/Alienwarem18R2.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "bcdd",
@@ -946,7 +847,11 @@
       "processor": "Intel Core i7-12700H",
       "price": "1299",
       "image": "/Laptop/DellG15GamingLaptop.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "6c26",
@@ -958,7 +863,11 @@
       "processor": "Intel Core i7-1260U",
       "price": "2199",
       "image": "/Laptop/DellPrecision5570.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "212a",
@@ -970,7 +879,11 @@
       "processor": "Intel Core i9-12900H",
       "price": "3999",
       "image": "/Laptop/DellPrecision5570.png",
-      "group": "Dell"
+      "brand": "Dell",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "4828",
@@ -982,7 +895,11 @@
       "processor": "Intel Core i9-13900HX",
       "price": "3499",
       "image": "/Laptop/LenovoLegionPro7i.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "cbeb",
@@ -994,7 +911,11 @@
       "processor": "Intel Core i7-1360P",
       "price": "1799",
       "image": "/Laptop/LenovoYoga9i.png",
-      "group": "Lenovo"
+      "brand": "Lenovo",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "4c7a",
@@ -1006,7 +927,11 @@
       "processor": "Apple M2 Pro",
       "price": "2499",
       "image": "/Laptop/MacBookPro16-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     },
     {
       "id": "3e5b",
@@ -1018,81 +943,11 @@
       "processor": "Apple M2",
       "price": "1299",
       "image": "/Laptop/MacBookAir15-inch.png",
-      "group": "MacBook"
+      "brand": "MacBook",
+      "rating": 4.5,
+      "reviews": 100,
+      "stock": 10,
+      "group": "laptops"
     }
-  ],
-  "motherboards": [
-    {
-      "id": "3972",
-      "name": "GIGABYTE X870E AORUS ELITE WIFI7 AM5 LGA 1718, ATX, DDR5, 4x M.2, PCIe 5.0, USB4, Wi-Fi 7, 2.5GbE LAN, EZ-Latch",
-      "price": 1299,
-      "image": "/MotherBoards/Gigabyte.png",
-      "productCod": "X870E AORUS ELITE WIFI7",
-      "group": "mother-board"
-    },
-    {
-      "id": "78bf",
-      "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
-      "price": 455,
-      "image": "/MotherBoards/X870E.png",
-      "productCod": "X870E AORUS PRO ICE",
-      "group": "mother-board"
-    },
-    {
-      "id": "070e",
-      "name": "MSI MPG X870E CARBON AM5 ATX Gaming Motherboard, 4x SATA 6Gb/s, AMD Wi-Fi 7,USB 4.0",
-      "price": 255,
-      "image": "/MotherBoards/AIPC.png",
-      "productCod": "MPG X870E CARBON WIFI",
-      "group": "mother-board"
-    }
-  ],
-  "cpu": [
-    {
-      "id": "386a",
-      "name": "Intel Core i9-13980HX",
-      "price": 999,
-      "image": "/CPU/AMD7.png",
-      "group": "cpu",
-      "brand": "AMD"
-    }
-  ],
-  "monitor": [],
-  "speaker": [],
-  "controller": [],
-  "power-supply-unit": [],
-  "mouse": [],
-  "keyboard": [],
-  "usb": [],
-  "microphone": [],
-  "cooling-fans": [],
-  "bluetooth-adapter": [],
-  "msi": [],
-  "asus": [],
-  "apple": [],
-  "hp": [],
-  "lenovo": [],
-  "acer": [],
-  "hdd": [],
-  "ssd": [],
-  "nvme-drives": [],
-  "external-hard-drivers": [],
-  "memory-cards": [],
-  "usb-flash-drivers": [],
-  "cloud-storage": [],
-  "raid-systems": [],
-  "nas": [],
-  "accessories": [],
-  "laptops-bages": [],
-  "gaming-headsets": [],
-  "external-dvd-drivers": [],
-  "docking-stations": [],
-  "external-keyboard": [],
-  "mouse-pads": [],
-  "cable-organizer": [],
-  "power-bank": [],
-  "screen-protector": [],
-  "webcams": [],
-  "usb-hubs": [],
-  "adapters-and-converters": []
+  ]
 }

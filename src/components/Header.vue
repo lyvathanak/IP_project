@@ -170,7 +170,7 @@ export default {
   methods: {
     async fetchLaptops() {
       try {
-        const response = await axios.get("http://localhost:3000/laptops");
+        const response = await axios.get("http://localhost:3000/products");
         this.filteredLaptops = response.data;
       } catch (error) {
         console.error("Error fetching laptops:", error);
@@ -183,7 +183,7 @@ export default {
       }
 
       try {
-        const response = await axios.get("http://localhost:3000/laptops");
+        const response = await axios.get("http://localhost:3000/products");
         this.searchResults = response.data
           .filter(
             (laptop) =>

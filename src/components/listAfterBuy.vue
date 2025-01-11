@@ -7,7 +7,7 @@
           <th>Price</th>
           <th>Quantity</th>
           <th>Subtotal</th>
-          <th>Action</th>
+          <th class="action">Action</th>
         </tr>
       </thead>
       <tbody v-if="cart.length">
@@ -40,35 +40,18 @@
     </table>
   </div>
 
+ <div class="calculate">
   <div class="btn-add">
     <Button :label="'Add Products'" class="btn-add-product" />
   </div>
 
   <div class="all">
-    <form class="apply-coupon" @submit.prevent="applyCoupon">
-      <input
-        id="CouponCode"
-        placeholder="Enter Coupon Code"
-        v-model="couponCode"
-        class="input-coupon"
-      />
-      <Button
-        type="submit"
-        :label="'Apply Coupon'"
-        class="btn-apply-coupon"
-      />
-    </form>
-
     <div class="summary">
       <p class="text-cart">Cart Summary</p>
       <div class="cart-total">
         <div class="price">
           <p>Subtotal</p>
           <p>${{ cartSubtotal }}</p>
-        </div>
-        <div class="price">
-          <p>Discount</p>
-          <p v-if="discount">{{ discount + '%' }}</p>
         </div>
         <div class="price">
           <p>Shipping</p>
@@ -84,44 +67,29 @@
       </div>
     </div>
   </div>
+ </div>
 </template>
 
 <script>
 import axios from "axios";
 import Button from "./Button.vue";
-import { RouterLink } from "vue-router";
-
 
 export default {
   components: {
- Button,
+    Button,
   },
   data() {
     return {
       cart: [],
       discount: 0,
       shipping: "Free",
-      couponCodes: ["SAVE10", "SAVE20", "WELCOME5"],
-      couponCode: "",
-    }
+    };
   },
   methods: {
-    applyCoupon() {
-      const discounts = { SAVE10: 10, SAVE20: 20, WELCOME5: 5 };
-      if (this.couponCodes.includes(this.couponCode)) {
-        this.discount = discounts[this.couponCode];
-        alert(`Coupon applied: ${this.discount}% off!`);
-      } else {
-        this.discount = 0;
-        alert("Invalid coupon code.");
-      }
+    removeItem() {
+    
     },
-    removeItem(index) {
-      // this.cart.splice(index, 1);
-      const cartStore = useCartStore();
-      cartStore.removeFromCart(index);
-    },
-    editItem(index) {
+    editItem() {
       alert(`Edit item at index ${index}`);
     },
   },
@@ -135,151 +103,27 @@ export default {
       const userId = loggedInUser.id;
       const response = await axios.get(`http://localhost:3000/users/${userId}`);
       this.cart = response.data.userCart || [];
-      const productIds = this.cart.map((item) => item.productId);
-      const param= { params: { ids: productIds.join(",") } };
-      if (productIds.length > 0) {
-          const [
-          laptopsRes,
-          motherboardsRes,
-          cpuRes,
-          monitorRes,
-          speakerRes,
-          controllerRes,
-          powerSupplyUnitRes,
-          mouseRes,
-          keyboardRes,
-          usbRes,
-          microphoneRes,
-          coolingFansRes,
-          bluetoothAdapterRes,
-          msiRes,
-          asusRes,
-          appleRes,
-          hpRes,
-          lenovoRes,
-          acerRes,
-          hddRes,
-          ssdRes,
-          nvmeDrivesRes,
-          externalHardDriversRes,
-          memoryCardsRes,
-          usbFlashDriversRes,
-          cloudStorageRes,
-          raidSystemsRes,
-          nasRes,
-          accessoriesRes,
-          laptopsBagsRes,
-          gamingHeadsetsRes,
-          externalDvdDriversRes,
-          dockingStationsRes,
-          externalKeyboardRes,
-          mousePadsRes,
-          cableOrganizerRes,
-          powerBankRes,
-          screenProtectorRes,
-          webcamsRes,
-          usbHubsRes,
-          adaptersAndConvertersRes
-          ] = await Promise.all([
-          axios.get(`http://localhost:3000/laptops`, param),
-          axios.get(`http://localhost:3000/motherboards`, param),
-          axios.get(`http://localhost:3000/cpu`, param),
-          axios.get(`http://localhost:3000/monitor`, param),
-          axios.get(`http://localhost:3000/speaker`, param),
-          axios.get(`http://localhost:3000/controller`, param),
-          axios.get(`http://localhost:3000/power-supply-unit`, param),
-          axios.get(`http://localhost:3000/mouse`, param),
-          axios.get(`http://localhost:3000/keyboard`, param),
-          axios.get(`http://localhost:3000/usb`, param),
-          axios.get(`http://localhost:3000/microphone`, param),
-          axios.get(`http://localhost:3000/cooling-fans`, param),
-          axios.get(`http://localhost:3000/bluetooth-adapter`, param),
-          axios.get(`http://localhost:3000/msi`, param),
-          axios.get(`http://localhost:3000/asus`, param),
-          axios.get(`http://localhost:3000/apple`, param),
-          axios.get(`http://localhost:3000/hp`, param),
-          axios.get(`http://localhost:3000/lenovo`, param),
-          axios.get(`http://localhost:3000/acer`, param),
-          axios.get(`http://localhost:3000/hdd`, param),
-          axios.get(`http://localhost:3000/ssd`, param),
-          axios.get(`http://localhost:3000/nvme-drives`, param),
-          axios.get(`http://localhost:3000/external-hard-drivers`, param),
-          axios.get(`http://localhost:3000/memory-cards`, param),
-          axios.get(`http://localhost:3000/usb-flash-drivers`, param),
-          axios.get(`http://localhost:3000/cloud-storage`, param),
-          axios.get(`http://localhost:3000/raid-systems`, param),
-          axios.get(`http://localhost:3000/nas`, param),
-          axios.get(`http://localhost:3000/accessories`, param),
-          axios.get(`http://localhost:3000/laptops-bages`, param),
-          axios.get(`http://localhost:3000/gaming-headsets`, param),
-          axios.get(`http://localhost:3000/external-dvd-drivers`, param),
-          axios.get(`http://localhost:3000/docking-stations`, param),
-          axios.get(`http://localhost:3000/external-keyboard`, param),
-          axios.get(`http://localhost:3000/mouse-pads`, param),
-          axios.get(`http://localhost:3000/cable-organizer`, param),
-          axios.get(`http://localhost:3000/power-bank`, param),
-          axios.get(`http://localhost:3000/screen-protector`, param),
-          axios.get(`http://localhost:3000/webcams`, param),
-          axios.get(`http://localhost:3000/usb-hubs`, param),
-          axios.get(`http://localhost:3000/adapters-and-converters`, param)
-        ]);
-
-        const allProducts = [
-          ...laptopsRes.data,
-          ...motherboardsRes.data,
-          ...cpuRes.data, ...monitorRes.data,
-          ...speakerRes.data, ...controllerRes.data,
-          ...powerSupplyUnitRes.data, ...mouseRes.data,
-          ...keyboardRes.data, ...usbRes.data,
-          ...microphoneRes.data,
-          ...coolingFansRes.data,
-          ...bluetoothAdapterRes.data,
-          ...msiRes.data,
-          ...asusRes.data,
-          ...appleRes.data,
-          ...hpRes.data,
-          ...lenovoRes.data,
-          ...acerRes.data,
-          ...hddRes.data,
-          ...ssdRes.data,
-          ...nvmeDrivesRes.data,
-          ...externalHardDriversRes.data,
-          ...memoryCardsRes.data,
-          ...usbFlashDriversRes.data,
-          ...cloudStorageRes.data,
-          ...raidSystemsRes.data,
-          ...nasRes.data,
-          ...accessoriesRes.data,
-          ...laptopsBagsRes.data,
-          ...gamingHeadsetsRes.data,
-          ...externalDvdDriversRes.data,
-          ...dockingStationsRes.data,
-          ...externalKeyboardRes.data,
-          ...mousePadsRes.data,
-          ...cableOrganizerRes.data,
-          ...powerBankRes.data,
-          ...screenProtectorRes.data,
-          ...webcamsRes.data,
-          ...usbHubsRes.data,
-          ...adaptersAndConvertersRes.data
-        ];
+      
+      if (this.cart.length > 0) {
+        const productIds = this.cart.map((item) => item.productId).join(",");
+        const productsResponse = await axios.get(`http://localhost:3000/products`, {
+          params: { ids: productIds }
+        });
+        const products = productsResponse.data;
 
         this.cart = this.cart.map((item) => {
-          const product = allProducts.find(
-            (product) => product.id === item.productId
-          );
+          const product = products.find((product) => product.id === item.productId);
           return {
             ...item,
             image: product?.image || "",
             price: product?.price || 0,
           };
         });
-        };
-      } catch (error) {
+      }
+    } catch (error) {
       console.error("Error fetching cart:", error);
     }
   },
-
   computed: {
     cartSubtotal() {
       return this.cart.reduce(
@@ -291,7 +135,7 @@ export default {
       return this.cartSubtotal - (this.cartSubtotal * this.discount) / 100;
     },
   },
-}; 
+};
 </script>
 
   <style scoped>
@@ -314,6 +158,18 @@ padding-bottom: 0px;
 background-color: #FBFBFB;
 margin-right:20px;
 }
+.action{
+  margin-left: 110px;
+}
+.calculate{
+  padding-top: auto;
+  padding-left: 210px;
+  padding-right: 210px;
+  display: flex;
+  padding-bottom: auto;
+  justify-content:space-between;
+  border-bottom: 1px solid black;
+}
 input:focus{
     border: 1px #dbdbdb solid;
     border-radius: 9px;
@@ -333,13 +189,7 @@ input[type="text"] {
   .all{
     display: flex;
     justify-content: space-between;
-    padding:10px 210px;
-    align-items: start;
     border-bottom: 1px solid black;
-  }
-  .btn-add{
-    padding-top: 20px;
-    padding-left: 210px;
   }
   .summary{
     display: flex;
@@ -349,11 +199,12 @@ input[type="text"] {
   }
   .cart-total{
     width: 330px;
-    padding: 10px;
+    padding: 10px 10px 50% 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap:12px;
+    border-bottom: none;
   }
   .price{
     display: flex;
@@ -379,11 +230,11 @@ input[type="text"] {
     display: flex;
     align-items: center;
   }
-  .btn-delete{
+  .btn-delete,.btn-edit{
     padding:8px 20px;
     border-radius: 1px;
     font-size: 16px;
-    margin-left: 12px;
+    margin-right: 24px;
   }
   .cart-table {
     width: 100%;
@@ -394,8 +245,8 @@ input[type="text"] {
   .cart{
     display: flex;
     flex-direction: column;
-    border-bottom: none;
-    
+    border-bottom: 1px solid rgb(127, 127, 127);
+    padding-bottom:25px;
   }
   .btn-add-product{
     padding:14px 24px;
