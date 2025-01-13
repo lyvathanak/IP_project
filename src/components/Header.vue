@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <RouterLink to="/" class="logo">GOODDeal</RouterLink>
+    <RouterLink to="/" class="logo">GOODeal</RouterLink>
     <nav class="nav">
       <ul>
         <li
@@ -237,24 +237,28 @@ export default {
 <style scoped>
 .header {
   background-color: black;
-  padding: 0 20px;
-  height: 60px;
+  padding: 0 30px;
+  height: 80px; /* Adjusted height for a larger logo */
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  font-family: "Abhaya Libre", serif; /* Default font for navigation and actions */
 }
 
 .logo {
   color: white;
   text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 64px; /* Bigger logo size */
+  font-family: "ADLaM Display", sans-serif; /* Font for the logo */
+  font-weight: 700; /* Bold for better visibility */
+  letter-spacing: 1.5px; /* Spacing for clarity */
+  text-transform: uppercase; /* Capitalized text for the logo */
 }
 
 .nav ul {
   display: flex;
-  gap: 30px;
+  gap: 40px; /* More spacing between menu items */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -263,12 +267,15 @@ export default {
 .nav a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 16px; /* Slightly larger text for readability */
+  font-family: "Abhaya Libre", serif; /* Font for navigation items */
+  font-weight: 500;
+  text-transform: uppercase; /* Capitalized for uniformity */
 }
 
 .nav li {
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -285,20 +292,21 @@ export default {
 
 .actions {
   display: flex;
-  gap: 20px;
+  gap: 24px; /* Spacing between action icons */
   align-items: center;
 }
 
 .icon {
   color: white;
-  font-size: 24px;
+  font-size: 24px; /* Adjusted size for icons */
   cursor: pointer;
+  transition: color 0.3s;
 }
 
 /* Dropdown styles */
 .dropdown {
   position: absolute;
-  top: 60px;
+  top: 80px; /* Adjusted for the new header height */
   left: 0;
   width: 100%;
   background-color: black;
@@ -312,7 +320,9 @@ export default {
 .dropdown-item {
   color: white;
   text-decoration: none;
+  font-size: 14px;
   padding: 8px 16px;
+  font-family: "Abhaya Libre", serif; /* Font for dropdown items */
   transition: background-color 0.2s;
 }
 
@@ -323,7 +333,7 @@ export default {
 /* Search bar styles */
 .search-container {
   position: absolute;
-  top: 60px;
+  top: 80px; /* Adjusted for the new header height */
   left: 0;
   width: 100%;
   background-color: white;
@@ -344,6 +354,7 @@ export default {
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-family: "Abhaya Libre", serif; /* Font for search input */
 }
 
 .search-results {
@@ -387,3 +398,5 @@ export default {
   color: #888;
 }
 </style>
+
+
