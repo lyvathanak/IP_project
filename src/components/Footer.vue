@@ -34,29 +34,31 @@
                 <!-- Social Media Links -->
                 <div class="social">
                     <p style="color: gray;">Social Media</p>
-                    <a href="#" aria-label="Facebook">
+                    <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                         <Icon icon="uil:facebook" width="24" height="24" />
                     </a>
-                    <a href="#" aria-label="Twitter">
+                    <a href="https://www.twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                         <Icon icon="uil:twitter" width="24" height="24" />
                     </a>
-                    <a href="#" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                         <Icon icon="uil:linkedin" width="24" height="24" />
                     </a>
-                    <a href="#" aria-label="Instagram">
+                    <a href="https://www.instagram.com" aria-label="Instagram" target="_blank"
+                        rel="noopener noreferrer">
                         <Icon icon="il:instagram" width="24" height="24" />
                     </a>
 
-                    <a href="#" aria-label="YouTube">
+                    <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                         <Icon icon="il:youtube" width="24" height="24" />
                     </a>
-                    <a href="#" aria-label="Google">
+                    <a href="https://www.google.com" aria-label="Google" target="_blank" rel="noopener noreferrer">
                         <Icon icon="uil:google" width="24" height="24" />
                     </a>
-                    <a href="#" aria-label="Pinterest">
+                    <a href="https://www.pinterest.com" aria-label="Pinterest" target="_blank"
+                        rel="noopener noreferrer">
                         <Icon icon="mdi:pinterest" width="24" height="24" />
                     </a>
-                    <a href="#" aria-label="RSS">
+                    <a href="https://www.rss.com" aria-label="RSS" target="_blank" rel="noopener noreferrer">
                         <Icon icon="uil:rss" width="24" height="24" />
                     </a>
                 </div>
@@ -66,11 +68,11 @@
         <!-- Bottom Section -->
         <div class="footer-bottom">
             <nav>
-                <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Help</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Disclaimer</a>
+                <RouterLink to="/about-us" aria-label="About Us">About Us</RouterLink>
+                <RouterLink to="/contact-us" aria-label="Contact Us">Contact Us</RouterLink>
+                <RouterLink to="/help" aria-label="Help">Help</RouterLink>
+                <RouterLink to="/privacy-policy" aria-label="Privacy Policy">Privacy Policy</RouterLink>
+                <RouterLink to="/disclaimer" aria-label="Disclaimer">Disclaimer</RouterLink>
             </nav>
         </div>
     </div>
