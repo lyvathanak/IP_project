@@ -2,7 +2,8 @@
   <div class="frame">
     <div class="container">
       <img :src="userInfo.profileImage || 'default-image-url.jpg'" alt="Profile Image" class="profile" >
-        <input type="file" id="media" accept="image/*" @change="handleFileUpload" class="upload" />
+        <label for="file-upload" class="custom-file-upload">Upload Profile Picture</label>
+        <input id="file-upload" class="upload" type="file" accept="image/*" @change="handleFileUpload">
     <div v-if="!isEditing" class="box">
       <div class="header">
       <h1>Account</h1>
@@ -168,29 +169,28 @@
   border-radius: 50%; 
   border: 1px solid gray;
 }
-.upload {
-  width: 120px;
-  height: 45px;
-  margin: 8px 14px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 45px;
-}
+input[type="file"] {
+        display: none;
+    }
 
-.upload:hover {
-  background-color: #0056b3;
-}
-
+    .custom-file-upload {
+        border: 1px solid black;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        font-weight: 500;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
 .conC{
   display: flex;
   justify-content: space-between;
   width: 710px;
   align-items: end;
 }
+
 .inputClass1 {
   border: 0.5px solid gray;
   border-radius: 10px;

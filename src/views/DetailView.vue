@@ -95,6 +95,10 @@
      }
    },
    async ItemsCard() {
+    if (this.product.stock <= 0) {
+    alert("This product is out of stock and cannot be added to the cart.");
+    return;
+  }
      const productCart = {
      productId: this.product.id,
      name: this.product.name,

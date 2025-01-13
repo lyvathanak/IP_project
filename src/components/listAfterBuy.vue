@@ -40,7 +40,7 @@
 
  <div class="calculate" v-if="cart.length">
   <div class="btn-add">
-    <Button :label="'Add Products'" class="btn-add-product" />
+    <Button :label="'Add Products'" class="btn-add-product"   @click="navigateToAllComponents" />
   </div>
 
   <div class="all">
@@ -84,6 +84,9 @@ export default {
     };
   },
   methods: {
+    navigateToAllComponents(){
+ this.$router.push(`/products/all-components`)
+    },
     async removeItemFromCart(itemId) {
   try {
     this.userId = JSON.parse(localStorage.getItem("user-info"))?.id;
