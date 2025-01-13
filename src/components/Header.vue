@@ -98,7 +98,7 @@
           <RouterLink
             v-for="result in searchResults"
             :key="result.id"
-            :to="`/product/${result.id}`"
+            :to="`/product-details/${result.id}`"
             class="search-result-item"
             @click="hideSearch"
           >
@@ -160,18 +160,16 @@ export default {
         "Headset",
         "Webcam",
       ],
-      filteredLaptops: [], // Holds the filtered laptops based on category
     };
   },
   created() {
-    // Fetch all laptops when the component is created to populate the list
-    this.fetchLaptops();
+    this.fetchProducts();
   },
   methods: {
-    async fetchLaptops() {
+    async fetchProducts() {
       try {
         const response = await axios.get("http://localhost:3000/products");
-        this.filteredLaptops = response.data;
+        this.fetchProducts = response.data;
       } catch (error) {
         console.error("Error fetching laptops:", error);
       }
@@ -186,13 +184,12 @@ export default {
         const response = await axios.get("http://localhost:3000/products");
         this.searchResults = response.data
           .filter(
-            (laptop) =>
-              laptop.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-              laptop.group.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-              laptop.model.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-              laptop.processor.toLowerCase().includes(this.searchQuery.toLowerCase())
+            (products) =>
+              products.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+              products.group.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+              products.brand.toLowerCase().includes(this.searchQuery.toLowerCase())
           )
-          .slice(0, 5); // Limits the results to top 5 matches
+          .slice(0, 5); 
       } catch (error) {
         console.error("Error fetching search results:", error);
         this.searchResults = [];
@@ -213,23 +210,9 @@ export default {
       this.searchQuery = "";
       this.searchResults = [];
     },
-    filterByCategory(category, item) {
-      // Filters based on category and group
-      if (category === 'laptops') {
-        this.filteredLaptops = this.filteredLaptops.filter(
-          (laptop) => laptop.group.toLowerCase() === item.toLowerCase() || item === 'All Laptops'
-        );
-      }
-      // You can add more filter logic for other categories here (components, storage, accessories)
-    },
   },
   watch: {
-    // Watch for changes in the route and filter laptops accordingly
-    "$route.params.group": function(newGroup) {
-      if (newGroup) {
-        this.filterByGroup(newGroup);
-      }
-    },
+
   },
 };
 </script>
