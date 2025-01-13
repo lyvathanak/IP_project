@@ -10,8 +10,11 @@
           <th class="action">Action</th>
         </tr>
       </thead>
-      <tbody v-if="cart.length">
-        <tr v-for="(item, index) in cart" :key="item.productId">
+      <div class="empty" style="display: flex; align-items: center; justify-content: center; padding-top: 30px; font-size: 70px; padding-left: 120px;" v-if="!cart.length">
+       Your Card is Empty
+      </div>
+      <tbody v-else-if="cart.length">
+        <tr v-for="item in cart" :key="item.productId">
           <td class="product">
             <img :src="item.image" :alt="item.name" class="product-image" />
             <p class="name">{{ item.name }}</p>
@@ -35,7 +38,7 @@
     </table>
   </div>
 
- <div class="calculate">
+ <div class="calculate" v-if="cart.length">
   <div class="btn-add">
     <Button :label="'Add Products'" class="btn-add-product" />
   </div>
@@ -265,7 +268,6 @@ input[type="text"] {
   .cart{
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid rgb(127, 127, 127);
     padding-bottom:25px;
   }
   .btn-add-product{

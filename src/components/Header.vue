@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" >
     <RouterLink to="/" class="logo">GOODeal</RouterLink>
     <nav class="nav">
       <ul>
@@ -100,7 +100,7 @@
             :key="result.id"
             :to="`/product-details/${result.id}`"
             class="search-result-item"
-            @click="hideSearch"
+            @click="handleProductClick(result.id)"
           >
             <img :src="result.image" :alt="result.name" class="result-image">
             <div class="result-info">
@@ -205,6 +205,11 @@ export default {
         this.searchResults = [];
       }
     },
+   async handleProductClick(id) {
+      this.hideSearch()
+      await this.$router.push(`/product-details/${id}`);
+      window.location.reload();
+  },
     hideSearch() {
       this.isSearchVisible = false;
       this.searchQuery = "";
