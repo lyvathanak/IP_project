@@ -107,6 +107,11 @@ export default {
   }
 },
 
+
+
+    async editItem() {
+      alert(`Edit item at index ${index}`);
+    },
   },
   async created() {
     try {
