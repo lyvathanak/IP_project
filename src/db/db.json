@@ -20,14 +20,7 @@
           ]
         }
       ],
-      "userCart": [
-        {
-          "productId": "070e",
-          "name": "MSI MPG X870E CARBON AM5 ATX Gaming Motherboard, 4x SATA 6Gb/s, AMD Wi-Fi 7,USB 4.0",
-          "quantity": 1,
-          "group": "mother-board"
-        }
-      ],
+      "userCart": [],
       "invoices": [
         {
           "invoiceId": "INV1736582413695",
