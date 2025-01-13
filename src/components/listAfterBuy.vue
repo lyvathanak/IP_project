@@ -29,11 +29,6 @@
             @click="removeItemFromCart(item.productId)"
             class="btn-delete"
           />
-            <Button
-              :label="'Edit'"
-              @click="editItem(index)"
-              class="btn-edit"
-            />
           </td>
         </tr>
       </tbody>
