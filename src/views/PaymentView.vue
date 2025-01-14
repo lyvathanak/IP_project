@@ -12,11 +12,14 @@
                 v-model="field.value"
                 :placeholder="field.placeholder"
                 :type="field.type"
+                 :class="{'input-error': errors[field.id]}"
               />
+              <span v-if="errors[field.id]" class="error-message">{{ errors[field.id] }}</span>
             </div>
             <div class="check-container">
               <input type="checkbox" id="terms" v-model="terms" />
               <label for="terms">Accept terms and conditions</label>
+              <span v-if="errors.terms" class="error-message">{{ errors.terms }}</span>
             </div>
           </div>
 
@@ -74,7 +77,9 @@
             id="CardHolder"
             v-model="cardHolder"
             placeholder="Card Holder"
+              :class="{'input-error': errors.cardHolder}"
           />
+          <span v-if="errors.cardHolder" class="error-message">{{ errors.cardHolder }}</span>
         </div>
         <div class="in">
           <label for="CardNumber">Card Number</label>
@@ -83,7 +88,9 @@
             v-model="cardNumber"
             placeholder="Card Number"
             class="input-card"
+             :class="{'input-error': errors.cardNumber}"
           />
+          <span v-if="errors.cardNumber" class="error-message">{{ errors.cardNumber }}</span>
         </div>
         <div class="cvv-exp">
           <div class="in">
@@ -93,7 +100,9 @@
               v-model="expireDate"
               placeholder="Expire Date"
               class="input-exp"
+               :class="{'input-error': errors.expireDate}"
             />
+            <span v-if="errors.expireDate" class="error-message">{{ errors.expireDate }}</span>
           </div>
           <div class="in">
             <label for="CVC">CVC</label>
@@ -102,7 +111,9 @@
               v-model="cvc"
               placeholder="CVC"
               class="input-cexp"
+                :class="{'input-error': errors.cvc}"
             />
+            <span v-if="errors.cvc" class="error-message">{{ errors.cvc }}</span>
           </div>
         </div>
       </div>
@@ -137,6 +148,7 @@ export default {
       { id: "phoneNumber", label: "Phone Number", value: "", placeholder: "Your Phone Number", type: "text" },
       { id: "emailAddress", label: "Email Address", value: "", placeholder: "Your Email Address", type: "email" },
       ],
+      errors: {},
       paymentMethods: [
         { label: "Bank", groupName: "paymentMethod", images: [Bkas, MasterCard, Visa, BankCard] },
         { label: "Cash", groupName: "paymentMethod", images: [] },
@@ -163,7 +175,7 @@ export default {
   methods: {
     selectPaymentMethod(method) {
       this.selectedPaymentMethod = method;
-      if (method === 'Bank') {
+      if (!method === 'Bank') {
         this.cardHolder = "";
         this.cardNumber = "";
         this.expireDate = "";
@@ -176,7 +188,44 @@ export default {
         this.cvc = "";
       }
     },
+    validate() {
+      this.errors = {};
+
+      // Validate required fields
+      this.fields.forEach(field => {
+        if (!field.value) {
+          this.errors[field.id] = `${field.label} is required`;
+        }
+      });
+
+      // Validate terms
+      if (!this.terms) {
+        this.errors.terms = "You must accept the terms and conditions.";
+      }
+
+      // Validate card details (only for Bank payment method)
+      if (this.selectedPaymentMethod === 'Bank') {
+        if (!this.cardHolder) {
+          this.errors.cardHolder = "Card holder name is required.";
+        }
+        if (!this.cardNumber) {
+          this.errors.cardNumber = "Card number is required.";
+        }
+        if (!this.expireDate) {
+          this.errors.expireDate = "Expiration date is required.";
+        }
+        if (!this.cvc) {
+          this.errors.cvc = "CVC is required.";
+        }
+      }
+
+      // Return true if no errors
+      return Object.keys(this.errors).length === 0;
+    },
     async handleSubmit() {
+      if (!this.validate()) {
+        return;
+      }
       console.log("Selected payment method:", this.selectedPaymentMethod);
       try {
         const loggedUser = JSON.parse(localStorage.getItem("user-info"));
@@ -290,6 +339,13 @@ export default {
 
 
 <style scoped>
+.input-error {
+  border-color: red;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+}
 .sys::placeholder {
   font-family: 'Arial', sans-serif; /* Replace with your desired font */
   font-size: 16px;
@@ -426,7 +482,7 @@ img {
   justify-content: space-between;
   align-items: center;
 }
-.input-exp {
+.input-exp,.input-cexp {
   width: 190px;
 }
 .credit-card {
