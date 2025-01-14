@@ -29,7 +29,7 @@
           <td class="edit-delete">
             <Button
             :label="'Delete'"
-            @click="removeItemFromCart(item.productId)"
+            @click="removeItemFromCart(item.productIdd)"
             class="btn-delete"
           />
           </td>
@@ -101,7 +101,7 @@ export default {
     const user = userRes.data;
 
     // Filter out the item to be removed based on productId
-    user.userCart = user.userCart.filter(item => item.productId !== itemId);
+    user.userCart = user.userCart.filter(item => item.productIdd !== itemId);
 
     // Update the cart in the backend with the modified cart
     await axios.put(`http://localhost:3000/users/${this.userId}`, user);

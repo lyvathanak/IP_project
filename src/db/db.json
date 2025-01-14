@@ -35,10 +35,11 @@
       ],
       "userCart": [
         {
-          "productId": "070e",
-          "name": "MSI MPG X870E CARBON AM5 ATX Gaming Motherboard, 4x SATA 6Gb/s, AMD Wi-Fi 7,USB 4.0",
+          "productIdd": "1736855651297",
+          "productId": "386a",
+          "name": "Intel Core i9-13980HX",
           "quantity": 1,
-          "group": "mother-board"
+          "group": "cpu"
         }
       ],
       "invoices": [

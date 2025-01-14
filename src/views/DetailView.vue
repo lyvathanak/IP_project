@@ -100,6 +100,7 @@
     return;
   }
      const productCart = {
+      productIdd: `${Date.now()}`,
      productId: this.product.id,
      name: this.product.name,
      quantity: this.quantity,
