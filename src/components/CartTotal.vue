@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <h2>Your Cart</h2>
     <div v-if="cart.length">
@@ -86,4 +86,4 @@ export default {
   color: red;
   margin-top: 20px;
 }
-</style>
+</style> -->
