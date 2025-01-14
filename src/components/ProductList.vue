@@ -1,5 +1,5 @@
 <!-- filepath: /d:/Learning/I4_GIC/S1/InternetProgramming_I/Group_IP_Project/IP_project/src/components/ProductList.vue -->
-<template>
+<!-- <template>
     <div class="product-list">
       <h1>Product List</h1>
       <ul>
@@ -77,4 +77,4 @@
     flex-grow: 1;
     padding: 0 10px;
   }
-  </style>
+  </style> -->
