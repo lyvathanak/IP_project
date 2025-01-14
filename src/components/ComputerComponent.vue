@@ -119,17 +119,19 @@ export default {
         case "/products/bluetooth-adapter":
           return this.products.filter(item => item.group === "bluetooth-adapter").slice(0,this.showAllProducts);
         case "/products/msi":
-          return this.products.filter(item => item.brand === "msi").slice(0,this.showAllProducts);
+          return this.products.filter(item => item.brand === "MSI").slice(0,this.showAllProducts);
+        case "/products/dell":
+        return this.products.filter(item => item.brand === "Dell").slice(0,this.showAllProducts);
         case "/products/asus":
-          return this.products.filter(item => item.brand === "asus").slice(0,this.showAllProducts);
+          return this.products.filter(item => item.brand === "Asus").slice(0,this.showAllProducts);
         case "/products/apple":
-          return this.products.filter(item => item.brand === "apple").slice(0,this.showAllProducts);
+          return this.products.filter(item => item.brand === "Apple").slice(0,this.showAllProducts);
         case "/products/hp":
-          return this.products.filter(item => item.brand === "hp").slice(0,this.showAllProducts);
+          return this.products.filter(item => item.brand === "HP").slice(0,this.showAllProducts);
         case "/products/lenovo":
-          return this.products.filter(item => item.brand === "lenovo").slice(0,this.showAllProducts);
+          return this.products.filter(item => item.brand === "Lenovo").slice(0,this.showAllProducts);
         case "/products/acer":
-          return this.products.filter(item => item.brand === "acer").slice(0,this.showAllProducts);
+          return this.products.filter(item => item.brand === "Acer").slice(0,this.showAllProducts);
         case "/products/hdd":
           return this.products.filter(item => item.group === "hdd").slice(0,this.showAllProducts);
         case "/products/ssd":

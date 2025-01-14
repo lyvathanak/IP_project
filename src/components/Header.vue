@@ -30,7 +30,6 @@
               :key="index"
               :to="`/products/${item.toLowerCase().replace(/ /g, '-')}`"
               class="dropdown-item"
-              @click="filterByGroup(item)"
             >
               {{ item }}
             </RouterLink>
