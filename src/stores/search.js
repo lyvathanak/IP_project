@@ -20,9 +20,9 @@ export const useCounterStore = defineStore('counter', {
     async fetchProducts() {
       try {
         const urls = [
-          'http://localhost:3000/laptops',
-          'http://localhost:3000/cpu',
-          'http://localhost:3000/motherboards',
+          'http://localhost:5000/laptops',
+          'http://localhost:5000/cpu',
+          'http://localhost:5000/motherboards',
         ];
 
         const [laptopsRes,cpuRes,motherboardsRes] = await Promise.all([

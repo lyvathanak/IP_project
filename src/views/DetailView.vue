@@ -85,7 +85,7 @@
    async fetchDetails() {
      const id = this.$route.params.id;
      try {
-     const res= await axios.get(`http://localhost:3000/products/${id}`);	
+     const res= await axios.get(`http://localhost:5000/products/${id}`);	
      this.product = res.data;
      if (!this.product) {
       throw new Error("Product not found");
@@ -114,13 +114,13 @@
        return;
      }
  
-     const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
+     const userRes = await axios.get(`http://localhost:5000/users/${this.userId}`);
      const user = userRes.data;
 
      user.userCart = user.userCart || [];
      user.userCart.push(productCart);
  
-     await axios.put(`http://localhost:3000/users/${this.userId}`, user);
+     await axios.put(`http://localhost:5000/users/${this.userId}`, user);
      alert("Product added to cart!");
      window.location.href = 'http://localhost:5173/cart';
      } catch (error) {

@@ -30,7 +30,7 @@
   
       const fetchProducts = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/laptops');
+          const response = await axios.get('http://localhost:5000/laptops');
           products.value = response.data;
         } catch (error) {
           console.error('Error fetching products:', error);

@@ -76,7 +76,7 @@ export default {
   methods: {
     async fetchProducts() {
       try {
-        const response = await axios.get("http://localhost:3000/products");
+        const response = await axios.get("http://localhost:5000/products");
         this.products = response.data;
       } catch (error) {
         this.error = "Failed to fetch products";

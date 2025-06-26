@@ -38,7 +38,7 @@ export default {
     async login() {
       try {
         const result = await axios.get(
-          `http://localhost:3000/users?email=${this.email}&password=${this.password}`
+          `http://localhost:5000/users?email=${this.email}&password=${this.password}`
         );
         if (result.status === 200 && result.data.length > 0) {
           localStorage.setItem("user-info", JSON.stringify(result.data[0])); // Save user info

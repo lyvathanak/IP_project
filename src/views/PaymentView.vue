@@ -234,15 +234,15 @@ export default {
           items: items,
         };
 
-        const response = await axios.get(`http://localhost:3000/users/${userId}`);
+        const response = await axios.get(`http://localhost:5000/users/${userId}`);
         const updatedUser = response.data;
 
-        await axios.patch(`http://localhost:3000/users/${userId}`, {
+        await axios.patch(`http://localhost:5000/users/${userId}`, {
           userBought: [...updatedUser.userBought, newPurchase],
           userCart: [],
         });
 
-        await axios.patch(`http://localhost:3000/users/${userId}`, {
+        await axios.patch(`http://localhost:5000/users/${userId}`, {
           invoices: [...(updatedUser.invoices || []), invoice],
         });
 
@@ -263,14 +263,14 @@ export default {
       }
 
       const userId = loggedUser.id;
-      const response = await axios.get(`http://localhost:3000/users/${userId}`);
+      const response = await axios.get(`http://localhost:5000/users/${userId}`);
       this.cart = response.data.userCart || [];
 
       const productIds = this.cart.map(item => item.productId);
       const param = { params: { ids: productIds.join(",") } };
 
       if (productIds.length > 0) {
-        const products= await axios.get("http://localhost:3000/products", param);
+        const products= await axios.get("http://localhost:5000/products", param);
         const allProducts = products.data;
         this.cart = this.cart.map((item) => {
           const product = allProducts.find((product) => product.id === item.productId);

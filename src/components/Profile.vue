@@ -105,7 +105,7 @@
           ...this.userInfo,
           profileImage: this.profileImage,
         };
-        const res = await axios.put(`http://localhost:3000/users/${this.userInfo.id}`, updatedData);
+        const res = await axios.put(`http://localhost:5000/users/${this.userInfo.id}`, updatedData);
         if (res.status === 200) {
           this.userInfo = res.data;
           localStorage.setItem("user-info", JSON.stringify(this.userInfo));
@@ -121,7 +121,7 @@
     }
     try {
       // Fetch the current user data to preserve userCart and userBought
-      const currentUser = await axios.get(`http://localhost:3000/users/${this.userInfo.id}`);
+      const currentUser = await axios.get(`http://localhost:5000/users/${this.userInfo.id}`);
       
       // Merge the existing data with the new updates
       const updatedData = {
@@ -132,7 +132,7 @@
       };
 
       // Update the user data
-      const res = await axios.put(`http://localhost:3000/users/${this.userInfo.id}`, updatedData);
+      const res = await axios.put(`http://localhost:5000/users/${this.userInfo.id}`, updatedData);
 
       if (res.status === 200) {
         // Update userInfo in localStorage

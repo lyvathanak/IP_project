@@ -100,15 +100,15 @@ export default {
         throw new Error('User not found');
       }
       const userId = loggedUser.id;
-      const response = await axios.get(`http://localhost:3000/users/${userId}`);
+      const response = await axios.get(`http://localhost:5000/users/${userId}`);
       this.cart = response.data.userCart || [];
       const productIds = this.cart.map(item => item.productId);
       const param = { params: { ids: productIds.join(',') } };
       if (productIds.length > 0) {
         const [lapRes, motherRes, cpuRes] = await Promise.all([
-          axios.get(`http://localhost:3000/laptops`, param),
-          axios.get(`http://localhost:3000/motherboards`, param),
-          axios.get(`http://localhost:3000/cpu`, param),
+          axios.get(`http://localhost:5000/laptops`, param),
+          axios.get(`http://localhost:5000/motherboards`, param),
+          axios.get(`http://localhost:5000/cpu`, param),
         ]);
         const allProducts = [...lapRes.data, ...motherRes.data, ...cpuRes.data];
         this.cart = this.cart.map((item) => {
