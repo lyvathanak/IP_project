@@ -260,6 +260,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": "4a50",
+      "userCart": [
+        {
+          "productIdd": "1750908974537",
+          "productId": "37",
+          "name": "HP Spectre x360 16",
+          "quantity": 2,
+          "group": "laptops"
+        },
+        {
+          "productIdd": "1750908987862",
+          "productId": "2",
+          "name": "MSI Raider GE78 HX",
+          "quantity": 2,
+          "group": "laptops"
+        }
+      ]
+    },
+    {
+      "id": "43aa",
+      "name": "Khun Meas",
+      "email": "measreaksmey02@gmail.com",
+      "password": "123",
+      "userBought": [],
+      "userCart": []
     }
   ],
   "products": [

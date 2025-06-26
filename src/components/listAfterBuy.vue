@@ -97,14 +97,14 @@ export default {
     }
 
     // Fetch the user's current cart from the backend
-    const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
+    const userRes = await axios.get(`http://localhost:5000/users/${this.userId}`);
     const user = userRes.data;
 
     // Filter out the item to be removed based on productId
     user.userCart = user.userCart.filter(item => item.productIdd !== itemId);
 
     // Update the cart in the backend with the modified cart
-    await axios.put(`http://localhost:3000/users/${this.userId}`, user);
+    await axios.put(`http://localhost:5000/users/${this.userId}`, user);
 
     alert("Product removed from cart!");
     window.location.href = 'http://localhost:5173/cart'; // Redirect to the cart page to reflect changes
@@ -127,12 +127,12 @@ export default {
       }
 
       const userId = loggedInUser.id;
-      const response = await axios.get(`http://localhost:3000/users/${userId}`);
+      const response = await axios.get(`http://localhost:5000/users/${userId}`);
       this.cart = response.data.userCart || [];
       
       if (this.cart.length > 0) {
         const productIds = this.cart.map((item) => item.productId).join(",");
-        const productsResponse = await axios.get(`http://localhost:3000/products`, {
+        const productsResponse = await axios.get(`http://localhost:5000/products`, {
           params: { ids: productIds }
         });
         const products = productsResponse.data;

@@ -46,7 +46,7 @@ export default {
   methods: {
     async signUp() {
       try {
-        const result = await axios.post("http://localhost:3000/users", {
+        const result = await axios.post("http://localhost:5000/users", {
           name: this.name,
           email: this.email,
           password: this.password,
