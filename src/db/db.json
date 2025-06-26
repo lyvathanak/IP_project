@@ -139,6 +139,12 @@
           "name": "X870E AORUS PRO ICE (LGA AM5 / Ram DDR5 / Wifi 7 +Bluetooth )",
           "quantity": 2,
           "group": "mother-board"
+        },
+        {
+          "productId": "1",
+          "name": "MSI Titan GT77 HX",
+          "quantity": 1,
+          "group": "MSI"
         }
       ]
     },
@@ -242,6 +248,14 @@
           "group": "MSI"
         }
       ]
+    },
+    {
+      "id": "0c37",
+      "name": "Khun",
+      "email": "measreaksmey02@gmail.com",
+      "password": "123",
+      "userBought": [],
+      "userCart": []
     }
   ],
   "laptops": [

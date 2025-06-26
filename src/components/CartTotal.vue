@@ -35,16 +35,16 @@ export default {
       }
 
       const userId = loggedInUser.id;
-      const response = await axios.get(`http://localhost:3000/users/${userId}`);
+      const response = await axios.get(`http://localhost:5000/users/${userId}`);
       this.cart = response.data.userCart || [];
 
       const productIds = this.cart.map((item) => item.productId);
       if (productIds.length > 0) {
         // Fetch products data
         const [laptopsRes, motherboardsRes,cpuRes] = await Promise.all([
-          axios.get(`http://localhost:3000/laptops`),
-          axios.get(`http://localhost:3000/motherboards`),
-          axios.get(`http://localhost:3000/cpu`),
+          axios.get(`http://localhost:5000/laptops`),
+          axios.get(`http://localhost:5000/motherboards`),
+          axios.get(`http://localhost:5000/cpu`),
         ]);
 
         const allProducts = [...laptopsRes.data, ...motherboardsRes.data,...cpuRes.data];

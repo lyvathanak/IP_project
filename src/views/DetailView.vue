@@ -87,9 +87,9 @@
      const id = this.$route.params.id;
      try {
      const [laptopsResponse, motherboardsResponse,cpuResponse] = await Promise.all([
-      axios.get("http://localhost:3000/laptops"),
-      axios.get("http://localhost:3000/motherboards"),
-      axios.get("http://localhost:3000/cpu"),
+      axios.get("http://localhost:5000/laptops"),
+      axios.get("http://localhost:5000/motherboards"),
+      axios.get("http://localhost:5000/cpu"),
       ]);
      const products =[...laptopsResponse.data,...motherboardsResponse.data,...cpuResponse.data];
      this.product=products.find((item)=> item.id==id);
@@ -116,14 +116,14 @@
        return;
      }
  
-     const userRes = await axios.get(`http://localhost:3000/users/${this.userId}`);
+     const userRes = await axios.get(`http://localhost:5000/users/${this.userId}`);
      const user = userRes.data;
  
      // Ensure userCart is initialized as an empty array if not already present
      user.userCart = user.userCart || [];
      user.userCart.push(productCart);
  
-     await axios.put(`http://localhost:3000/users/${this.userId}`, user);
+     await axios.put(`http://localhost:5000/users/${this.userId}`, user);
      alert("Product added to cart!");
      } catch (error) {
      alert("Error adding product to cart. Please try again.");
